@@ -1,0 +1,9 @@
+# ignore middle steps for latex
+*.aux
+*.log
+*.out
+*.listing
+*.toc
+
+# ignore any pdf's from subfolders
+*/*.pdf
