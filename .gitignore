@@ -1,3 +1,7 @@
+# ignore compiled code
+*.exe
+*.jar
+
 # ignore middle steps for latex
 *.aux
 *.log
