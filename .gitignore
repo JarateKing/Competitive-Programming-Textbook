@@ -8,6 +8,8 @@
 *.out
 *.listing
 *.toc
+*.pygstyle
+*.pygtex
 
 # ignore any pdf's from subfolders
 */*.pdf
