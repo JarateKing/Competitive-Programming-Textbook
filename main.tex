@@ -25,8 +25,17 @@
 
 % title page image support
 \usepackage{pdfpages}
+
+% minted options
+\usepackage{minted}
+\newcommand{\inputcpp}[1]{
+\inputminted[
+  fontsize=\small,
+  tabsize=4
+]{cpp}{#1}}
+
 \begin{document}
 
-Hello World!
+\inputcpp{code/hello_world_solution.cpp}
 
 \end{document}
