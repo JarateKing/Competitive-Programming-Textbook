@@ -39,7 +39,7 @@
 \end{tcolorbox}
 }
 
-\newcommand{\IOleftBox}{
+\newcommand{\IOleftBox}[1]{
 \begin{tcolorbox}[
   width=.49\linewidth,
   colframe=CodeBGclr,
@@ -47,11 +47,12 @@
   boxsep=1mm,
   arc=3mm,
   nobeforeafter,
-  sharp corners=east
+  sharp corners=east,
+  equal height group=#1
 ]
 }
 
-\newcommand{\IOrightBox}{
+\newcommand{\IOrightBox}[1]{
 \begin{tcolorbox}[
   width=.49\linewidth,
   colframe=CodeBGclr,
@@ -59,19 +60,24 @@
   boxsep=1mm,
   arc=3mm,
   nobeforeafter,
-  sharp corners=west
+  sharp corners=west,
+  equal height group=#1
 ]
 }
+
+\newcounter{IOsampleGroupCounter}
 
 \newcommand{\IOsample}[1]{
+
+\stepcounter{IOsampleGroupCounter}
 
 \texttt{Input:} \hfill \hspace{4mm} \texttt{Output:} \hfill \hspace{1mm}
 
 \vspace{-2mm}
-\IOleftBox
+\IOleftBox{\arabic{IOsampleGroupCounter}}
 \inputcode{cpp}{#1.in}
 \end{tcolorbox} \hfill
-\IOrightBox
+\IOrightBox{\arabic{IOsampleGroupCounter}}
 \inputcode{cpp}{#1.out}
 \end{tcolorbox}
 }
