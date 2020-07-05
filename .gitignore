@@ -13,3 +13,6 @@
 
 # ignore any pdf's from subfolders
 */*.pdf
+
+# unignore .out sample files
+!problems/**/*.out
