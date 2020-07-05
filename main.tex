@@ -29,8 +29,29 @@
 % additional support
 \input{latex/minted} % code snippets
 
+\newcommand{\problem}[7]{
+\section*{#1}
+#2
+\subsection*{Input}
+#3
+\subsection*{Output}
+#4
+\subsection*{Constraints}
+Time Limit: #5
+
+Memory Limit: #6
+\subsection*{Samples}
+#7
+}
+
 \begin{document}
 
-\IOsample{problems/hello_world/1}
+\problem{Hello World!}
+{Print out Hello World!}
+{There is no Input}
+{Output is a single string, Hello World!}
+{1 second}
+{1024 mb}
+{\IOsample{problems/hello_world/1}}
 
 \end{document}
