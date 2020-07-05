@@ -57,22 +57,21 @@
 ]
 }
 
-\begin{document}
+\newcommand{\IOsample}[1]{
 
-Input: \hfill \hspace{5mm} Output: \hfill \hspace{1mm}
+\texttt{Input:} \hfill \hspace{4mm} \texttt{Output:} \hfill \hspace{1mm}
 
 \vspace{-2mm}
 \IOleftBox
-\begin{verbatim}
-5
-1 2 3 4 5
-\end{verbatim}
+\inputcode{cpp}{#1.in}
 \end{tcolorbox} \hfill
 \IOrightBox
-\begin{verbatim}
-5
-1 2 3 4 5
-\end{verbatim}
+\inputcode{cpp}{#1.out}
 \end{tcolorbox}
+}
+
+\begin{document}
+
+\IOsample{problems/hello_world/1}
 
 \end{document}
