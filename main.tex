@@ -26,16 +26,53 @@
 % title page image support
 \usepackage{pdfpages}
 
-% code snippet support
-\input{latex/minted}
 % common settings
 \usepackage{xcolor}
 \definecolor{CodeBGclr}{rgb}{0.935,0.935,0.935}
 
+% additional support
+\input{latex/minted} % code snippets
+
+\newcommand{\IOleftBox}{
+\begin{tcolorbox}[
+  width=.49\linewidth,
+  colframe=CodeBGclr,
+  colback=CodeBGclr,
+  boxsep=1mm,
+  arc=3mm,
+  nobeforeafter,
+  sharp corners=east
+]
+}
+
+\newcommand{\IOrightBox}{
+\begin{tcolorbox}[
+  width=.49\linewidth,
+  colframe=CodeBGclr,
+  colback=CodeBGclr,
+  boxsep=1mm,
+  arc=3mm,
+  nobeforeafter,
+  sharp corners=west
+]
+}
+
 \begin{document}
 
-\inputcpp{code/hello_world_solution.cpp}
-\inputpython{code/hello_world_solution.py}
-\inputjava{code/hello_world_solution.java}
+Input: \hfill \hspace{5mm} Output: \hfill \hspace{1mm}
+
+\vspace{-2mm}
+\IOleftBox
+\begin{verbatim}
+5
+1 2 3 4 5
+\end{verbatim}
+\end{tcolorbox} \hfill
+\IOrightBox
+\begin{verbatim}
+5
+1 2 3 4 5
+\end{verbatim}
+\end{tcolorbox}
 
 \end{document}
