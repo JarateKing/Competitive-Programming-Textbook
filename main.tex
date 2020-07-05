@@ -26,49 +26,8 @@
 % title page image support
 \usepackage{pdfpages}
 
-% common settings
-\usepackage{xcolor}
-\definecolor{CodeBGclr}{rgb}{0.935,0.935,0.935}
-
 % additional support
 \input{latex/minted} % code snippets
-
-\newcommand{\IOleftBox}{
-\begin{tcolorbox}[
-  width=.49\linewidth,
-  colframe=CodeBGclr,
-  colback=CodeBGclr,
-  boxsep=1mm,
-  arc=3mm,
-  nobeforeafter,
-  sharp corners=east
-]
-}
-
-\newcommand{\IOrightBox}{
-\begin{tcolorbox}[
-  width=.49\linewidth,
-  colframe=CodeBGclr,
-  colback=CodeBGclr,
-  boxsep=1mm,
-  arc=3mm,
-  nobeforeafter,
-  sharp corners=west
-]
-}
-
-\newcommand{\IOsample}[1]{
-
-\texttt{Input:} \hfill \hspace{4mm} \texttt{Output:} \hfill \hspace{1mm}
-
-\vspace{-2mm}
-\IOleftBox
-\inputcode{cpp}{#1.in}
-\end{tcolorbox} \hfill
-\IOrightBox
-\inputcode{cpp}{#1.out}
-\end{tcolorbox}
-}
 
 \begin{document}
 

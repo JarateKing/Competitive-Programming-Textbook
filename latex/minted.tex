@@ -1,6 +1,9 @@
 \usepackage{minted}
 \usepackage{tcolorbox}
 
+\usepackage{xcolor}
+\definecolor{CodeBGclr}{rgb}{0.935,0.935,0.935}
+
 \newcommand{\inputcode}[2]{
 \inputminted[
   fontsize=\small,
@@ -33,5 +36,42 @@
 \newcommand{\inputjava}[1]{
 \inputtcolorbox
 \inputcode{java}{#1}
+\end{tcolorbox}
+}
+
+\newcommand{\IOleftBox}{
+\begin{tcolorbox}[
+  width=.49\linewidth,
+  colframe=CodeBGclr,
+  colback=CodeBGclr,
+  boxsep=1mm,
+  arc=3mm,
+  nobeforeafter,
+  sharp corners=east
+]
+}
+
+\newcommand{\IOrightBox}{
+\begin{tcolorbox}[
+  width=.49\linewidth,
+  colframe=CodeBGclr,
+  colback=CodeBGclr,
+  boxsep=1mm,
+  arc=3mm,
+  nobeforeafter,
+  sharp corners=west
+]
+}
+
+\newcommand{\IOsample}[1]{
+
+\texttt{Input:} \hfill \hspace{4mm} \texttt{Output:} \hfill \hspace{1mm}
+
+\vspace{-2mm}
+\IOleftBox
+\inputcode{cpp}{#1.in}
+\end{tcolorbox} \hfill
+\IOrightBox
+\inputcode{cpp}{#1.out}
 \end{tcolorbox}
 }
