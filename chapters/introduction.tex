@@ -81,7 +81,9 @@ In other words, there's no better time to start than right now. There's a saying
 
 \subsection{Example Problems}
 
-We've discussed competitive programming a fair bit by this point, but haven't seen any actual problems yet. What does a competitive programming task look like? We'll cover a few here:
+We've discussed competitive programming a fair bit by this point, but haven't seen any actual problems yet. What does a competitive programming task look like? We'll cover a few here.
+
+After listing out some problems, we will go over the solutions for them and explain the problem itself. You've been warned in case you'd like to solve these problems on your own first (it is recommended).
 
 \hrulefill
 
@@ -95,7 +97,7 @@ We've discussed competitive programming a fair bit by this point, but haven't se
 
 \hrulefill
 
-In the above problem we can notice several sections. We have the title of the problem, "Hello World!". Following this is a simple description. In this problem we have a pretty simple description.
+In the above problem we can notice several sections. We have the title of the problem, \textbf{Hello World!}. Following this is a simple description. In this problem we have a pretty simple description.
 
 After that, we have our input format. Hello world is a relatively unique problem in that it has no input -- these types of problems are rare. We do still have output, which we see in the next section, asking us to output "Hello World!". We also have our constraints section, where we list out the time limit and memory limit of our solutions. These constraints shouldn't be an issue for this problem specifically, but will come up in other problems.
 
@@ -109,7 +111,7 @@ We also have a sample input and output. When the program runs, it should produce
 As a friendly competition, Alice suggests that they compare how many of each fruit they have. Owen agrees, sure that he has more oranges than Alice has apples. Alice believes that she has more apples though. In true competition fashion, they get a judge to count so that they can be sure.
 
 Unfortunately, while the judge knows how to count, they don't know how to tell what number is bigger than the other. It's up to you to help finish the contest and properly declare the winner.}
-{You are given two integers, $a$ and $b$ where $0 \leq a,b \leq 10^9$. $a$ represents the number of apples that Alice has, and `b` represents the number of oranges that Owen has.}
+{You are given two integers, $a$ and $b$ where $0 \leq a,b \leq 10^9$. $a$ represents the number of apples that Alice has, and $b$ represents the number of oranges that Owen has.}
 {If Alice wins, print out "Alice". If Owen wins, print out "Owen". If it's a tie and neither wins, print out "Tie".}
 {1 second}
 {1024 mb}
@@ -117,3 +119,24 @@ Unfortunately, while the judge knows how to count, they don't know how to tell w
 \IOsample{problems/apples_and_oranges/2}
 \IOsample{problems/apples_and_oranges/3}}
 
+\hrulefill
+
+This problem is slightly more involved than \textbf{Hello World!}. The actual problem itself isn't complicated, but there is now something inside the input section that we have to consider. For someone new to competitive programming or someone unfamiliar with math, this can be a bit intimidating. It simply means that you have two input numbers whose values are between 0 and $10^9$ (inclusive). It then describes what these numbers actually mean, where $a$ and $b$ are used in the rest of the problem.
+
+The output section is also more involved than before. Our output depends on what we got for inputs. It is fairly easy to determine, but we do have to deal with 3 different cases for our output.
+
+The samples section goes over a bit more detail too. Specifically, there are multiple samples to look at. For each given input, the program should output what is seen in the samples.
+
+\hrulefill
+
+The solutions to \textbf{Hello World!} look like:
+
+\inputcpp{code/hello_world_solution.cpp}
+\inputjava{code/hello_world_solution.java}
+\inputpython{code/hello_world_solution.py}
+
+There is not much to say for these solutions -- they look like you'd find from any other resource.
+
+The solutions to \textbf{Apples and Oranges} look like:
+
+\inputcpp{code/apples_and_oranges_solution.cpp}
