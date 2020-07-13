@@ -4,12 +4,13 @@
 Programming can be very productive -- making something with practical value, that people can use in their life to simplify tasks. Programming can also be done for the sake of programming itself, and only because it's fun. The latter is called "recreational programming", where the act of programming is done for fun rather than to create something useful.
 
 There is a wide variety of forms of programming that people do recreationally. Many of them involve playing with how the sourcecode of a program appears, such as:
-\begin{enum}
+\begin{itemize}
 \item Codegolf -- solving problems in as few characters as possible
-\item Polyglots -- writing programs that can successfully run in multiple different languages (either by giving the same output, or intentionally giving different outputs depending on the language)
-\item Quines -- programs that output their own sourcecode
+\item Polyglot Programming -- writing programs that can successfully run in multiple different languages (either by giving the same output, or intentionally giving different outputs depending on the language)
+\item Quine Programming -- programs that output their own sourcecode
+\item Obfuscation -- programs made to be as difficult to read as possible, and are very hard to understand what they do by looking at the sourcecode (see IOCCC).
 \item Competitive Programming - solving well-defined problems under specific constraints (runtime, memory) often in a tournament setting with an emphasis on solving quickly
-\end{enum}
+\end{itemize}
 
 This book focuses on competitive programming.
 
@@ -27,11 +28,9 @@ Competitive programming is very helpful to a programmer. For students, many home
 
 Not to mention that practicing competitive programming is a great way to practice programming in general. When learning a new language, it is useful to solve many smaller problems with it to get more comfortable. Fortunately, competitive programming practice involves many small problems to solve. When learning a new technique or algorithm, it's useful to find many problems that require it of varying difficulty. Often, competitive programming practice will list out problems in terms of topic and difficulty for this reason.
 
-\hrulefill
+All that said, it's important to preface this book by saying that competitive programming won't help all your skills programming. Competitive programming tasks are a niche within programming, and as a result have special considerations. The biggest being that code maintainability doesn't matter at all for competitive programming, and as a consequence clean code practices can be pretty much entirely ignored (and often are, for the sake of typing faster) as long as you're still able to debug your solution in case of an error. Many practices recommended in competitive programming are actively discouraged in general software development, and vice versa. If you are looking to get better at writing readable and maintainable code, you have to be careful not to let competitive programming teach you bad habits.
 
-It's important to preface this book by saying that competitive programming won't help all your skills programming. Competitive programming tasks are a niche within programming, and as a result have special considerations. The biggest being that code maintainability doesn't matter at all for competitive programming, and as a consequence clean code practices can be pretty much entirely ignored (and often are, for the sake of typing faster) as long as you're still able to debug your solution in case of an error.
-
-Usually you don't care about things like memory management much either -- this is both a blessing and a cause for concern in a language like C++. It is generally much easier to learn and use C++ if you never concern yourself with manual memory management, as long as the solution runs through the testcases without passing the memory limit. But it is also missing out on a major part of the language that you will need if you work on larger projects.
+Usually you don't care about things like memory management much either -- this is both a blessing and a cause for concern in a language like C++. It is generally much easier to learn and use C++ if you never deal with manual memory management, as long as the solution runs through the testcases without passing the memory limit. But it is also missing out on a major part of the language that you will need if you work on larger projects. Issues from badly management memory are a relatively rare problem in competitive programming (they happen all the time, but if your solution still gets accepted then it doesn't matter) but are a very frequent problem in general software development.
 
 Don't let that dissuade you though. These sorts of things develop through practicing or working with larger projects, that you absolutely can do alongside competitive programming.
 
