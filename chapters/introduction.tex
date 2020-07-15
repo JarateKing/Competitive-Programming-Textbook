@@ -137,8 +137,13 @@ The solutions to \textbf{Hello World!} look like:
 \inputjava{code/hello_world_solution.java}
 \inputpython{code/hello_world_solution.py}
 
-There is not much to say for these solutions -- they look like you'd find from any other resource.
+There is not much to say for the solution in general -- they look like you'd find from any other resource.
+
+For C++ specifically, you can notice that we use \mintinline{cpp}{using namespace std;}. This just simplifies some of the rest of the program -- we can use \mintinline{cpp}{cout} instead of \mintinline{cpp}{std::cout}. This applies to nearly everything we obtain via \mintinline{cpp}{#include}. While there are arguments against using it in larger projects (namely, when you are dealing with many different namespaces that may or may not have conflicting function names) those same arguments don't apply too much to competitive programming (where you almost exclusively use the \mintinline{cpp}{std} namespace and programs only consist of a relatively small amount of functions) so you will find most people use \mintinline{cpp}{using namespace std;} when programming competitively.
+
+It's not uncommon to see people also use \mintinline{cpp}{#include <bits/stdc++.h>} as our include statement instead of \mintinline{cpp}{#include <iostream>}. That is a technique specific to GCC compilers that imports everything in the standard library, so that you don't need to have multiple \mintinline{cpp}{#include}s for each different library used. We avoid doing so in this book, both because it makes the origin of certain standard library functions or classes more clear to not, and also to maintain compatibility with other compilers other than GCC (which does not apply when competitively programming, it only needs to work for whichever compiler you're using).
 
 The solutions to \textbf{Apples and Oranges} look like:
 
 \inputcpp{code/apples_and_oranges_solution.cpp}
+
