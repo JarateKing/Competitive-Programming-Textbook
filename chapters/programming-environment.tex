@@ -1,13 +1,39 @@
 \section{Programming Environment}
+
+
+
 \subsection{C++}
+
 \subsubsection{Setup}
+
 \subsubsection{Strengths and Weaknesses}
+
+The most clear benefit of C++ is that it's among the fastest languages there are, and is usually the fastest language available in a contest setting. While solutions in other languages will usually be able to pass a problem's time constraints (assuming the algorithm is the intended solution, and potentially with some optimization) C++ is the only language that is guaranteed to be capable of passing time constraints.
+
+While not an actual feature of the language itself, C++ is also the most common language in competitive programming in general. As such, you will find most resources use C++.
+
+Unfortunately, there are some notable issues in C++'s standard library. For example, the standard library offers no way to represent arbitrarily large integers, and you would have to implement a class for this purpose on your own.
+
 \subsection{Java}
 \subsubsection{Setup}
 \subsubsection{Strengths and Weaknesses}
+
+Compared to the other languages listed here, Java's strength is that it enforces much more safeguards at compile-time than either C++ (that often only warns about things if you enable those warnings in the compiler, and they are not necessarily the most clear warnings) or python (that doesn't even have a proper compile step, and outside or erroneous syntax will throw its errors at runtime).
+
+Java also comes with some very useful bits inside its standard library. An example would be \mintinline{java}{BigInteger} and \mintinline{java}{BigDecimal} that...
+
+Unfortunately, it does come with a fair amount of boilerplate, so solutions in java tend to be relatively verbose compared to other languages.
+
+While Java's JIT is very impressive and its programs are quite fast once it's warmed up, this startup time is a significant issue.
+
 \subsection{Python}
 \subsubsection{Setup}
 \subsubsection{Strengths and Weaknesses}
+
+Python's main strength from a competitive programming standpoint is that it has very little boilerplate code, and in general it is very short.
+
+The main weakness of Python is that it's fairly slow.
+
 \subsection{Other}
 \subsubsection{C}
 \subsubsection{Pascal}
