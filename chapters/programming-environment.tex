@@ -6,6 +6,16 @@
 
 \subsubsection{Setup}
 
+There are a few different possible compilers that C++ can use. While options like the clang compiler are occasionally used, the most common compiler in competitive programming is GCC. Because of this, we will focus primarily on setting up the GCC compiler. The C++ compiler specifically is the \mintinline{bash}{g++} command, most often.
+
+On a Linux system the installation varies between different distros, but is generally relatively easy for someone used to the operating system. On Ubuntu for example, you should be able to run \mintinline{bash}{sudo apt install build-essential} which will install various necessary packages, including \mintinline{bash}{g++}.
+
+On Mac OSX...
+
+On windows, the setup requires \url{http://mingw.org/} in order to get the GCC. You can download the installation manager that will simplify the process.
+
+To verify that the install worked, you should be able to run \mintinline{bash}{g++ --version} to see if it's a missing command or if it tells you the version number.
+
 \subsubsection{Strengths and Weaknesses}
 
 The most clear benefit of C++ is that it's among the fastest languages there are, and is usually the fastest language available in a contest setting. While solutions in other languages will usually be able to pass a problem's time constraints (assuming the algorithm is the intended solution, and potentially with some optimization) C++ is the only language that is guaranteed to be capable of passing time constraints.
