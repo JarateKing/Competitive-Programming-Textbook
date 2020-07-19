@@ -134,11 +134,7 @@ The samples section goes over a bit more detail too. Specifically, there are mul
 \hrulefill
 
 \problem{Factorial Digit Product}
-{The factorial of a number $n$ is denoted as $n!$. The math behind a factorial is $n! = 1 * 2 * 3 * ... * (n-1) * n$.
-
-In other words, the factorial of $n$ is the product of every number between $1$ and $n$ inclusive.
-
-The exception to this rule is when $n = 0$, where $0! = 1$. This is the same as $1!$ where $1! = 1$.
+{The factorial of a number $n$ is denoted as $n!$. The math behind a factorial is $n! = 1 * 2 * 3 * ... * (n-1) * n$. In other words, the factorial of $n$ is the product of every number between $1$ and $n$ inclusive. The exception to this rule is when $n = 0$, where $0! = 1$. This is the same as $1!$ where $1! = 1$.
 
 What we want to do is find the product of each individual digit of a factorial. For example, with $4!$ we get $1 * 2 * 3 * 4 = 24$, and the product of the digits of $24$ is $2 * 4 = 8$.}
 {Input first consists of a number $t$ where $1 <= t <= 100000$. $t$ denotes how many test cases there are.
@@ -148,6 +144,12 @@ For each test case there is a number $n$ where $0 <= n <= 10^9$.}
 {1 second}
 {1024 mb}
 {\IOsample{problems/factorial_digit_product/1}}
+
+\hrulefill
+
+This problem is relatively difficult compared to the others. At first glance, we can notice that we have to handle multiple tests within a single testcase. This is not much more logic to handle, but does mean we have to be careful not to have too slow of a solution.
+
+Without giving away the answer, runtime is likely something to be concerned for with this problem. The input section mentions that we can have up to $100000$ tests, where each number can be as large as $10^9$. We can assume that one of the hidden testcases will be something along the lines of requesting the factorial digit sum of $10^9$ $100000$ times. If we calculate the factorial naively, this will not be able to pass runtime constraints (not to mention that $10^9!$ is a huge number and multiplication slows down for larger numbers, and would require a custom class in C++ since it can't handle arbitrarily large numbers natively) -- we have to think of a smarter solution.
 
 \hrulefill
 
