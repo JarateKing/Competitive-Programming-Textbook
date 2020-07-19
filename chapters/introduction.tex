@@ -173,6 +173,10 @@ The solutions to \textbf{Factorial Digit Product} look like:
 
 \inputcpp{problems/factorial_digit_product/solution.cpp}
 
+You will notice that the solution is quite simple, and not necessarily immediately obvious. The problem description gives no indication that numbers above 4 are trivial to calculate. The fact that $5! = 120$ whose digit product is $0$, and that increasing the factorial and multiplying it more will always leave a $0$ as the last digit ($6! = 720$, $7! = 5040$, $8! = 40320$, $9! = 362880$, $10! = 3628800$ and so on) which means the digit product is always $0$ is an observation that needs to be made by the problem solver.
+
+Because of this, we just have to have special cases for each number from $0$ to $4$ that we can figure out on paper easily (in fact the sample data already gives us the answer to all of these), and then print out $0$ if it's any other number.
+
 ---
 
 This book will recommend other problems as well, related to the techniques explored in the chapter or subsection.
