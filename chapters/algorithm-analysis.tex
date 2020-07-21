@@ -7,6 +7,8 @@
 
 The main application of Big-O notation is to describe runtimes of algorithms.
 
+While we will say things like "$O(n)$ algorithms will take $n$ operations" this is not entirely true, and is a generalization. If you were to calculate out how many operations an algorithm takes, Big-O only concerns itself with the largest term. For example, if you had an algorithm that took $n^2 + 100n$ operations, you would have $O(n^2)$ even though the $100n$ is significant. $O(n^2)$ could be $999n^2$ operations or it could be $0.1n^2 + 10^9n + 10^{100}$, since Big-O is only a measure of the highest growing term without any coefficients.
+
 There are many frequent examples of algorithm complexities:
 
 \begin{itemize}
