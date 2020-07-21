@@ -1,6 +1,40 @@
 \section{Algorithm Analysis}
 \subsection{Big-O Notation}
+
+
+
 \subsection{Runtime Complexity}
+
+The main application of Big-O notation is to describe runtimes of algorithms.
+
+There are many frequent examples of algorithm complexities:
+
+\begin{itemize}
+\item $O(1)$ means that an algorithm is done in constant time, no matter how big the input is. A trivial example would be "for a list of $n$ elements, print the first element" because the algorithm is not concerned with how many elements there are after the first one.
+\item $O(log n)$
+\item $O(n)$ is an extremely common runtime, where you have to go through every element of the input.
+\item $O(n log n)$
+\item $O(n^2)$ is a very common runtime that can be best described as "for every input, go through every input."
+\item $O(n^3)$ is much like $O(n^2)$ except that it is "for every pair of input, go through every input" where every pair of input is $O(n^2)$ itself.
+\end{itemize}
+
+There are several less common time complexities as well, but some of the uncommon (but far from unheardof) runtimes would be:
+
+\begin{itemize}
+\item $O(\sqrt{n})$
+\item $O(n log log n)$
+\item $O(2^n)$
+\item $O(n!)$
+\item $O(n^n)$
+\end{itemize}
+
+As well, there are sometimes time complexities that rely on multiple variables. For example, you will see:
+
+\begin{itemize}
+\item $O(v + e)$
+\item $O(v * e)$
+\end{itemize}
+
 \subsection{Space Complexity}
 \subsection{Precision}
 \subsubsection{Integer Types}
