@@ -18,6 +18,20 @@ There are many frequent examples of algorithm complexities:
 \item $O(n^3)$ is much like $O(n^2)$ except that it is "for every pair of input, go through every input" where every pair of input is $O(n^2)$ itself.
 \end{itemize}
 
+To elaborate a bit on what these actually mean, we should look at some example programs. For a $O(1)$ algorithm, we can look at:
+
+\inputpython{code/runtime_complexity_1.py}
+
+Notice that it doesn't matter if $n$ is extremely large or extremely small, the program will take the same amount of time to run in any case. Compare this to a $O(n)$ algorithm:
+
+\inputpython{code/runtime_complexity_n.py}
+
+Where a small $n$ will run very fast, but a large $n$ might take a long time to run. This can then be compared to a $O(n^2)$ algorithm:
+
+\inputpython{code/runtime_complexity_n2.py}
+
+If a $O(n)$ algorithm took a long time with a large $n$, this algorithm will take an extremely long time. Specifically, if $n$ is $10,000$, then a $O(n)$ algorithm will take $10,000$ operations while a $O(n^2)$ algorithm will take $10,000^2 = 100,000,000$ operations. Fortunately, $10,000$ is not a huge amount of operations for a computer, and usually (at least for most online judges) it's around $10^8$ that a $O(n)$ algorithm is still relatively safe to use for a time limit of 1 second. When $n$ is $10^8$ though, a $O(n^2)$ algorithm would perform $10^{16}$ operations which is far beyond 1 second of runtime.
+
 There are several less common time complexities as well, but some of the uncommon (but far from unheardof) runtimes would be:
 
 \begin{itemize}
