@@ -36,6 +36,13 @@ As well, there are sometimes time complexities that rely on multiple variables. 
 \end{itemize}
 
 \subsection{Space Complexity}
+
+Space complexity is comparable to runtime complexity. But instead of measuring how much time an algorithm takes to run, it measures how much additional data the algorithm needs to store.
+
+If you have a problem with an input of size $n$, and you need to store elements into an array of size $n$ as well, we are talking about $O(n)$ space complexity. If you have a 2 dimensional array where both dimensions are size $n$ (in other words, we're storing $n^2$ individual elements), our space complexity is $O(n^2)$. If we never have to store any additional data (or more accurately, the amount of data we store doesn't change depending on the problem size) we're dealing with $O(1)$.
+
+In general, all the same complexities that exist with runtime complexities are possible, but we are less likely to run into the less common ones, and likewise we are less likely to concern ourselves with the memory complexity (more often than not, runtime constraints are what limit you in a problem, memory constraints are not uncommon to be a problem but are less often than runtime).
+
 \subsection{Precision}
 \subsubsection{Integer Types}
 \subsubsection{Floating Point Types}
