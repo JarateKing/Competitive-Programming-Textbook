@@ -101,6 +101,11 @@ Which, when we change what floating point type we're using, gets us:
 \item \mintinline{cpp}{float} is $10020363264.0000000000$ which is $\sim20363264$ off the correct answer.
 \item \mintinline{cpp}{double} is $9999999999.8307151794$ which is $\sim0.1692848206$ off the correct answer.
 \item \mintinline{cpp}{long double} is $9999999999.9999834169$ which is $\sim0.0000165831$ off the correct answer.
+\item \mintinline{cpp}{__float128} is $10000000000.0000000000$ which is accurate to the precision we're using.
 \end{itemize}
 
-In general, floats are not very accurate and have trouble handling repeated arithmetic like this -- in a problem that requires lots of repeated arithmetic a simple float might not be sufficient. Double is a lot better and has much greater precision, but is still not perfect and may occasionally have precision issues. Long double is better and reduces the imprecision from doubles even further, but it still is not entirely precise with repeated arithmetic.
+In general, \mintinline{cpp}{float} isn't very accurate and has trouble handling repeated arithmetic like this -- in a problem that requires lots of repeated arithmetic a simple \mintinline{cpp}{float} might not be sufficient. \mintinline{cpp}{double} is a lot better and has much greater precision, but is still not perfect and may occasionally have precision issues. \mintinline{cpp}{long double} is better and reduces the imprecision from doubles even further, but it still is not entirely precise with repeated arithmetic.
+
+\mintinline{cpp}{__float128} gives us the best precision out of all of them, but (as mentioned) is not guaranteed to work in all compilers since it's a GCC extension. In addition, \mintinline{cpp}{cout << val} doesn't work with \mintinline{cpp}{__float128} and it is necessary to cast it to another type, such as \mintinline{cpp}{cout << (double)val}. Because the issue is the precision when doing lots of arithmetic that eventually results in significant precision losses, it's fine to cast it to a smaller type after performing that repeated arithmetic.
+
+Some considerations for Java and Python are that you have less options for your types, but one of the options is an arbitrary precision type that can be as large as need be (that C++'s standard library doesn't offer). Note that arbitrary precision data types are relatively slow, so if possible it is recommended to use the primitive types.
