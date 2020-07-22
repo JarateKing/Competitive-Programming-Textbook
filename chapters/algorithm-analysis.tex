@@ -68,14 +68,14 @@ Frequently, we will need to deal with precision in solving problems. Specificall
 \subsubsection{Integer Types}
 
 \begin{itemize}
-\item \textbf{16-bit signed} (\mintinline{cpp}{short} in C++ and Java)
-\item \textbf{16-bit unsigned} (\mintinline{cpp}{unsigned short} in C++)
-\item \textbf{32-bit signed} (\mintinline{cpp}{int} in C++ and Java)
-\item \textbf{32-bit unsigned} (\mintinline{cpp}{unsigned int} in C++)
-\item \textbf{64-bit signed} (\mintinline{cpp}{long long} in C++ and just \mintinline{java}{long} Java)
-\item \textbf{64-bit unsigned} (\mintinline{cpp}{unsigned long long} in C++)
-\item \textbf{128-bit signed} (\mintinline{cpp}{__int128} in GCC C++)
-\item \textbf{128-bit unsigned} (\mintinline{cpp}{unsigned __int128} in GCC C++)
+\item \textbf{16-bit signed} (\mintinline{cpp}{short} in C++ and Java) supports $[-2^{15},2^{15})$ and can hold integers up to over $10^4$.
+\item \textbf{16-bit unsigned} (\mintinline{cpp}{unsigned short} in C++) supports $[0,2^{16})$ and can hold integers up to over $10^4$.
+\item \textbf{32-bit signed} (\mintinline{cpp}{int} in C++ and Java) supports $[-2^{31},2^{31})$ and can hold integers up to over $10^9$.
+\item \textbf{32-bit unsigned} (\mintinline{cpp}{unsigned int} in C++) supports $[0,2^{32})$ and can hold integers up to over $10^9$.
+\item \textbf{64-bit signed} (\mintinline{cpp}{long long} in C++ and just \mintinline{java}{long} Java) supports $[-2^{63},2^{63})$ and can hold integers up to over $10^{18}$.
+\item \textbf{64-bit unsigned} (\mintinline{cpp}{unsigned long long} in C++) supports $[0,2^{64})$ and can hold integers up to over $10^{19}$.
+\item \textbf{128-bit signed} (\mintinline{cpp}{__int128} in GCC C++) supports $[-2^{127},2^{127})$ and can hold integers up to over $10^{38}$.
+\item \textbf{128-bit unsigned} (\mintinline{cpp}{unsigned __int128} in GCC C++) supports $[0,2^{128})$ and can hold integers up to over $10^{38}$.
 \item Python's \textbf{int} 
 \item Java's \textbf{BigInteger}
 \end{itemize}
@@ -83,10 +83,24 @@ Frequently, we will need to deal with precision in solving problems. Specificall
 \subsubsection{Floating Point Types}
 
 \begin{itemize}
-\item \textbf{32-bit floating point} (\mintinline{cpp}{float} in C++ and Java)
-\item \textbf{64-bit floating point} (\mintinline{cpp}{double} in C++ and Java)
+\item \textbf{32-bit floating point} (\mintinline{cpp}{float} in C++ and Java) supports up to $\pm3.40282 * 10^{38}$.
+\item \textbf{64-bit floating point} (\mintinline{cpp}{double} in C++ and Java or \mintinline{python}{float} in Python, the normal floating point representation) supports up to $\pm1.79769 * 10^{308}$.
 \item \textbf{80-bit floating point} (\mintinline{cpp}{long double} in C++)
 \item \textbf{128-bit floating point} (\mintinline{cpp}{__float128} in GCC C++)
-\item Python's \textbf{float}
+\item Python's \textbf{decimal}
 \item Java's \textbf{BigDecimal}
 \end{itemize}
+
+Floating point precision mostly comes into play when we're dealing with huge amounts of repeated operations. To demonstrate, we can simulate the difference between a few of these types (in C++) with something like:
+
+\inputcpp{code/runtime_float_precision.cpp}
+
+Which, when we change what floating point type we're using, gets us:
+
+\begin{itemize}
+\item \mintinline{cpp}{float} is $10020363264.0000000000$ which is $\sim20363264$ off the correct answer.
+\item \mintinline{cpp}{double} is $9999999999.8307151794$ which is $\sim0.1692848206$ off the correct answer.
+\item \mintinline{cpp}{long double} is $9999999999.9999834169$ which is $\sim0.0000165831$ off the correct answer.
+\end{itemize}
+
+In general, floats are not very accurate and have trouble handling repeated arithmetic like this -- in a problem that requires lots of repeated arithmetic a simple float might not be sufficient. Double is a lot better and has much greater precision, but is still not perfect and may occasionally have precision issues. Long double is better and reduces the imprecision from doubles even further, but it still is not entirely precise with repeated arithmetic.
