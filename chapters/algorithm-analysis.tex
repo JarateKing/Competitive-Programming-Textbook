@@ -34,6 +34,8 @@ Where a small $n$ will run very fast, but a large $n$ might take a long time to 
 
 If a $O(n)$ algorithm took a long time with a large $n$, this algorithm will take an extremely long time. Specifically, if $n$ is $10,000$, then a $O(n)$ algorithm will take $10,000$ operations while a $O(n^2)$ algorithm will take $10,000^2 = 100,000,000$ operations. Fortunately, $10,000$ is not a huge amount of operations for a computer, and usually (at least for most online judges) it's around $10^8$ that a $O(n)$ algorithm is still relatively safe to use for a time limit of 1 second. When $n$ is $10^8$ though, a $O(n^2)$ algorithm would perform $10^{16}$ operations which is far beyond 1 second of runtime.
 
+You might be able to notice a pattern, where every nested for-loop from $0$ to $n$ multiplies our Big-O by $n$ as well. Indeed, if we had 3 nested for-loops we would have $O(n^3)$. 4 nested for-loops from $[0,n)$ would be $O(n^4)$. And so on.
+
 There are several less common time complexities as well, but some of the uncommon (but far from unheardof) runtimes would be:
 
 \begin{itemize}
