@@ -76,9 +76,11 @@ Frequently, we will need to deal with precision in solving problems. Specificall
 \item \textbf{64-bit unsigned} (\mintinline{cpp}{unsigned long long} in C++) supports $[0,2^{64})$ and can hold integers up to over $10^{19}$.
 \item \textbf{128-bit signed} (\mintinline{cpp}{__int128} in GCC C++) supports $[-2^{127},2^{127})$ and can hold integers up to over $10^{38}$.
 \item \textbf{128-bit unsigned} (\mintinline{cpp}{unsigned __int128} in GCC C++) supports $[0,2^{128})$ and can hold integers up to over $10^{38}$.
-\item Python's \textbf{int} 
-\item Java's \textbf{BigInteger}
+\item Python's \textbf{int} will internally convert into an arbitrary-precision data type when it needs to in order to store integers of any size (restricted only by memory).
+\item Java's \textbf{BigInteger} is much like Python's \textbf{int}. It does have its own features, such as supporting a method \mintinline{java}{isProbablePrime(10)} that can tell you (to a likelihood of $1 - \frac{1}{1^{10}}$) whether the number is prime or not (though it will not give false negatives, if it returns \mintinline{java}{false} is is definitely not prime, but returning \mintinline{java}{true} only means that it is probably prime).
 \end{itemize}
+
+It's notable to mention that C++ does not have its own arbitrary-precision integer type. There are popular third-party libraries for this, but those aren't normally available in contests or on online judges. It's not uncommon for competitive programmers who use C++ to write their own arbitrary-precision integer type (you can find examples in many teams' ICPC notebooks) but it is also common for problems to not require arbitrary precision types.
 
 \subsubsection{Floating Point Types}
 
@@ -87,9 +89,11 @@ Frequently, we will need to deal with precision in solving problems. Specificall
 \item \textbf{64-bit floating point} (\mintinline{cpp}{double} in C++ and Java or \mintinline{python}{float} in Python, the normal floating point representation) supports up to $\pm1.79769 * 10^{308}$.
 \item \textbf{80-bit floating point} (\mintinline{cpp}{long double} in C++)
 \item \textbf{128-bit floating point} (\mintinline{cpp}{__float128} in GCC C++)
-\item Python's \textbf{decimal}
-\item Java's \textbf{BigDecimal}
+\item Python's \textbf{decimal} is a library class that allows you to set precision as you need, via setting \mintinline{python}{getcontext().prec} (used as \mintinline{python}{getcontext().prec = 50} for 50 significant places).
+\item Java's \textbf{BigDecimal} is like Python's \textbf{decimal} in that you can set your own precision, by calling \mintinline{java}{.setScale(50)} on the \textbf{BigDecimal} object.
 \end{itemize}
+
+Like with arbitrary-precision integers, C++ doesn't offer any standard library solution for arbitrary-precision floats. This is generally less of an issue because problems that can't be solved with \mintinline{cpp}{long double} or \mintinline{cpp}{__float128} and actually require arbitrary-precision are quite rare (unlike integers, it is extremely rare to find arbitrary-precision floats in ICPC team notebooks).
 
 Floating point precision mostly comes into play when we're dealing with huge amounts of repeated operations. To demonstrate, we can simulate the difference between a few of these types (in C++) with something like:
 
