@@ -87,8 +87,8 @@ It's notable to mention that C++ does not have its own arbitrary-precision integ
 \begin{itemize}
 \item \textbf{32-bit floating point} (\mintinline{cpp}{float} in C++ and Java) supports up to $\pm3.40282 * 10^{38}$.
 \item \textbf{64-bit floating point} (\mintinline{cpp}{double} in C++ and Java or \mintinline{python}{float} in Python, the normal floating point representation) supports up to $\pm1.79769 * 10^{308}$.
-\item \textbf{80-bit floating point} (\mintinline{cpp}{long double} in C++)
-\item \textbf{128-bit floating point} (\mintinline{cpp}{__float128} in GCC C++)
+\item \textbf{80-bit floating point} (\mintinline{cpp}{long double} in C++) supports up to $1.18973 * 10^{4932}$.
+\item \textbf{128-bit floating point} (\mintinline{cpp}{__float128} in GCC C++) supports up to $\pm1.18973 * 10^{4932}$ but with greater precision than \textbf{80-bit} floats.
 \item Python's \textbf{decimal} is a library class that allows you to set precision as you need, via setting \mintinline{python}{getcontext().prec} (used as \mintinline{python}{getcontext().prec = 50} for 50 significant places).
 \item Java's \textbf{BigDecimal} is like Python's \textbf{decimal} in that you can set your own precision, by calling \mintinline{java}{.setScale(50)} on the \textbf{BigDecimal} object.
 \end{itemize}
