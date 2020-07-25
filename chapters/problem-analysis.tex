@@ -1,5 +1,24 @@
 \section{Problem Analysis}
 \subsection{IO Formats}
+
+For the vast majority of problems, the IO is some variant on "here is the inputs for one or more testcases, for each testcase print the proper output".
+
+At its simplest form, it will be the inputs for a single testcase.
+
+\IOsample{code/io_formats/single_case}
+
+Often, there will be multiple testcases, given by a number $t$.
+
+\IOsample{code/io_formats/t_cases}
+
+Other times, multiple testcases continue until you read a 0. For example:
+
+\IOsample{code/io_formats/0_terminated}
+
+Or instead will be terminated by no more input at all:
+
+\IOsample{code/io_formats/null_terminated}
+
 \subsubsection{Interactive IO}
 \subsection{Problem Solving}
 
