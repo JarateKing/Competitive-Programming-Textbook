@@ -16,3 +16,4 @@
 
 # unignore .out sample files
 !problems/**/*.out
+!code/**/*.out
