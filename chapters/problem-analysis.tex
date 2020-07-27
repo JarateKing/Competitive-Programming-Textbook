@@ -20,6 +20,15 @@ Or instead will be terminated by no more input at all:
 \IOsample{code/io_formats/null_terminated}
 
 \subsubsection{Interactive IO}
+
+There are some problems where you don't have all the input initially, and instead your solution communicates back and forth with the judge. These problems are called 'interactive problems' and are relatively uncommon but can throw someone off when they haven't encountered one before.
+
+Consider a simple interactive problem, where we have to guess a number from 1 to 10. When we output our guess, we will get back a response that's either "correct" or "wrong". Then, if it's "wrong", we guess again. Usually there will be some limit on the number of guesses (often called queries) we can make, and in this problem we can limit the total number of guesses to be 10 (we should never need more than that, even for a very naive approach).
+
+A naive solution can be:
+
+\inputcpp{code/io_formats/interactive.cpp}
+
 \subsection{Problem Solving}
 
 Problem solving is not a well defined, simple to follow process. There is no algorithm to follow that will solve problems with success. Problem solving involves creativity and intuition. Competitive programming problems especially, where they are carefully designed with the intention of being interesting problems that usually require a creative solution.
