@@ -29,6 +29,10 @@ A naive solution can be:
 
 \inputcpp{code/io_formats/interactive.cpp}
 
+Note that we use \mintinline{c++}{std::endl} rather than \mintinline{c++}{'\n'} for our endlines. This is because \mintinline{c++}{'\n'} doesn't immediately print our outputs and will instead buffer them to print later (and is faster for that reason) which doesn't work in interactive problems.
+
+This problem is not very representative of actual interactive problems, because it's so basic and you don't need to do any interesting logic based off of the interactivity (it's a simple loop . This is meant more as a "hello world" problem for interactive problems.
+
 \subsection{Problem Solving}
 
 Problem solving is not a well defined, simple to follow process. There is no algorithm to follow that will solve problems with success. Problem solving involves creativity and intuition. Competitive programming problems especially, where they are carefully designed with the intention of being interesting problems that usually require a creative solution.
