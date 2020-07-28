@@ -27,3 +27,9 @@ Ivan wanted to figure out how to do this, but was not very fast at it. He couldn
 {1024 mb}
 {\IOsample{problems/big_difference/1}
 \IOsample{problems/big_difference/2}}
+
+\hrulefill
+
+There's a few things about this problem that stands out. The restriction is fairly basic -- we just have to make sure the minimum difference between adjacent elements is as large as possible. Our output is just a list of numbers between $1$ and $n$ that's ordered in a way that meets this restriction.
+
+There can be multiple variants on this problem. It could also provide an input $k$ and ask that no two adjacent elements have an absolute difference less than $k$. It could ask for the lexicographically smallest answer if there are multiple (if $2 1 3$ and $3 1 2$ as both valid answers, the lexicographically smallest answer would be $2 1 3$ since $2$ is less than $3$).
