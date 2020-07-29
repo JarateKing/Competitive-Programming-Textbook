@@ -12,7 +12,7 @@ The goal of a sorting algorithm is simple, to transform an array of data to be s
 
 A \textbf{sorted} array refers to one where elements are ordered according to some criteria. In practice, this is usually in ascending order (so that each element is larger than the previous) and less occasionally in descending order (where each element is smaller than the previous, which sometimes is called "sorted in reverse").
 
-In comparison, and \textbf{unsorted} array refers to one where this criteria is not met.
+In comparison, an \textbf{unsorted} array refers to one where this criteria is not met.
 
 There are two main types of sorting algorithms: \textbf{comparison sorts} and \textbf{integer sorts}. The comparison variety relies on exactly what it says, comparisons.
 
@@ -20,13 +20,15 @@ What determines ascending or descending order can depend on what specifically is
 
 An integer sort on the other hand doesn't make use of any comparison function, and instead relies on properties about integers themselves. As a result, it doesn't work on arbitrary types, and you can't make it have its own sorting criteria by changing how it should compare elements. Generally, these sorting algorithms are much more specialized. That said a few integer sorting algorithms can offer very good runtime complexity, and depending on the data can offer significant speedups over any comparison sort alternative.
 
-Another classification for sorting algorithms is whether they're \textbf{stable} or \textbf{unstable}. A stable sorting algorithm will ensure that different elements that compare equally to eachother (for custom classes with their own comparators for example) will have keep the relative order that they appeared in originally. For example, with an array of pairs $\{1,1\}, \{2,2\}, \{1,3\}, \{2,4\}, \{1,5\}$ where the comparison function only compares the first element of each pair, a stably sorted array would look like $\{1,1\}, \{1,3\}, \{1,5\}, \{2,2\}, \{2,4\}$.
+Another classification for sorting algorithms is whether they're \textbf{stable} or not. A stable sorting algorithm will ensure that different elements that compare equally to eachother (for custom classes with their own comparators for example) will have keep the relative order that they appeared in originally. For example, with an array of pairs $\{1,1\}, \{2,2\}, \{1,3\}, \{2,4\}, \{1,5\}$ where the comparison function only compares the first element of each pair, a stably sorted array would look like $\{1,1\}, \{1,3\}, \{1,5\}, \{2,2\}, \{2,4\}$.
 
-In contrast, an \textbf{unstable} algorithm makes no guarantees. It could pretty easily still end up sorted the exact same as a \textbf{stable} sorting algorithm, but it isn't necessarily going to.
+In contrast, an \textbf{unstable} algorithm makes no guarantees. It could pretty easily still end up sorted the exact same as a stable sorting algorithm, but it isn't necessarily going to.
 
 If every element of the array is unique, the difference between stable and unstable doesn't matter. If there are duplicate elements in the array, but you don't have any other data associated with them (two duplicate elements will be identical to eachother) then it doesn't matter either. It also wouldn't matter if duplicate elements with different data exist, but you don't really care what order they appear in as long as they're sorted relative to other elements. It's only in the (relatively narrow) circumstance that all these properties hold and the original order of duplicate elements is relevant that the difference between stable and unstable matters.
 
 \subsection{Searching}
+
+Often, you need to check whether an element exists within an array. Other times, you have to find the index of that element. In any case, given an array (or other list of elements), searching for an element is a common task. Like sorting, this is often fairly simple when done on its own, and more often than not it's a subtask of a larger problem or a part of a larger algorithm entirely.
 
 There are various algorithms for searching for an element within an array.
 
