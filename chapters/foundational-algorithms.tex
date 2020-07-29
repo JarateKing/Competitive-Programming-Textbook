@@ -4,6 +4,18 @@ There are a few algorithms that should be covered and discussed before going int
 
 \subsection{Sorting}
 
+\subsubsection{Sorting Concepts}
+
+A \textbf{sorted} array refers to one where elements are ordered according to some criteria. In practice, this is usually in ascending order (so that each element is larger than the previous) and less occasionally in descending order (where each element is smaller than the previous, which sometimes is called "sorted in reverse").
+
+In comparison, and \textbf{unsorted} array refers to one where this criteria is not met.
+
+There are two main types of sorting algorithms: \textbf{comparison sorts} and \textbf{integer sorts}. The comparison variety relies on exactly what it says, comparisons.
+
+What determines ascending or descending order can depend on what specifically is being sorted. For integers it's easy, one is clearly larger or smaller (or equal) to another. Same with floating point numbers. For strings, it's usually lexicographical order (alphabetical order). For more complex types it's not necessarily clear. To sort an array of queues stacks, it's less obvious what you should do, and it may depend entirely on your use case. In some problems you'll even find yourself with a \mintinline{cpp}{pair<int,int>} where you want to sort by the first integer at one part of your program, and then later sort by the second integer. In a comparison sort, you will have some \textbf{comparison function} that determines how to compare different elements with each other.
+
+An integer sort on the other hand doesn't make use of any comparison function, and instead relies on properties about integers themselves. As a result, it doesn't work on arbitrary types, and you can't make it have its own sorting criteria by changing how it should compare elements. Generally, these sorting algorithms are much more specialized. That said a few integer sorting algorithms can offer very good runtime complexity, and depending on the data can offer significant speedups over any comparison sort alternative.
+
 \subsection{Searching}
 
 There are various algorithms for searching for an element within an array.
