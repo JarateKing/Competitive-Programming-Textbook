@@ -10,6 +10,13 @@ Arrays don't have to be a fixed size -- dynamic arrays allow you to dynamically 
 In C++ we have the \mintinline{cpp}{std::vector} class that works as our dynamic array. In Java, it's \mintinline{java}{ArrayList}. And in Python, lists are already dynamic arrays.
 
 \subsection{Sets}
+
+In mathematics, a set is a collection of distinct elements. Pratically speaking, this differs from a traditional array in that every element is unique (in practice, trying to insert a duplicate element will not insert it) and that there is no guarantee of any specific order (in practice, the order depends on implementation).
+
+In C++, the basic type for a set is \mintinline{cpp}{std::set}. Internally, this is implemented as a self-balancing tree, so that insertions, deletions, or queries all take $O(log n)$ time complexity.
+
+C++ also offers the \mintinline{cpp}{std::unordered_set} that is based on a hash table. This offers $O(1)$ average case insertion, deletion, and queries, but is generally much less performant for iterating through the entire \mintinline{cpp}{std::unordered_set} than using an \mintinline{cpp}{std::set}.
+
 \subsection{Maps}
 \subsection{Sequential Structures}
 \subsubsection{Stack}
