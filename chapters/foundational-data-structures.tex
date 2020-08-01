@@ -18,6 +18,11 @@ In C++, the basic type for a set is \mintinline{cpp}{std::set}. Internally, this
 C++ also offers the \mintinline{cpp}{std::unordered_set} that is based on a hash table. This offers $O(1)$ average case insertion, deletion, and queries, but is generally much less performant for iterating through the entire \mintinline{cpp}{std::unordered_set} than using an \mintinline{cpp}{std::set}.
 
 \subsection{Maps}
+
+Maps are very similar to sets, except that every element has an associated value with it as well.
+
+C++ calls its map structure a \mintinline{cpp}{std::map} as the tree-based structure, with \mintinline{cpp}{std::unordered_map} serving as the hash-based variant. In Java, we have a \mintinline{Java}{Map} interface, of which \mintinline{java}{TreeMap} and \mintinline{java}{HashMap} (among several other variants) are available. In Python, we have dict's as a language feature that serves as its map.
+
 \subsection{Sequential Structures}
 \subsubsection{Stack}
 \subsubsection{Queue}
