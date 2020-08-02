@@ -24,7 +24,21 @@ Maps are very similar to sets, except that every element has an associated value
 C++ calls its map structure a \mintinline{cpp}{std::map} as the tree-based structure, with \mintinline{cpp}{std::unordered_map} serving as the hash-based variant. In Java, we have a \mintinline{Java}{Map} interface, of which \mintinline{java}{TreeMap} and \mintinline{java}{HashMap} (among several other variants) are available. In Python, we have dict's as a language feature that serves as its map.
 
 \subsection{Sequential Structures}
+
+Sequential structures are those that 
+
 \subsubsection{Stack}
+
+A stack is a first-in-last-out structure -- you can add or remove elements from the back (or top) of the stack.
+
 \subsubsection{Queue}
+
+A queue is a structure that's the opposite of a stack in that it's first-in-first-out. Specifically, you can add elements to the back of a queue and remove elements from the front of the queue.
+
 \subsubsection{Deque}
+
+A Deque is a double-ended queue. Practically speaking, this structure supports both operations of stacks at queues at once -- you can add or remove elements from either the front or the back.
+
 \subsubsection{Priority Queue}
+
+A priority queue, despite its name, does not behave exactly like a queue. While accessing and removing elements does happen at the front of a priority queue, a priority queue is always sorted and by consequence insertion can put an element anywhere in the priority queue (as long as it keeps the priority queue sorted).
