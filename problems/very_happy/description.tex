@@ -1,0 +1,13 @@
+\problem{Very Happy}
+{If you take a positive integer and sum the square of all its digits, you end up with an interesting transformation. For example, applying this to $123$ gives us $1^2 + 2^2 + 3^2 = 14$.
+
+We can repeat this process multiple times, such as taking $14$ and getting $1^2 + 4^2 = 17$, $17$ becoming $1^2 + 7^2 = 50$, $50$ becoming $25$, $25$ becoming $29$, becoming $85$, then $89$, then $145$, then $42$, $20$, then $4$. This will continue to loop forever, since it turns out that $4$ enters a cycle $4,16,37,58,89,145,42,20,4$.
+
+Not all numbers will enter into a long cycle when you do this -- some numbers will turn into $1$ when you repeat this process enough times (and applying this process on $1$ gives us $1^2 = 1$). These are called happy numbers.
+
+The task here is to determine whether a number is happy or not. And if it is happy, figure out how many iterations it takes to do so.}
+{Input consists of an integer $1 \le t \le 10^5$. Then follows $t$ integers $1 \le n \le 10^9$.}
+{For every integer $n$, output either the number of iterations it takes to become $1$, or "impossible" if it never does.}
+{1 second}
+{1024 mb}
+{\IOsample{problems/very_happy/1}}
