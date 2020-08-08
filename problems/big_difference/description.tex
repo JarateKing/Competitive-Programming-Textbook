@@ -1,0 +1,12 @@
+\problem{Big Difference}
+{"Big Difference!" Ivan said to his teacher, pointing at a list of numbers the teacher wrote on the board.
+
+"That's right Ivan, there is a big difference here", the teacher said pointing to how the difference between every two elements in the list is fairly large. "In fact, I had carefully ensured that the difference between all elements was as large as possible, so that no elements next to each other was small." Specifically, the teacher made a list where the smallest (absolute) difference between every adjacent element was as large as possible.
+
+Ivan wanted to figure out how to do this, but was not very fast at it. He couldn't figure out a way to solve it other than trying every different arrangement of the list, which was far too slow when he had a large list to deal with.}
+{Input consists of a single integer $n$ where $1 \le n \le 10^8$.}
+{Output an list of numbers of size $n$ with values $[1,2,3,...,n]$ where the smallest absolute difference between adjacent elements is maximized. More formally, create a permutation of an array $a$ with values $[1,n]$ with the maximum value of $min(|a_1-a_2|, |a_2-a_3|, ... |a_{n-1}-a_{n}|)$. If there are multiple answers, print any.}
+{1 second}
+{1024 mb}
+{\IOsample{problems/big_difference/1}
+\IOsample{problems/big_difference/2}}
