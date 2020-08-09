@@ -21,7 +21,7 @@ Simulation problems are problems where the problem description describes some st
 
 Two pointers problems, generally speaking, are problems that can be solved by keeping track of two locations on a sorted array. One pointer starts at the start of the array (the smallest element) and the other starts at the end of the array (the largest element). You are asked to find a pair of elements for which a certain property holds.
 
-A classic example is "given an array of integers, determine whether a pair of elements sums up to 100".
+A classic example is "given a sorted array of integers, determine whether a pair of elements sums up to 100".
 
 It is simple to solve this problem using a brute-force approach in $O(n^2)$:
 
@@ -34,6 +34,13 @@ It can be improved further by using binary search instead our nested for loop, w
 But with a two-pointers approach we can perform this in $O(n)$:
 
 \inputcpp{code/iterative/find-sum-two-pointers.cpp}
+
+There's two things to note about this approach: it relies on the array being sorted (if it isn't sorted, you must sort it first), and that you at every step of the way, you either:
+\begin{itemize}
+\item found a valid pair
+\item know that your left pointer is too small (because your sum is too low, and changing the right pointer will only decrease it further)
+\item know that your right pointer is too high (because your sum is too high, and changing your left pointer will only increase it further)
+\end{itemize}
 
 \subsection{Sliding Window}
 \subsection{Constructive}
