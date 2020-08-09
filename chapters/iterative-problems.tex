@@ -25,9 +25,15 @@ A classic example is "given an array of integers, determine whether a pair of el
 
 It is simple to solve this problem using a brute-force approach in $O(n^2)$:
 
+\inputcpp{code/iterative/find-sum-brute-force.cpp}
+
 It can be improved further by using binary search instead our nested for loop, which turns it $O(n log n)$ instead:
 
+\inputcpp{code/iterative/find-sum-binary-search.cpp}
+
 But with a two-pointers approach we can perform this in $O(n)$:
+
+\inputcpp{code/iterative/find-sum-two-pointers.cpp}
 
 \subsection{Sliding Window}
 \subsection{Constructive}
