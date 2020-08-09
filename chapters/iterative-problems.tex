@@ -35,6 +35,25 @@ But with a two-pointers approach we can perform this in $O(n)$:
 
 \inputcpp{code/iterative/find-sum-two-pointers.cpp}
 
+To explain how this works internally, let's consider an array $1,2,7,49,50,51,95,100,110$. We start with considering the first and last elements, and then we will repeatedly perform this:
+\begin{enumerate}
+\item $1 + 110 = 111$, which is greater than $100$ so we decrease right
+\item $1 + 100 = 101$, which is greater than $100$ so we decrease right
+\item $1 + 95 = 96$, which is less than $100$ so we increase left
+\item $2 + 95 = 97$, which is less than $100$ so we increase left
+\item $7 + 95 = 102$, which is greater than $100$ so we decrease right
+\item $7 + 51 = 58$, which is less than $100$ so we increase left
+\item $49 + 51 = 100$, which is our target value, so we return true
+\end{enumerate}
+
+It's useful to compare with an array that doesn't have a correct answer, like $1,5,97,100$:
+\begin{enumerate}
+\item $1 + 100 = 101$, which is greater than $100$ so we decrease right
+\item $1 + 97 = 98$, which is less than $100$ so we increase left
+\item $5 + 97 = 102$, which is greater than $100$ so we decrease right
+\item both pointers are at the second element, so we return false
+\end{enumerate}
+
 There's two things to note about this approach: it relies on the array being sorted (if it isn't sorted, you must sort it first), and that you at every step of the way, you either:
 \begin{itemize}
 \item found a valid pair
