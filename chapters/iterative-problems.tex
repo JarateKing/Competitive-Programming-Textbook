@@ -18,6 +18,17 @@ Simulation problems are problems where the problem description describes some st
 \hrulefill
 
 \subsection{Two-Pointers}
+
+Two pointers problems, generally speaking, are problems that can be solved by keeping track of two locations on a sorted array. One pointer starts at the start of the array (the smallest element) and the other starts at the end of the array (the largest element). You are asked to find a pair of elements for which a certain property holds.
+
+A classic example is "given an array of integers, determine whether a pair of elements sums up to 100".
+
+It is simple to solve this problem using a brute-force approach in $O(n^2)$:
+
+It can be improved further by using binary search instead our nested for loop, which turns it $O(n log n)$ instead:
+
+But with a two-pointers approach we can perform this in $O(n)$:
+
 \subsection{Sliding Window}
 \subsection{Constructive}
 
