@@ -83,6 +83,18 @@ There are various ways to implement this. Here's an example implementation that 
 
 \inputcpp{code/iterative/subarray-sum-resizing-window.cpp}
 
+Something a keen eye might've noticed is that our example problem was "non-negative integers". This was carefully chosen, because this approach doesn't work when we include the possibility of negative numbers. Specifically, the sliding window technique relies on increasing the window size to always either increase our sum or keep it the same, and likewise that decreasing the window size will always decrease our sum or keep it the same. This assumption doesn't hold with negatives numbers.
+
+To demonstrate the problem with negative numbers, let's look at the counter-example $50, -1, 50, 50, -99$. It should be obvious that there is a subarray that sums to 100, specially the $50,50$ in the middle. If we attempt to find this via a resizing window, we will instead get:
+\begin{enumerate}
+\item our range is $50$ with sum $50$, which is less than 100 so we increase our window size
+\item our range is $50,-1$ with sum $49$, which is less than 100 so we increase our window size
+\item our range is $50,-1,50$ with sum $99$, which is less than 100 so we increase our window size
+\item our range is $50,-1,50,50$ with sum $149$, which is greater than 100 so we decrease our window size
+\item our range is $-1,50,50$ with sum $99$, which is less than 100 so we increase our window size
+\item our range is $-1,50,50,-99$ with sum $0$, which is less than 100 so we increase our window size, except that we have traversed the entire array and have no more elements to consider
+\end{enumerate}
+
 \subsection{Constructive}
 
 Sometimes you will find problems along the lines of "here is a list of restrictions, construct an array that meets those restrictions" or "create the optimum answer under a list of restrictions". Usually, they also have some variant on "if there are multiple solutions, print any of them."
