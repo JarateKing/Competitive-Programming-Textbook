@@ -19,7 +19,7 @@ Simulation problems are problems where the problem description describes some st
 
 \subsection{Two-Pointers}
 
-Two pointers problems, generally speaking, are problems that can be solved by keeping track of two locations on a sorted array. One pointer starts at the start of the array (the smallest element) and the other starts at the end of the array (the largest element). You are asked to find a pair of elements for which a certain property holds.
+Two-pointers problems, generally speaking, are problems that can be solved by keeping track of two locations on a sorted array. One pointer starts at the start of the array (the smallest element) and the other starts at the end of the array (the largest element). You are asked to find a pair of elements for which a certain property holds.
 
 A classic example is "given a sorted array of integers, determine whether a pair of elements sums up to 100".
 
@@ -62,6 +62,15 @@ There's two things to note about this approach: it relies on the array being sor
 \end{itemize}
 
 \subsection{Sliding Window}
+
+
+
+\subsubsection{Resizing Window}
+
+You can combine concepts with two-pointers and sliding windows together, where you keep left and right pointers like with two-pointers, but instead of considering pairs we consider ranges like with sliding windows.
+
+A classical example for this is "given an array of non-negative integers, determine whether any subarray sums to 100".
+
 \subsection{Constructive}
 
 Sometimes you will find problems along the lines of "here is a list of restrictions, construct an array that meets those restrictions" or "create the optimum answer under a list of restrictions". Usually, they also have some variant on "if there are multiple solutions, print any of them."
