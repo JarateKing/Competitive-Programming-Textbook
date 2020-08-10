@@ -69,7 +69,11 @@ There's two things to note about this approach: it relies on the array being sor
 
 You can combine concepts with two-pointers and sliding windows together, where you keep left and right pointers like with two-pointers, but instead of considering pairs we consider ranges like with sliding windows.
 
-A classical example for this is "given an array of non-negative integers, determine whether any subarray sums to 100".
+A classical example for this is "given an array of non-negative integers, determine whether any subarray sums to 100". We approach this by starting with a range that's only the first element, and then if it's too small we add the element to the right of our window, and if it's too large we subtract the element at the left.
+
+Note that in this example problem we're just looking for whether or not there is a subarray that sums to 100. If we want to find all subarrays that sum to 100, or the smallest such subarray, or some other criteria, we can still use the resizing window approach but will have to prevent it from finishing as soon as we find a valid range.
+
+There are various ways to implement this. Here's an example implementation that used a for-loop for the left pointer, and a nested while-loop for the right pointer.
 
 \inputcpp{code/iterative/subarray-sum-resizing-window.cpp}
 
