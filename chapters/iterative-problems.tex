@@ -71,7 +71,13 @@ You can combine concepts with two-pointers and sliding windows together, where y
 
 A classical example for this is "given an array of non-negative integers, determine whether any subarray sums to 100". We approach this by starting with a range that's only the first element, and then if it's too small we add the element to the right of our window, and if it's too large we subtract the element at the left.
 
-Note that in this example problem we're just looking for whether or not there is a subarray that sums to 100. If we want to find all subarrays that sum to 100, or the smallest such subarray, or some other criteria, we can still use the resizing window approach but will have to prevent it from finishing as soon as we find a valid range.
+For example, let's look at the array $20,30,5,5,50,30,5,5,80,20$. If we want to find a subarray that sums to 100, we can look:
+
+{\centering \includegraphics{images/iterative/resizing-window}}
+
+Where the cells shaded blue are the current subarray we're considering, and the number to the left represents the current sum of the entire range. We find our final answer to be the subarray $5,5,50,30,5,5$.
+
+Note that in this example problem we're just looking for whether or not there is a subarray that sums to 100. If we want to find all subarrays that sum to 100, or the smallest such subarray (in our above example, the last two elements $80,20$ sum to 100 in a mich smaller subarray), or some other criteria, we can still use the resizing window approach but will have to prevent it from finishing as soon as we find a valid range.
 
 There are various ways to implement this. Here's an example implementation that used a for-loop for the left pointer, and a nested while-loop for the right pointer.
 
