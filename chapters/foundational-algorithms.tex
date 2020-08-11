@@ -36,9 +36,11 @@ If every element of the array is unique, the difference between stable and unsta
 
 Consider the case where you have $10^9$ 1-digit numbers that you want to sort. It is certainly possible to perform a comparison-based sort that will run in $O(n log n)$, there is actually an integer sort that's perfectly suited for this sort of problem that runs in $O(n)$.
 
-\textbf{Counting sort} is based around having an array where each element is the number of times that index appeared in the original unsorted list. For example, with the array $0,5,2,2,2,1,5,9$ we would have the counts $1,1,3,0,0,2,0,0,0,1$ because 0 appears once, 1 appears once, 2 appears three times, 4 never appears, and so on. Generating this is a simple process -- simply iterate through the unsorted list and increase the necessary count by 1 for every element. This takes $O(n)$.
+\textbf{Counting sort} is based around having an array where each element is the number of times that index appeared in the original unsorted list. For example, with the array $0,5,2,2,2,1,5,9$ we would have the counts $1,1,3,0,0,2,0,0,0,1$ because 0 appears once, 1 appears once, 2 appears three times, 4 never appears, and so on. Generating this is a simple process -- simply iterate through the unsorted list and increase the necessary count by 1 for every element.
 
 The next step is to create a new sorted array, once we know the counts of each value. This time we iterate through our counts and insert them into our new array. When a value was counted multiple times, we insert it that many times. The result of this will be an array containing $0,1,2,2,2,5,5,9$, the sorted version of the original array.
+
+\inputcpp{code/algorithms/counting_sort.cpp}
 
 \subsection{Searching}
 
