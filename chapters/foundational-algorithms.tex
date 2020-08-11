@@ -28,6 +28,10 @@ If every element of the array is unique, the difference between stable and unsta
 
 \subsubsection{Insertion Sort}
 
+\textbf{Insertion sort} is...
+
+While insertion-sort is generally not common because its $O(n^2)$ time complexity is too slow for large arrays, it does have very little overhead when dealing with small arrays to the point of often being one of the fastest sorting algorithms. For this reason it's not uncommon to see it beind used as part of a more complicated hybrid sort. Timsort, the standard library sorting algorithm of Python, is one such hybrid sort that is based on a combination of insertion sort and merge sort, for example.
+
 \subsubsection{Quicksort}
 
 \subsubsection{Mergesort}
@@ -41,6 +45,8 @@ Consider the case where you have $10^9$ 1-digit numbers that you want to sort. I
 The next step is to create a new sorted array, once we know the counts of each value. This time we iterate through our counts and insert them into our new array. When a value was counted multiple times, we insert it that many times. The result of this will be an array containing $0,1,2,2,2,5,5,9$, the sorted version of the original array.
 
 \inputcpp{code/algorithms/counting_sort.cpp}
+
+\subsubsection{Cycle Sort}
 
 \subsection{Searching}
 
