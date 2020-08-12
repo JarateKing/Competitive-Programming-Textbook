@@ -102,6 +102,12 @@ Binary search is an extremely common search algorithm that uses the structure of
 
 \subsubsection{Quickselect}
 
+Let's consider the case where you want to find the $k$th smallest element in an unsorted array. One of the easiest options is to sort that array and then just look at the $k$th element there.
+
+You will notice however, that we don't actually need most of the array to be sorted for this to be the case. If we're looking for the smallest element, it's no concern of ours if the majority of the array is unsorted. If we're looking for the median element, we don't care that what's to the left and what's to the right are fully sorted, just as long as we're sure the median element is where it's supposed to be (which we can verify by every element to the left being smaller, and every element to the right being larger).
+
+If you can notice the wording of that is fairly similar to quicksort, you're correct. \textbf{Quickselect} is a selection algorithm that uses similar concepts like partitioning that quicksort uses, in order to find the $k$th smallest element by only partially sorting the array.
+
 \subsubsection{Unimodal Searches}
 
 Less commonly, you may want to search the outputs of a function rather than an array. There are some search algorithms designed to search for maximums or minimums in a unimodal function (a function that has only one unique maximum or minimum).
