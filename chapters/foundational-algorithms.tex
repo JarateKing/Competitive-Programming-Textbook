@@ -30,7 +30,11 @@ If every element of the array is unique, the difference between stable and unsta
 
 \textbf{Insertion sort} is a stable comparison-based sorting algorithm that's among the simplest to implement. The algorithm consists of iterating through the unsorted array, and for each element we check if the element before it is larger and swap if so, then check if the element before that is larger and swap if so, etc. In other words, we keep shifting an element earlier until elements to the left are all smaller and elements to the right are all larger.
 
-While insertion-sort is generally not common because its $O(n^2)$ time complexity is too slow for large arrays, it does have very little overhead when dealing with small arrays to the point of often being one of the fastest sorting algorithms. For this reason it's not uncommon to see it beind used as part of a more complicated hybrid sort. Timsort, the standard library sorting algorithm of Python, is one such hybrid sort that is based on a combination of insertion sort and merge sort, for example.
+\inputcpp{code/algorithms/insertion_sort.cpp}
+
+What is the run-time of this algorithm? Unfortunately it is a fairly naive algorithm, and runs in $O(n^2)$. The worst-case is pretty simple to create, when the array is reversed we will have to do the maximum number of comparisons and swaps. Insertion sort isn't recommended as a general-use algorithm for these reasons -- its runtime isn't ideal and its worst-case is very common to encounter (some test cases for a problem might be in reverse order just to cover all bases, not even necessarily to specifically exclude insertion sort).
+
+While insertion-sort is generally not common because its $O(n^2)$ time complexity is too slow for large arrays, it does have very little overhead when dealing with small arrays to the point of often being one of the fastest sorting algorithms. Specifically, when we're dealing with elements in the CPU cache, swapping elements is extremely fast. For this reason it's not uncommon to see it beind used as part of a more complicated hybrid sort. Timsort, the standard library sorting algorithm of Python, is one such hybrid sort that is based on a combination of insertion sort and merge sort, for example.
 
 \subsubsection{Quicksort}
 
