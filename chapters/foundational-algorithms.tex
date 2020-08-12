@@ -92,13 +92,23 @@ There are various algorithms for searching for an element within an array.
 
 \subsubsection{Sequential Search}
 
-Sequential search is the simplest form of searching for an element within an array. It consists of a simple for-loop that checks each individual element 
+\textbf{Sequential search} (also called linear search) is the simplest form of searching for an element within an array. It consists of a simple for-loop that checks each individual element 
 
 It's useful because it doesn't rely on the array being sorted or anything like that. While it is often quite slow, it can be useful when runtime is not a concern.
 
 \subsubsection{Binary Search}
 
-Binary search is an extremely common search algorithm that uses the structure of a sorted array to offer great speedups.
+\textbf{Binary search} is an extremely common search algorithm that uses the structure of a sorted array to offer great speedups.
+
+\subsubsection{Exponential Search}
+
+\textbf{Exponential Search} is a variant on binary search that both performs slightly better than binary search when the search key is near the beginning of the list, and also works for unbounded lists (not generally an issue with arrays, but if you were to binary search a nonstrictly increasing function without a clear maximum, this would apply).
+
+The idea is to first obtain a valid range to binary search. Exponential search specifically tries to check if the search key potentially exists within the ranges $[0,1)$, $[1,2)$, $[2,4)$, $[4,8)$, $[8,16)$, and so on. The patterns for the ranges isn't too complicated -- we double our upper bound each time, and our lower bound is just our upper bound divided by 2. Checking whether the key is potentially within that range is simple -- as long as the key is between the upper and lower bounds of the range, it could exist.
+
+Once we have the valid range, we simply perform a normal binary search on that range. The code as a result looks like:
+
+\inputcpp{code/algorithms/exponential_search.cpp}
 
 \subsubsection{Quickselect}
 
