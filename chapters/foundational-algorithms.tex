@@ -46,6 +46,8 @@ The next step is to create a new sorted array, once we know the counts of each v
 
 \inputcpp{code/algorithms/counting_sort.cpp}
 
+Note that our count array has to be as large as the maximum element. Because of this (and that we have to traverse the entire count array), this means counting sort is best suited for when the range of valid elements is very small. A huge amount of one-digit numbers is a great example of where counting sort does well (and was chosen as the example here for that reason). When our elements are potentially very large, counting sort is not very well suited.
+
 \subsubsection{Cycle Sort}
 
 \subsection{Searching}
