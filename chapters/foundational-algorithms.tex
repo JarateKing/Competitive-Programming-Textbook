@@ -72,6 +72,18 @@ If we're not too concerned with sorting algorithm details, what do we do instead
 \item Python lets you either create a sorted copy of a list or iterable via \mintinline{python}{sorted(arr)} or lets you sort a list directly via \mintinline{python}{arr.sort()} (which is more efficient, but loses the original ordering and only works for lists). These sorts are guaranteed to be stable.
 \end{itemize}
 
+For interest, some other sorting algorithms are described here:
+\begin{itemize}
+\item \textbf{Bubble sort} is a commonly taught algorithm as a very simple (but very naive and slow) sorting algorithm. You iterate through the list multiple times, and if two adjacent elements are out of order, they get swapped. It doesn't see much practical use because other sorting algorithms are generally better.
+\item \textbf{Selection sort} is a naive sorting algorithm that for each element, it finds whatever element is smallest out of all elements to the right and swaps it into its right place. You can be guaranteed that, at the $i$th iteration, the range $[0,i)$ contains the right elements that need to be sorted.
+\item \textbf{Heapsort} is an algorithm that inserts all elements of an array into a heap, and then removes all those elements from the heap.
+\item \textbf{Radix Sort} is an integer sorting algorithm that recursively sorts by individual digits -- you take either the most-significant-digit or least-significant-digit of a number, distribute elements into different buckets based on what that digit was, then within each bucket you repeat with the next digit, and so on.
+\item \textbf{Bogosort} an extremely naive algorithm that creates a random permutation of an array, checks if it's sorted, and if not repeats. It's notable that it has an expected runtime of $O(n!)$ and in the worst case (if you are extremely unlucky) will never finish, but in the best case is $O(n)$.
+\item \textbf{Dropsort} is an extremely fast algorithm that sorts an entire array in a single pass, by simply removing any elements that are smaller than the one before it. It is usually mentioned as a joke algorithm for this reason -- but the output is a sorted array in any case (even if it's potentially much smaller than the original array).
+\end{itemize}
+
+That isn't to say that we have a complete list of all sorting algorithms -- not at all, there are lots of them. Some fairly well-known but not listed here, some that are variants on existing algorithms, and some that are nearly unheard of but still a valid sorting algorithm nonetheless.
+
 \subsection{Searching}
 
 Often, you need to check whether an element exists within an array. Other times, you have to find the index of that element. In any case, given an array (or other list of elements), searching for an element is a common task. Like sorting, this is often fairly simple when done on its own, and more often than not it's a subtask of a larger problem or a part of a larger algorithm entirely.
