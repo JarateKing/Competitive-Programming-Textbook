@@ -1,6 +1,10 @@
 \section{Optimizations}
 
+It's not uncommon for runtime to be the main concern with a problem. Sometimes, you may get a time limit exceeded issue with an approach you believe to be just barely too slow. Knowing how you can better optimize your code can be useful in getting the fractions of a second necessary to pass a problem like that.
+
 \subsection{Concepts}
+
+There are various fundamentals we need to consider when dealing with optimizations.
 
 \subsubsection{Cache Efficiency}
 
@@ -16,6 +20,8 @@
 
 \subsection{General}
 
+A lot of advice for optimization applies across the board, and are generally worth keeping in mind whenever you come across them.
+
 \subsubsection{Avoid Additional Allocations}
 
 \subsubsection{Bitwise Operations}
@@ -27,6 +33,8 @@
 \subsubsection{Lazy Evaluation}
 
 \subsection{Specific Techniques}
+
+Sometimes we have to deal with very specific optimizations. Generally, these involve some way of doing less work.
 
 \subsubsection{Reverse Access of Loops}
 
@@ -44,10 +52,24 @@
 
 \subsection{C++}
 
+There are some specific options that C++ allows for much more optimized code.
+
+\subsubsection{Fast IO}
+
+\subsubsection{Pragmas}
+
 \subsubsection{Inlined and Macro Functions}
 
 \subsubsection{Const Correctness}
 
 \subsection{Java}
 
+Java has some optimizations that are unique to it.
+
+\subsubsection{Fast IO}
+
 \subsection{Python}
+
+Python is generally the slowest language we regularly use in competitive programming, and as such it's important that we can. 
+
+\subsubsection{Fast IO}
