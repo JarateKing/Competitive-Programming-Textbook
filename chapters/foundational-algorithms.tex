@@ -61,6 +61,17 @@ Note that our count array has to be as large as the maximum element. Because of 
 
 \subsubsection{Cycle Sort}
 
+\subsubsection{Other Sorting Algorithms}
+
+It's likely that you've heard about or seen other sorting algorithms that we haven't covered in the above subsections. The truth is, we usually aren't too concerned with the details of various sorting algorithms in competitive programming. We listed some sorting algorithms because they're relevant (the details for merge-sort sometimes is useful to know for solving some problems), useful (counting sort is something that will occasionally get used for competitive programming), or more likely that they teach some fundamental concepts that we use elsewhere (quicksort's partitioning sees use in other algorithms).
+
+If we're not too concerned with sorting algorithm details, what do we do instead? In the vast majority of cases, using the standard library to sort things is sufficient (and definitely far easier).
+\begin{itemize}
+\item C++ supports \mintinline{cpp}{std::sort} for general purpose sorting, and \mintinline{cpp}{std::stable_sort} for when a stable sort is required (because \mintinline{cpp}{std::sort} is not guaranteed to be stable). Both of these require \mintinline{cpp}{#include <algorithm>}.
+\item Java supports \mintinline{java}{Arrays.sort()} via \mintinline{java}{import java.util.Arrays;} for arrays specifically, and \mintinline{java}{Collections.sort()} via \mintinline{java}{import java.util.Collections;} for general data structure containers (including arrays). These sorts are stable by default.
+\item Python lets you either create a sorted copy of a list or iterable via \mintinline{python}{sorted(arr)} or lets you sort a list directly via \mintinline{python}{arr.sort()} (which is more efficient, but loses the original ordering and only works for lists). These sorts are guaranteed to be stable.
+\end{itemize}
+
 \subsection{Searching}
 
 Often, you need to check whether an element exists within an array. Other times, you have to find the index of that element. In any case, given an array (or other list of elements), searching for an element is a common task. Like sorting, this is often fairly simple when done on its own, and more often than not it's a subtask of a larger problem or a part of a larger algorithm entirely.
@@ -76,6 +87,8 @@ It's useful because it doesn't rely on the array being sorted or anything like t
 \subsubsection{Binary Search}
 
 Binary search is an extremely common search algorithm that uses the structure of a sorted array to offer great speedups.
+
+\subsubsection{Quickselect}
 
 \subsubsection{Unimodal Searches}
 
