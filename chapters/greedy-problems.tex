@@ -20,6 +20,22 @@ While in this case we do greedily take the locally optimal choice at each step, 
 
 \subsection{Knapsack}
 
+Knapsack problems are those that involve having a knapsack with a maximum capacity $c$, and $n$ items with values $v$ and weights $w$. There are many variants on this problem, but the goal is to put items into the knapsack so that our total value is as high as possible without the total weight exceeding the maximum capacity.
+
+Some knapsack variants are greedy, which we will explore here. Some are not, which won't be covered in depth here, but we will make mention of a few that can't be solved greedily and give reasons why.
+
+\hrulefill
+
+In an unbounded knapsack problem, we can put any amount of an item into the knapsack -- both multiple copies of the same item, and fractional amounts of that item.
+
+The solution in this case is to determine what item has the highest $\frac{v}{w}$ to maximize the value we get for its weight, and then fill the entire knapsack with that.
+
+\hrulefill
+
+In a fractional knapsack problem, we are allowed to put fractional amounts into the knapsack, but we can't put multiple of the same item.
+
+The general concept is the same as before, we greedily use whatever item has the highest $\frac{v}{w}$ because it gives us to most optimal usage of our capacity. This time though, we can't fill our entire knapsack with that one item, and likely have to start using the item with the next highest $\frac{v}{w}$ assuming we still have capacity to spare. We do this until eventually we either run out of items, or we run out of capacity (potentially needing to use a fractional amount of the last item we insert).
+
 \subsection{Coin Change}
 
 \subsection{Interval Cover}
