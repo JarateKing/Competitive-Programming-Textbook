@@ -47,3 +47,11 @@ The issue here being that we can only assume the greedy approach will work if, n
 \subsection{Coin Change}
 
 \subsection{Interval Cover}
+
+In this problem you're given a range $[L,R]$ and a list of intervals $[l,r]$. The task is to determine whether these intervals fully cover the range $[L,R]$.
+
+Let's first consider a non-greedy, recursive approach (formally, a depth-first search approach, that we will describe in a later section). Starting at the leftmost-interval (the interval with the smallest value $l$, even if $r$ is large) that contains $L$, we find every intersection that starts within the range $[l,r]$ (in other words, every overlapping section that's to the right) and then for each we recursively try the same. We will either exhaust all overlapping intervals before we can reach $R$ and know that we can't cover the entire range $[L,R]$, or one of the intervals contains $R$ and know that we do cover the entire range (at which point our algorithm is done).
+
+It's nearly all intervals that get considered, with the only exception being that we find an interval containing $R$ at the end. The above diagram doesn't account for, depending on implementation, that you may end up considering the same interval multiple times as well.
+
+The greedy optimization of this is recognizing that we don't need to check every interval that overlaps, we only need to check the rightmost interval (the overlapping interval with the largest value $r$, \textbf{not} the overlapping interval with the largest value $l$) because it every other interval we might consider is suboptimal to that. This means that we can consider far less intervals.
