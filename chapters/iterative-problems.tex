@@ -75,6 +75,8 @@ You'll notice that we redo a lot of work with that brute-force approach. Both $[
 
 With a sliding window, we can move from $[0,k)$ to $[1,k+1)$ by subtracting $arr[0]$ and adding $arr[k]$, so that we now have our next range in two operations instead of $k$ operations.
 
+\inputcpp{code/iterative/subarray-sum-sliding-window.cpp}
+
 \subsubsection{Resizing Window}
 
 You can combine concepts with two-pointers and sliding windows together, where you keep left and right pointers like with two-pointers, but instead of considering pairs we consider ranges like with sliding windows.
