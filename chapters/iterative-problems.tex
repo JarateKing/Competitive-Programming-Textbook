@@ -67,7 +67,13 @@ There's two things to note about this approach: it relies on the array being sor
 
 \subsection{Sliding Window}
 
+In a sliding window problem, we have a list of elements, and we want to find a range of a certain length with some property.
 
+Consider a problem like "given an array of integers, determine whether a subarray of length $k$ sums to 100". This isn't too hard to think of conceptually, and we can solve it with a straightforward brute-force approach -- sum all elements from $[0,k)$ and see if they equal 100, then sum from $[1,k+1)$ and see if they equal 100, and so on.
+
+You'll notice that we redo a lot of work with that brute-force approach. Both $[0,k)$ and $[1,k+1)$ involve the sum $[1,k)$, so we can reduce the amount of operations we need to do if we can stop re-adding elements together unnecessarily.
+
+With a sliding window, we can move from $[0,k)$ to $[1,k+1)$ by subtracting $arr[0]$ and adding $arr[k]$, so that we now have our next range in two operations instead of $k$ operations.
 
 \subsubsection{Resizing Window}
 
