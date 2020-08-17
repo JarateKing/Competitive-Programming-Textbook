@@ -6,7 +6,7 @@ For example, a simple greedy problem might look like: we are given a binary sear
 
 The greedy solution to this problem is to always traverse to the right of the tree until we end up at a leaf node. This leaf node is the largest element of the tree, guaranteed by the properties of a binary search tree. In greedy terms, starting from the root of the tree, we will greedy move to the largest child node.
 
-{\centering \includegraphics{images/greedy/greedy_tree_1.png}}
+{\centering \includegraphics[width=\textwidth]{images/greedy/greedy_tree_1.png}}
 
 In the above example, we can easily verify that 100 is the largest element in the binary search tree.
 
@@ -14,7 +14,7 @@ We can show a similar but slightly modified problem that stops being greedy: we 
 
 Here, this is problem is no longer greedy because we can't reliably say that the largest element is always a child of the larger node at each step. Our greedy solution only worked because we could be guaranteed, at each decision, that our locally optimal choice would lead us to the global optimal.
 
-{\centering \includegraphics{images/greedy/greedy_tree_2.png}}
+{\centering \includegraphics[width=\textwidth]{images/greedy/greedy_tree_2.png}}
 
 While in this case we do greedily take the locally optimal choice at each step, the globally optimal answer involves us taking the locally sub-optimal choice of 65 instead of 75. Because we're not dealing with a binary search tree, we don't have the guarantees we need to greedily approach this problem.
 
@@ -54,7 +54,7 @@ Let's first consider a non-greedy, recursive approach (formally, a depth-first s
 
 With recursively considering the leftmost overlapping intervals, we can see in blue what gets considered:
 
-{\centering \includegraphics{images/greedy/interval_1.png}}
+{\centering \includegraphics[width=\textwidth]{images/greedy/interval_1.png}}
 
 It's nearly all intervals that get considered, with the only exception being that we find an interval containing $R$ at the end. The above diagram doesn't account for, depending on implementation, that you may end up considering the same interval multiple times as well.
 
@@ -62,4 +62,4 @@ The greedy optimization of this is recognizing that we don't need to check every
 
 We can see with the same example as above that we have to check less intervals in total:
 
-{\centering \includegraphics{images/greedy/interval_2.png}}
+{\centering \includegraphics[width=\textwidth]{images/greedy/interval_2.png}}
