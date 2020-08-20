@@ -1,5 +1,17 @@
 \section{Advanced Data Structures}
 \subsection{Range-based Structures}
+\subsubsection{Prefix Sum Arrays}
+
+Prefix sums are not a particularly complicated data structure. However, they are useful as the most basic form of range-based data structures. As the name suggests, they deal with sums of integers.
+
+If we are given an array of integers, we can generate a prefix sum array by making each element be the cumulative sum of all elements before it in the original array. For example, given an array $arr = \{1,2,3,5,10,3,2,5\}$, our prefix sum is $ps = \{1,3,6,11,21,24,26,31\}$ because each $ps_i$ is equal to $arr_0 + ... + arr_i$.
+
+Generating the prefix sum is a simple process...
+
+Normally, the prefix sum gives us the sum of the array from $[0,i)$. We can obtain the sum of an arbitrary subarray $[l,r)$ by obtaining $[0,r)$ and subtracting $[0,l)$. 
+
+While for some problems prefix sums are sufficient (construction in $O(n)$ and queries in $O(1)$), they aren't able to be updated efficiently (you would have to recalculate all sums after the element you're updating, which is $O(n)$).
+
 \subsubsection{Sparse Table}
 \subsubsection{Fenwick Tree / BIT}
 \subsubsection{Segment Tree}
