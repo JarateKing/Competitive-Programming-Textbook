@@ -1,3 +1,5 @@
+int f[100];
+
 // precalculate fibonacci sequence
 void genFibonacci() {
 	// f(0) and f(1) base cases
