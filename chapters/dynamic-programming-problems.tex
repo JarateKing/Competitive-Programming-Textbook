@@ -10,9 +10,15 @@ Unfortunately, this results in a lot of repeated work. A call to \mintinline{cpp
 
 Dynamic programming fixes this by storing the results of these recursive subcalls in a process called memoization.
 
-\inputcpp{code/dp/fib_dp.cpp}
+\inputcpp{code/dp/fib_dp_td.cpp}
 
-Here, we don't make any recursive calls -- a call of \mintinline{cpp}{fibonacci(10)} will not result in recalculating earlier values in the sequence repeatedly.
+That is called "top down" dynamic programming because we still make recursive calls, but if we've already gotten the result from one of our recursive calls we'll store it for any times it appears later.
+
+The alternative is "bottom up" dynamic programming where we start with the smallest cases and gradually work our way up:
+
+\inputcpp{code/dp/fib_dp_bu.cpp}
+
+Here, we don't make any recursive calls at all -- a call of \mintinline{cpp}{fibonacci(10)} will not result in recalculating earlier values in the sequence repeatedly.
 
 You may note that we can store this permanently, by precalculating entirely:
 
