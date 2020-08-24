@@ -1,7 +1,15 @@
-\section{Dynamic Programming Problems}\section{Dynamic Programming Problems}
+\section{Dynamic Programming Problems}
 
 Dynamic programming is...
 
 Consider the problem of calculating the Fibonacci sequence. The Fibonacci sequence is the sequence $0,1,1,2,3,5,8,13,21,34,55,89,...$ where each value (other than the initial $0,1$) is the sum of the previous two (so $89 = 55 + 34$, $55 = 34 + 21$, $34 = 21 + 13$, and so on). This is a pretty intuitive example of recursion, like in:
 
 \inputcpp{code/dp/fib_recursive.cpp}
+
+Unfortunately, this results in a lot of repeated work. A call to \mintinline{cpp}{fibonacci(10)} will call \mintinline{cpp}{fibonacci(9)} and \mintinline{cpp}{fibonacci(8)}, where \mintinline{cpp}{fibonacci(9)} will also call \mintinline{cpp}{fibonacci(8)}, \mintinline{cpp}{fibonacci(7)} ends up getting called 3 times, \mintinline{cpp}{fibonacci(6)} gets called 5 times, and so on until \mintinline{cpp}{fibonacci(1)} ultimately gets called 56 times. There is a huge amount of work being done with these recursive calls \textit{that we already obtained the result from earlier}.
+
+Dynamic programming fixes this by storing the results of these recursive subcalls in a process called memoization.
+
+\inputcpp{code/dp/fib_dp.cpp}
+
+Here, we don't make any recursive calls -- a call of \mintinline{cpp}{fibonacci(10)} will not result in recalculating earlier values in the sequence repeatedly.
