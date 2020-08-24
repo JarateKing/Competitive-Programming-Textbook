@@ -13,3 +13,7 @@ Dynamic programming fixes this by storing the results of these recursive subcall
 \inputcpp{code/dp/fib_dp.cpp}
 
 Here, we don't make any recursive calls -- a call of \mintinline{cpp}{fibonacci(10)} will not result in recalculating earlier values in the sequence repeatedly.
+
+You may note that we can store this permanently, by precalculating entirely:
+
+\inputcpp{code/dp/fib_precalc.cpp}
