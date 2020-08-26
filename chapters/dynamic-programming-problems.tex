@@ -36,6 +36,8 @@ An example of this will be in the coin change problem. Let's say we have a targe
 
 What do we do when our list of valid coins is $\{1,2,3,4,5,6,7,8,9,10,17,25,90\}$? It should be clear that this would be difficult to do naively -- $100$ $1$s is a valid solution, $98$ $1$s and a $2$ is a valid solution, $97$ $1$s and a $3$ is a valid solution, $96$ $1$s and a $4$ or $2$ $2$s are both valid solutions, something like $90$ $1$s and any of $\{10\},\{8,2\},\{7,3\},\{6,4\},\{5,5\},\{6,2,2\},\{5,3,2\},\{4,4,2\},\{4,2,2,2\},\{3,3,2,2\},\{2,2,2,2,2\}$ are all valid solutions. It is far too difficult to simply look at the problem and be able to accurately determine the proper number of valid solutions (in this case, that number is $9505074$).
 
+\inputcpp{code/dp/coinchange.cpp}
+
 \subsection{Longest Common Subsequence}
 
 \subsection{Longest Increasing Subsequence}
