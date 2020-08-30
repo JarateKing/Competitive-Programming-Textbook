@@ -40,4 +40,10 @@ What do we do when our list of valid coins is $\{1,2,3,4,5,6,7,8,9,10,17,25,90\}
 
 \subsection{Longest Common Subsequence}
 
+The Longest Common Subsequence problem (commonly called the LCS problem) is one where you're given two strings (or some other array of data) and, as the name suggests, you have to find the longest subsequence they have in common.
+
+Recall that subsequences refer to a sequence with some elements deleted from the original (including no elements or all elements), so that there is (potentially) less elements but they are all from the original sequence and keep the original ordering. For example, with the string "abcdef", some valid subsequences would be "abc" or "ace", or even the original string "abcdef" or an empty string "".
+
+A subsequence in common, therefore, would be any subsequence that exists in two different sequences at once. Given two strings "abcdef" and "defghi", they might contain the common subsequences \{"", "d", "e", "f", "de", "ef", "def"\}. As another example, the common subsequences of "abcdef" and "aceg" would be \{"", "a", "c", "e", "ac", "ce", "ace"\}.
+
 \subsection{Longest Increasing Subsequence}
