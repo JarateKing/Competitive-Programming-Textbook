@@ -44,6 +44,9 @@ The Longest Common Subsequence problem (commonly called the LCS problem) is one 
 
 Recall that subsequences refer to a sequence with some elements deleted from the original (including no elements or all elements), so that there is (potentially) less elements but they are all from the original sequence and keep the original ordering. For example, with the string "abcdef", some valid subsequences would be "abc" or "ace", or even the original string "abcdef" or an empty string "".
 
-A subsequence in common, therefore, would be any subsequence that exists in two different sequences at once. Given two strings "abcdef" and "defghi", they might contain the common subsequences \{"", "d", "e", "f", "de", "ef", "def"\}. As another example, the common subsequences of "abcdef" and "aceg" would be \{"", "a", "c", "e", "ac", "ce", "ace"\}.
+A subsequence in common, therefore, would be any subsequence that exists in two different sequences at once. Given two strings "abcdef" and "defghi", they might contain the common subsequences \{"", "d", "e", "f", "de", "ef", "def"\}. As another example, the common subsequences of "abcdef" and "aceg" would be \{"", "a", "c", "e", "ac", "ce", "ace"\}. It should be clear what the longest common subsequence is with these examples, "def" and "ace" respectively.
+
+A potential problem that we may have to deal with is that the first possible subsequence we can take isn't necessarily the best one. In the above examples, you might notice that simply adding all letters they have in common would give you the right answers in those testcases. This is not true for all possible strings, for example with "abcde" and "abdbce" if we took a greedy approach we would likely find "abd" when the longest common subsequence is actually "abce".
+
 
 \subsection{Longest Increasing Subsequence}
