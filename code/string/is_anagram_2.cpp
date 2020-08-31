@@ -10,7 +10,8 @@ bool isAnagram(string a, string b) {
 	for (auto c : b)
 		count[(c-'a')]--;
 
-	// check if they are all 0
+	// check to make sure they are all 0
+	// otherwise, our two strings have a different character count
 	for (int i = 0; i < 26; i++)
 		if (count[i] != 0)
 			return false;

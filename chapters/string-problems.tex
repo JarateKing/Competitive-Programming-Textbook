@@ -5,6 +5,14 @@
 
 Anagrams are the string equivalent to a permutation of an array. Two strings are anagrams of eachother if they contain the same elements, but their ordering isn't necessarily the same. For example, "abc" and "bac" are anagrams. Similarly, all anagrams of "abc" are \{"abc","acb","bac","bca","cab","cba"\}.
 
+We can check whether two strings are anagrams by comparing the count of each character they have in their string:
+
+\inputcpp{code/string/is_anagram_2.cpp}
+
+That said, we can make our code smaller (though somewhat less efficient) by simply sorting the strings (so that they are both the lexicographically lowest anagram) and then comparing them.
+
+\inputcpp{code/string/is_anagram_1.cpp}
+
 \subsubsection{Lexicographic Order}
 
 Lexicographic order of strings is one where strings are sorted based on the alphabetical ordering of their first characters. When strings have the same first character, the alphabetical order of their second characters are considered, and so on. A similar tie-breaker has to appear with shorter strings, where the end of the string is considered first alphabetically.
