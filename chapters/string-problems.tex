@@ -1,8 +1,15 @@
 \section{String Problems}
 \subsection{String Concepts}
+
 \subsubsection{Anagrams}
 
 Anagrams are the string equivalent to a permutation of an array. Two strings are anagrams of eachother if they contain the same elements, but their ordering isn't necessarily the same. For example, "abc" and "bac" are anagrams. Similarly, all anagrams of "abc" are \{"abc","acb","bac","bca","cab","cba"\}.
+
+\subsubsection{Lexicographic Order}
+
+Lexicographic order of strings is one where strings are sorted based on the alphabetical ordering of their first characters. When strings have the same first character, the alphabetical order of their second characters are considered, and so on. A similar tie-breaker has to appear with shorter strings, where the end of the string is considered first alphabetically.
+
+For example, \{"abc", "abd", "ada", "ae", "aeiou", "b"\} is a lexicographically ordered array of strings, following the rules above.
 
 \subsubsection{Palindromes}
 
