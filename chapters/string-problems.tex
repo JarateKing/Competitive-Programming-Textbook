@@ -42,9 +42,18 @@ One of the common tasks needed for string problems involves pattern matching -- 
 There are a fair amount of possible variants and alternatives to pattern matching. The simplest is simply "does a given substring exist in a given larger string" with no other complications.
 
 \subsubsection{Regex}
-\subsubsection{Z-Algorithm}
+
+Pattern matching can be solved easily using regular expressions. For example, consider in python:
+
+\inputpython{code/string/regex.py}
+
+The main advantages of regex are that they can be very quick to code, and they can support more advanced patterns. For example, if you wanted to match either "Hello" or "World", you could use \mintinline{python}{"(Hello)|(World)"} as the pattern. You could search for any consecutive pair of vowels with \mintinline{python}{"[aeiou]{2}"}, or any word that ends in s with \mintinline{python}{"\b.+s\b"}. Regex can define fairly complex patterns to search for in only one short line.
+
+This comes with some hefty downsides though: namely that regex matching is significantly slower than other methods of pattern matching, that it requires an entire different syntax to write and is generally hard to understand once written, and that if the regex engine doesn't do exactly what you like it can't be easily modified to work.
+
 \subsubsection{Knuth-Morris-Pratt}
 \subsubsection{Boyer Moore}
+\subsubsection{Z-Algorithm}
 \subsubsection{Aho Corasick}
 \subsection{Subsequence Matching}
 \subsection{Hashing}
