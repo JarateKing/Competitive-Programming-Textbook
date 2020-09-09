@@ -27,6 +27,8 @@ It can be pretty easy to check if a string is a palindrome or not. We can simply
 
 \inputcpp{code/string/is_palindrome.cpp}
 
+Something to watch out for is that you can have palindromes of even length (such as "abba") and palindromes of odd length (such as "abcba"). Even length palindromes can be thought of as a string concatenated by its reverse ("ab" + "ba"), while odd length palindromes are a string concatenated by its reverse with another character in the middle ("ab" + "c" + "ba"). Often when dealing with palindromes, we may have to generate two different cases to deal with both types of palindromes.
+
 \subsubsection{Prefixes}
 
 Prefixes are substrings that contain the start of a string. For example, the prefixes of "abcde" are \{"a","ab","abc","abcd","abcde"\}.
