@@ -89,8 +89,12 @@ While this is a general string algorithm with several applications, one applicat
 Now, any time the length of $p$ appears inside the z-array, we know that pattern has a match. We can convince ourselves of this pretty easily -- because of $x$ we should never have a value that's greater than the length of $p$, and any value in the z-array that appears after $x$ is how many leading characters are the same in $p$.
 
 \subsubsection{Aho Corasick}
+
+Aho Corasick is an algorithm for pattern matching that's designed to search for multiple patterns simultaneously. Aho Corasick is based on construction of a finite state machine that represents all patterns simultaneously, and allows you to iterate over the original string with each character being used for the state transitions, and noting every accepted state as a successful match.
+
 \subsection{Subsequence Matching}
 \subsection{Hashing}
+\subsection{Prefix/Suffix Arrays}
 \subsection{Distance}
 \subsubsection{Diff}
 \subsubsection{Levenshtein}
