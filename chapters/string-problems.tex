@@ -66,6 +66,13 @@ This comes with some hefty downsides though: namely that regex matching is signi
 \subsubsection{Knuth-Morris-Pratt}
 \subsubsection{Boyer Moore}
 \subsubsection{Z-Algorithm}
+
+The Z-Algorithm generates an array $Z$ where $Z[i]$ is the length of the longest common prefix between a string and its substring beginning at position $i$. Explained practically, $Z[i]$ is the number of characters that are the same starting from $s[0]$ and $s[i]$.
+
+While this is a general string algorithm with several applications, one application is in string matching. Given text $s$ and a pattern $p$ (and some character not present in either, which we'll call $x$ which can be something like \mintinline{cpp}{'\n'} that is uncommon to be needed in a problem), we generate the z-array of $p+x+s$ so that they're all concatenated into one string.
+
+Now, any time the length of $p$ appears inside the z-array, we know that pattern has a match. We can convince ourselves of this pretty easily -- because of $x$ we should never have a value that's greater than the length of $p$, and any value in the z-array that appears after $x$ is how many leading characters are the same in $p$.
+
 \subsubsection{Aho Corasick}
 \subsection{Subsequence Matching}
 \subsection{Hashing}
