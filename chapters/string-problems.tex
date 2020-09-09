@@ -68,6 +68,17 @@ The main advantages of regex are that they can be very quick to code, and they c
 This comes with some hefty downsides though: namely that regex matching is significantly slower than other methods of pattern matching, that it requires an entire different syntax to write and is generally hard to understand once written, and that if the regex engine doesn't do exactly what you like it can't be easily modified to work.
 
 \subsubsection{Knuth-Morris-Pratt}
+
+Consider the naive approach: for every position $i$ in the original string $s$ with the search pattern $p$, we check if $s[i] = p[0]$, then if $s[i+1] = p[1]$, and so on until we go through the either the full pattern (in which case we found a match) or the full original string (in which case we didn't find a match).
+
+That approach is not ideal, because we can filter out an invalid match early in many cases. For example, consider trying to match "abcabd" into "abcabcabd". When we fail to match at position 0, we've already made comparisons for positions 1 and 2 and can know that our pattern can't exist there either. This results in an unnecessary (and potentially large) slowdown.
+
+Knuth-Morris-Pratt (commonly abbreviated as KMP) is an algorithm that can apply the necessary information to skip starting positions we may already know are invalid. We do have to do some pre-processing on the pattern string first though.
+
+To begin, we generate an array `l` where $l[i]$ is the length of the longest proper prefix of the substring $p[0:i]$ that's also a proper suffix. In other words, for every $i$, $l[i]$ is the largest value $m$ where $m < i$ and $p[0:m] = p[i-m:i]$. The l-array of "aaa" will be $[0,1,2]$ because at $i=0$ there is no common prefix/suffix, at $i=1$ we have the substring "aa" and the longest proper prefix that's also a suffix is "a", and at $i=2$ our substring "aaa" has the longest proper prefix/suffix of "aa". Meanwhile, the l-array of "abc" is $[0,0,0]$ because it never shares a common proper prefix and suffix.
+
+Now that we have the l-array, we can actually perform our pattern matching. Let's consider the example of trying to pattern match "abcabd" into "abcabcabd" again. We begin naively, comparing $s[0] = p[0]$ through to $s[5] = p[5]$ and notice we have a mismatch. Rather than shifting the string by 1 and recomparing the full pattern, we instead shift the string by 3 and begin comparing the pattern starting at $s[3+2] = p[2]$.
+
 \subsubsection{Boyer Moore}
 \subsubsection{Z-Algorithm}
 
