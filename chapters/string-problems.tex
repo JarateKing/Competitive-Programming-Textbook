@@ -19,6 +19,8 @@ Lexicographic order of strings is one where strings are sorted based on the alph
 
 For example, \{"abc", "abd", "ada", "ae", "aeiou", "b"\} is a lexicographically ordered array of strings, following the rules above.
 
+Most languages provide some way to check whether a string is lexicographically greater or lesser than another. In C++ and Python, you can simply use \mintinline{cpp}{"abc" < "zzz"} which will return \mintinline{cpp}{true} since "abc" is lexicographically lesser than "zzz". In Java, we would want to use \mintinline{java}{"abc".compareTo("zzz")} which would return a negative value to indicate that it's lexicographically lesser (a positive value means lexicographically greater, and a value of 0 means they're the same string).
+
 \subsubsection{Palindromes}
 
 Palindromes are strings that are the same when they're reversed. For example, "abccba" or "abcba" are both palindromes, whereas "abcde" isn't.
