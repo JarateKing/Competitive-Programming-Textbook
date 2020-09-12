@@ -59,13 +59,15 @@ There are a fair amount of possible variants and alternatives to pattern matchin
 
 \subsubsection{Regex}
 
-Pattern matching can be solved easily using regular expressions. For example, consider in python:
+\textit{Note: the term 'regex' is a common shorthand for 'regular expressions', but there is a large difference between modern regex engines and true regular expressions. Briefly, that regular expressions are regular in a formal languages sense, while regex engines include many features that make them not regular expressions. Because of this, when we say "regex" we mean the language used in modern regex engines, while "regular expressions" is more akin to theoretical computer science. Confusingly, we might also say 'regex expression' when we want to refer to a specific pattern of regex, while we don't use 'regular expression expression'.}
+
+Pattern matching can be solved easily using regex, which is a domain-specific language that defines patterns of text. This can easily be used to search for a specific pattern, which can be as simple as a raw string such as \mintinline{python}{"pattern"}. For example, consider in python:
 
 \inputpython{code/string/regex.py}
 
-The main advantages of regex are that they can be very quick to code, and they can support more advanced patterns. For example, if you wanted to match either "Hello" or "World", you could use \mintinline{python}{"(Hello)|(World)"} as the pattern. You could search for any consecutive pair of vowels with \mintinline{python}{"[aeiou]{2}"}, or any word that ends in s with \mintinline{python}{"\b.+s\b"}. Regex can define fairly complex patterns to search for in only one short line.
+The main advantages of regex are that they can be very quick to code, and they can support more advanced patterns. For example, if you wanted to match either "Hello" or "World", you could use \mintinline{python}{"(Hello)|(World)"} as the pattern. You could search for any consecutive pair of vowels with \mintinline{python}{"[aeiou]{2}"}, or any word that ends in s with \mintinline{python}{"\b.+s\b"}. Regex can define fairly complex patterns to search for in only one short line. We won't go into detail here about regex's syntax or how to write complicated patterns with it, but it can be a useful read.
 
-This comes with some hefty downsides though: namely that regex matching is significantly slower than other methods of pattern matching, that it requires an entire different syntax to write and is generally hard to understand once written, and that if the regex engine doesn't do exactly what you like it can't be easily modified to work.
+This comes with some hefty downsides though: namely that regex matching is significantly slower than other methods of pattern matching (to the point of needing to be very careful, because exceeding the timelimit with regex is very common), that it requires an entire different syntax to write and is generally harder to understand once written, and that if the regex engine doesn't do exactly what you need then it can't be easily modified to work.
 
 \subsubsection{Knuth-Morris-Pratt}
 
