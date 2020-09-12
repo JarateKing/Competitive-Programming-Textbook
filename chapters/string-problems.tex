@@ -55,7 +55,7 @@ Strict or proper suffixes are also similar to prefixes, in that they're suffixes
 
 One of the common tasks needed for string problems involves pattern matching -- determining whether or not a substring exists in the larger string altogether.
 
-There are a fair amount of possible variants and alternatives to pattern matching. The simplest is simply "does a given substring exist in a given larger string" with no other complications.
+There are a fair amount of possible variants and alternatives to pattern matching. The simplest is simply "does a given substring exist in a given larger string" with no other complications. In this case, if we have some text "abcdef" and we're looking for the pattern "def", we can confidently say the pattern does exist. A common variant is to find the specific location of a matched pattern, where the previous example would start its match at position 3 in the original string. Sometimes it's sufficient to find one match even if there may be many, sometimes it's necessary to find every valid match.
 
 \subsubsection{Regex}
 
@@ -93,6 +93,12 @@ Now, any time the length of $p$ appears inside the z-array, we know that pattern
 \subsubsection{Aho Corasick}
 
 Aho Corasick is an algorithm for pattern matching that's designed to search for multiple patterns simultaneously. Aho Corasick is based on construction of a finite state machine that represents all patterns simultaneously, and allows you to iterate over the original string with each character being used for the state transitions, and noting every accepted state as a successful match.
+
+\subsubsection{Pattern Matching Applications}
+
+Sometimes, we may want to do some creative applications using our pattern matching algorithms.
+
+Consider the regex expression \mintinline{python}{"abc.*xyz"}, which essentially matches any substring that starts with "abc" and ends with "xyz", including "abcxyz". We don't actually need regex to solve this.
 
 \subsection{Subsequence Matching}
 \subsection{Hashing}
