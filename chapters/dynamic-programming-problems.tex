@@ -1,6 +1,6 @@
 \section{Dynamic Programming Problems}
 
-Dynamic programming is...
+Dynamic programming (often shortened to "dp") is a method to break down certain problems into smaller sub-problems, very similar to recursion. It can be thought of as an optimization over regular recursion, where multiple calls with the same input only have to be evaluated once instead of multiple times.
 
 Consider the problem of calculating the Fibonacci sequence. The Fibonacci sequence is the sequence $0,1,1,2,3,5,8,13,21,34,55,89,...$ where each value (other than the initial $0,1$) is the sum of the previous two (so $89 = 55 + 34$, $55 = 34 + 21$, $34 = 21 + 13$, and so on). This is a pretty intuitive example of recursion, like in:
 
@@ -8,25 +8,27 @@ Consider the problem of calculating the Fibonacci sequence. The Fibonacci sequen
 
 Unfortunately, this results in a lot of repeated work. A call to \mintinline{cpp}{fibonacci(10)} will call \mintinline{cpp}{fibonacci(9)} and \mintinline{cpp}{fibonacci(8)}, where \mintinline{cpp}{fibonacci(9)} will also call \mintinline{cpp}{fibonacci(8)}, \mintinline{cpp}{fibonacci(7)} ends up getting called 3 times, \mintinline{cpp}{fibonacci(6)} gets called 5 times, and so on until \mintinline{cpp}{fibonacci(1)} ultimately gets called 56 times. There is a huge amount of work being done with these recursive calls \textit{that we already obtained the result from earlier}.
 
-Dynamic programming fixes this by storing the results of these recursive subcalls in a process called memoization.
+Dynamic programming fixes this by storing the results of these recursive subcalls in a process called memoization. We can simply store a value when we calculate it, so that we can reduce the number of recursive calls done.
 
 \inputcpp{code/dp/fib_dp_td.cpp}
 
-That is called "top down" dynamic programming because we still make recursive calls, but if we've already gotten the result from one of our recursive calls we'll store it for any times it appears later.
+That is called "top-down" dynamic programming because we still make recursive calls, but if we've already gotten the required result from one of our earlier recursive calls we'll store it for any times it appears later.
 
-The alternative is "bottom up" dynamic programming where we start with the smallest cases and gradually work our way up:
+The alternative is "bottom-up" dynamic programming where we start with the smallest cases and gradually work our way up:
 
 \inputcpp{code/dp/fib_dp_bu.cpp}
 
-Here, we don't make any recursive calls at all -- a call of \mintinline{cpp}{fibonacci(10)} will not result in recalculating earlier values in the sequence repeatedly.
+Here, we don't make any recursive calls at all -- a call of \mintinline{cpp}{fibonacci(10)} will not result in recalculating earlier values in the sequence repeatedly. We start from the base cases, and work our way up from the bottom, hence the term "bottom-up".
 
-You may note that we can store this permanently, by precalculating entirely:
+You may note that in this problem we can store this permanently, by precalculating entirely:
 
 \inputcpp{code/dp/fib_precalc.cpp}
 
 Where we call \mintinline{cpp}{genFibonacci()} at the start of the program, and then obtain results from \mintinline{cpp}{fibonacci(n)} or even directly with \mintinline{cpp}{f[n]}.
 
 This works in this specific instance because our stored results are always the same: we always begin with {0,1} and always add the previous two terms. If this might change, whether it be by having different starting numbers or a different number of previous terms (or even coefficients on those terms), we couldn't precalculate beforehand.
+
+In theory, any problem that can be solved recursively can also be solved with dynamic programming. We can simply apply top-down dynamic programming to an existing recursive solution, as long as our recursive function doesn't have any side-effects like printing or modifying a global state. But we don't necessarily see any benefit from doing this -- if there's no overlap in our recursive calls, there's no benefit to storing results.
 
 \subsection{Coin Change}
 
