@@ -24,6 +24,10 @@ Addition can be fairly simple -- we add our numbers together and then perform th
 
 \inputcpp{code/number_theory/modulo_add.cpp}
 
+The modulo operation is relatively expensive for a basic arithmetic operation, however. If we can guarantee that $a$ and $b$ are both less than $m$, we can avoid doing any modulo operations with:
+
+\inputcpp{code/number_theory/modulo_add_fast.cpp}
+
 \subsubsection{Subtraction}
 
 \subsubsection{Multiplication}
