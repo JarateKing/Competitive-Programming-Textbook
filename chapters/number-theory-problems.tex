@@ -40,6 +40,12 @@ Likewise with addition, we can also optimize our subtraction function to not per
 
 \subsubsection{Multiplication}
 
+Multiplication can (mostly) be performed similar to the non-optimized method of addition and subtraction -- by simply doing the multiplication operation and then performing the modulo operation on that. However, we may be concerned with overflows.
+
+Specifically, consider $m = 10^9 + 7$. The largest numbers we will multiply will be when both $a$ and $b$ are equal to $10^9 + 6$. $a * b$ is somewhat above $10^{18}$ which is outside of the range of what a 32-bit integer can hold. In a language like C++ or Java, we will have to ensure that we use 64-bit integers when performing our multiplication:
+
+\inputcpp{code/number_theory/modulo_mul.cpp}
+
 \subsubsection{Exponentiation}
 
 \subsubsection{Division (Prime Modulo)}
