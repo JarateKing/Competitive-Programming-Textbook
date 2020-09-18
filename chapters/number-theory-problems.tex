@@ -30,6 +30,10 @@ The modulo operation is relatively expensive for a basic arithmetic operation, h
 
 \subsubsection{Subtraction}
 
+Subtraction is similar to addition, but we need to guarantee that we don't go negative. We can fix this by simply adding $m$ before performing our modulo operation:
+
+\inputcpp{code/number_theory/modulo_sub.cpp}
+
 \subsubsection{Multiplication}
 
 \subsubsection{Exponentiation}
