@@ -1,5 +1,7 @@
 # Competitive Programming Textbook
 
+Textbook for learning competitive programming, suited especially for university students with 1-3 years of computer science experience. 
+
 ## How to compile
 
 Dependencies:
