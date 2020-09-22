@@ -24,6 +24,8 @@ Given a prime factorization of two numbers, the GCD is the product of factors in
 
 The least common multiple between two non-zero integers can be calculated quickly: $\frac{a * b}{gcd(a, b)}$. Since $gcd(a, b)$ is a divisor of both $a$ and $b$ (and by extension $a * b$) this will always be an integer as well.
 
+The primal representation of the LCM is similar to the primal representation of their GCD, except it's the product of factors they don't share multiplied by the product of factors in common (or GCD). For example, with $60$ and $24$ again, we have $\{2,5\}$ as unshared factors, along with $\{2,2,3\}$ as common factors, which is $2 * 2 * 2 * 3 * 5 = 120$ which is the LCM.
+
 \subsection{Modular Arithmetic}
 
 \subsubsection{Addition}
