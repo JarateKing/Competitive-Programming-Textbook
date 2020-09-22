@@ -26,6 +26,12 @@ The least common multiple between two non-zero integers can be calculated quickl
 
 The primal representation of the LCM is similar to the primal representation of their GCD, except it's the product of factors they don't share multiplied by the product of factors in common (or GCD). For example, with $60$ and $24$ again, we have $\{2,5\}$ as unshared factors, along with $\{2,2,3\}$ as common factors, which is $2 * 2 * 2 * 3 * 5 = 120$ which is the LCM.
 
+\subsubsection{Coprime Numbers}
+
+Numbers are considered coprime (or relatively prime) if their GCD is 1. That is to say, they have no prime factors in common.
+
+Prime numbers are, by necessity, coprime to other primes. This is because they would share no prime factors (for both, their sole prime factor being themselves) and as such have a GCD of 1. Following similar logic, any number is either coprime to a prime, or it's a multiple of that prime (because the only scenario that the GCD wouldn't be 1 is when the prime is a factor).
+
 \subsection{Modular Arithmetic}
 
 \subsubsection{Addition}
