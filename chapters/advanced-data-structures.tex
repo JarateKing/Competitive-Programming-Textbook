@@ -21,5 +21,10 @@ While for some problems prefix sums are sufficient (construction in $O(n)$ and q
 Fenwick Trees, also commonly known as Binary Indexed Trees (which is also commonly abbreviated to BITs) is a structure that allows calculates the prefix sum that can be queried in $O(log n)$ and allows for updates in $O(log n)$ as well, compared to the prefix sum array that allows $O(1)$ queries but $O(n)$ updates.
 
 \subsubsection{Segment Tree}
+
+Segment Trees are conceptually similar to Fenwick Trees, in that they support range queries in $O(log n)$ and updates in $O(log n)$ as well. Segment Trees have the notable benefit of supporting more functions that summation, though -- sums, products, maximum, minimum, GCD, LCM, as some examples.
+
+The cost of this is some slight overhead -- there is more code to them than Fenwick Trees, and they require some additional memory as well, but generally most problems that can be solved with Fenwick Trees can also be solved with Segment Trees.
+
 \subsubsection{Wavelet Tree}
 \subsection{Ropes}
