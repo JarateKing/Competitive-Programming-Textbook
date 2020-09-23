@@ -110,6 +110,13 @@ Hashing is an option that allows us to treat strings as integers, where the comp
 \subsubsection{Basic Polynomial Hashing}
 \subsubsection{Operations on Polynomial Hashes}
 \subsubsection{Collisions}
+
+When we try to represent strings as integers, we run the risk of representing different strings with the same integer.
+
+A simple example of this happening is that, if our integer is 32 bit, we can store $2^{32}$ possible values. Let's say we want to try hashing $2^{32}+1$ different strings. Logically, there is going to be at least one value that gets repeated twice.
+
+A more practical example, let's consider a case where we have a polynomial hash with the function \mintinline{cpp}{v = ((s[i] - 'a' + 1) + v * 27) % 31} that loops through the string $s$. With this function, the strings \mintinline{cpp}{"a"} and \mintinline{cpp}{"zl"} both have the hash value $1$. In practice we'll rarely want to perform the hash modulo a small number like 31, but the same concept applies with larger moduluses or when relying on buffer overflows.
+
 \subsection{Prefix/Suffix Arrays}
 \subsection{Distance}
 \subsubsection{Diff}
