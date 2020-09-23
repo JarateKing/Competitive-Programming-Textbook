@@ -16,7 +16,10 @@ Normally, the prefix sum gives us the sum of the array from $[0,i)$. We can obta
 While for some problems prefix sums are sufficient (construction in $O(n)$ and queries in $O(1)$), they aren't able to be updated efficiently (you would have to recalculate all sums after the element you're updating, which is $O(n)$).
 
 \subsubsection{Sparse Table}
-\subsubsection{Fenwick Tree / BIT}
+\subsubsection{Fenwick Tree / Binary Indexed Tree}
+
+Fenwick Trees, also commonly known as Binary Indexed Trees (which is also commonly abbreviated to BITs) is a structure that allows calculates the prefix sum that can be queried in $O(log n)$ and allows for updates in $O(log n)$ as well, compared to the prefix sum array that allows $O(1)$ queries but $O(n)$ updates.
+
 \subsubsection{Segment Tree}
 \subsubsection{Wavelet Tree}
 \subsection{Ropes}
