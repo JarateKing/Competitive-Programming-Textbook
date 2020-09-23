@@ -102,6 +102,14 @@ Consider the regex expression \mintinline{python}{"abc.*xyz"}, which essentially
 
 \subsection{Subsequence Matching}
 \subsection{Hashing}
+
+Comparing strings with eachother to see if they're the same or not is a $O(n)$ operation -- you can only tell if two strings of the same length are different by checking if any characters are different, and as a result you can only know tht two strings are the same if you check each character. For problems that involve lots of string equality checks, this might be too slow.
+
+Hashing is an option that allows us to treat strings as integers, where the comparison between them is a $O(1)$ operation.
+
+\subsubsection{Basic Polynomial Hashing}
+\subsubsection{Operations on Polynomial Hashes}
+\subsubsection{Collisions}
 \subsection{Prefix/Suffix Arrays}
 \subsection{Distance}
 \subsubsection{Diff}
