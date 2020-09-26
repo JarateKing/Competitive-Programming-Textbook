@@ -2,9 +2,23 @@
 
 \subsection{Binary Exponentiation}
 
-Consider the naive way to calculate $a^n$, we simply get the product of $n$ $a$s. In terms of code, we can simply initialize a variable to $1$ and then have a for-loop that multiplies our variable by $a$ a total of $n$ times. This works fine for $0^n$ where our answer should be 0, and $a^0$ where our answer should be $1$, but doesn't work for $0^0$ which is undefined (for simplicity's sake, we'll ignore $0^0$).
+Consider the naive way to calculate $a^n$ (where $n$ is an integer), we simply get the product of $n$ $a$s. In terms of code, we can simply initialize a variable to $1$ and then have a for-loop that multiplies our variable by $a$ a total of $n$ times. This works fine for $0^n$ where our answer should be 0, and $a^0$ where our answer should be $1$, but doesn't work for $0^0$ which is undefined (for simplicity's sake, we'll ignore $0^0$).
 
 \inputcpp{code/number_theory/pow_naive.cpp}
+
+Unfortunately, this is relatively slow. In many problems or algorithms where you need to use exponentiation, calculating it in $O(n)$ is far too slow.
+
+Binary exponentiation is the idea of calculating an arbitrary integer power as a product of different values of $a^{2^n}$. Specifically, we rely on two properties:
+\begin{itemize}
+\item We can represent a number as a sum of powers of 2 based on its binary representation. Consider the decimal number $10$, which has a binary representation of $1010_2$. We can tell that $10 = 2^1 + 2^3$ from its binary representation.
+\item $a^{n+m} = a^n * a^m$. Rather than calculate the larger $a^{n+m}$ we can instead calculate it as the product of smaller powers that add to $n+m$.
+\end{itemize}
+
+When we combine these together, we can notice that $a^{10} = a^{2^1 + 2^3} = a^{2^1} * a^{2^3}$. What makes calculating this very fast is noticing that $a^{2^{i+1}} = (a^{2^i})^2$, so that we can quickly iterate through values of $a^{2^i}$:
+
+\inputcpp{code/number_theory/pow_binary.cpp}
+
+The value in this is that we have significantly reduced our runtime. Rather than calculate in $O(n)$, we calculate in $O(log_2n)$. Now, rather than $2^{2^{31}-1}$ requiring over 2 billion iterations of a for-loop in the naive method, it takes a mere 31 iterations of a while-loop in our binary exponentiation method.
 
 \subsection{Primes}
 
