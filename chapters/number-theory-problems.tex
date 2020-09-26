@@ -2,6 +2,10 @@
 
 \subsection{Binary Exponentiation}
 
+Consider the naive way to calculate $a^n$, we simply get the product of $n$ $a$s. In terms of code, we can simply initialize a variable to $1$ and then have a for-loop that multiplies our variable by $a$ a total of $n$ times. This works fine for $0^n$ where our answer should be 0, and $a^0$ where our answer should be $1$, but doesn't work for $0^0$ which is undefined (for simplicity's sake, we'll ignore $0^0$).
+
+\inputcpp{code/number_theory/pow_naive.cpp}
+
 \subsection{Primes}
 
 \subsubsection{Prime Sieve}
