@@ -1,6 +1,6 @@
-# Competitive Programming Textbook
+# Competitive Programming: Start to Finish
 
-Textbook for learning competitive programming, suited especially for university students with 1-3 years of computer science experience. 
+Textbook for learning competitive programming, suited especially for university students with 1-3 years of computer science experience. Title is subject to change.
 
 ## How to compile
 
