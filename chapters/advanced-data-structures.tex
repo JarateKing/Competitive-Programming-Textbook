@@ -16,6 +16,8 @@ Ideally, persistent data structures involve representing the data in such a way 
 
 In our persistent queue's case, a better approach would be to recognize that we only ever can represent a queue as a subarray of all the elements added in order -- if we have an array that contains all the elements that will be added to our queue, we can keep track of the index of the element we consider at the front of our queue, and the total size of our queue from that starting position (alternatively, the end position of our queue, or one more than the index of our last element in the queue). Pushing is a simple matter of incrementing our size by 1, while popping involves incrementing our start position by 1 and decrementing our size by 1 as well. For every push or pop we perform on our persistent queue, we can keep track of the state of the queue as a pair of integers for the start position and the size of the queue:
 
+\inputcpp{code/data_structures/persistent_queue.cpp}
+
 \subsection{Range-based Structures}
 \subsubsection{Prefix Sum Arrays}
 
