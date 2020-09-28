@@ -2,6 +2,13 @@
 
 "Advanced" is possibly a misnomer. Some of these data structures aren't very complicated, in either their implementation or their usage. We call them advanced here because they relate to much more specific and particular applications. Things like arrays or sets are necessary to solve many basic problems -- while things like range-based structures may be necessary to efficiently implement an algorithm or solution, the problems they appear in are never as simple.
 
+\subsection{Concepts}
+
+\subsubsection{Persistent Data Structures}
+
+Persistent data structures are ones that allow for not just querying an element, but also being able to query it at a specific time, keeping track of the modifications that have been done to it. For example, if you had a queue with 10 elements and pushed and popped several times, you wouldn't be able to query what the front of the queue is at its initial state with 10 elements. A persistent queue would not only allow you to query it at that state, or after any arbitrary amount of pushes and pops for that matter.
+
+A trivial example of a persistent data structure is simply a list of copies of a complete object for every modification that happens to it. If you add an element to a persistent queue, you keep a copy of the old queue and create a new copy of the list with that element added. Likewise with popping the first element in the queue. You do this 100 times, you now have 100 more copies of the queue at different points in history than you started with. And if you want to query the fron of the queue at some point in history, you can easily refer to the proper state and use that.
 \subsection{Range-based Structures}
 \subsubsection{Prefix Sum Arrays}
 
