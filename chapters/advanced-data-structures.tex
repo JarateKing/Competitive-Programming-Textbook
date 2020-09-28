@@ -18,6 +18,16 @@ In our persistent queue's case, a better approach would be to recognize that we 
 
 \inputcpp{code/data_structures/persistent_queue.cpp}
 
+\subsubsection{Lazy Evaluation}
+
+In some cases, we are far more likely to update a data structure than we are to query it. In other cases, we may have many updates in one go before we make any queries. Perhaps an update involves modifying a huge range of elements in our data structure, when we only perform queries on a small handful of them, and most of the updates are ignored and unused.
+
+For data structures where updating is $O(1)$ it's most likely fine to update as normal. If our updates happen in $O(log n)$ or $O(n)$ or some other non-constant time complexity, we may begin to be concerned with updates. Specifically, we would like to batch our updates together until we actually perform a query that's affected by that update.
+
+Consider a data structure where...
+
+We can make these updates lazy as...
+
 \subsection{Range-based Structures}
 \subsubsection{Prefix Sum Arrays}
 
