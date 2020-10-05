@@ -92,7 +92,11 @@ Specifically, consider $m = 10^9 + 7$. The largest numbers we will multiply will
 
 \subsubsection{Exponentiation}
 
+Exponentiation follows a very similar methodology to the binary exponentiation method we explored earlier, except now at each multiplication we perform, we need to instead perform the multiplication modulo $m$. We can avoid our \mintinline{cpp}{modulo_mul} method's repeated casting to 64-bit integers by simply keeping every value we multiply in 64-bit integers always.
+
 \inputcpp{code/number_theory/modulo_pow.cpp}
+
+The above code also handles a special edge case where $m = 1$, and by consequence our answer will always be $0$.
 
 \subsubsection{Division (Prime Modulo)}
 
