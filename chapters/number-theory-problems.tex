@@ -108,6 +108,12 @@ Let's consider what division really is: if multiplication is finding $x * y = z$
 
 If we work it out by hand, we can discover that a solution for $frac{2}{6} \% 7$ is $5$ -- by rearranging it into our multiplication equation, we find that $(6 * 5) \% 7 = 2 \% 7$ to be valid.
 
+A naive method of calculating modular division would be to try every possible value $[0, m)$ and see if it satisfies the above equation. Unfortunately, when our $m$ is large as it often is, this can be far too slow to reliably use.
+
+This section is about division with a prime $m$ because it's easier to do (we'll cover arbitrary values of $m$ later). Another way of representing division is as $x * frac{1}{y} = z$ with known $x$ and $y$, and the same applies under modulus assuming that we can calculate $frac{1}{y} \% m$.
+
+As it turns out, it's not very difficult to calculate $frac{1}{y} \% m$ when $m$ is prime. Fermat's little theorem states that $a^m \% m = a \% m$ when $m$ is prime, which is equivalent to $a^{m-1} \% m = 1 \% m$, and $a$ can be divided out from both sides to obtain $a^{m-2} \% m = frac{1}{a} \% m$. As such, as long as we know $m$ is prime, we can quickly calculate $frac{1}{y}$ by raising it to the (modular) power of $m-2$. All together, we can calculate $frac{x}{y} \% m$ as $x * y^{m-2} \% m$.
+
 \subsubsection{Modular Inverse}
 
 \subsubsection{Division (Any Modulo)}
