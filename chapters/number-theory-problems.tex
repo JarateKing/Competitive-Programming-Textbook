@@ -100,6 +100,14 @@ The above code also handles a special edge case where $m = 1$, and by consequenc
 
 \subsubsection{Division (Prime Modulo)}
 
+So far we've explored and implemented operations that seem fairly similar to how they'd be implemented without modulus -- addition, subtraction, and multiplication are the same as normal but with the modulus operation at the end of its computation. Exponentiation is similar, except with modulus operations performed at intermediary steps as well.
+
+Division is more complicated. While some operations, such as $frac{6}{2} \% 7$ can be expressed as the regular division operation (since 2 evenly divides 6, and equals the integer 3) modulo 7, the same is not true of $frac{2}{6} \% 7$. $frac{2}{6} = frac{1}{3} = 0.333...$ but modular arithmetic is based on integers, so this won't do.
+
+Let's consider what division really is: if multiplication is finding $x * y = z$ with known values of $x$ and $y$, division is finding $x * z = y$. Modular division follows the same principle, where we're trying to find $(x * z) \% m = y \% m$ given known values of $x$, $y$, and $m$.
+
+If we work it out by hand, we can discover that a solution for $frac{2}{6} \% 7$ is $5$ -- by rearranging it into our multiplication equation, we find that $(6 * 5) \% 7 = 2 \% 7$ to be valid.
+
 \subsubsection{Modular Inverse}
 
 \subsubsection{Division (Any Modulo)}
