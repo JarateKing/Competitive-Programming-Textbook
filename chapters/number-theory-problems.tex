@@ -102,17 +102,17 @@ The above code also handles a special edge case where $m = 1$, and by consequenc
 
 So far we've explored and implemented operations that seem fairly similar to how they'd be implemented without modulus -- addition, subtraction, and multiplication are the same as normal but with the modulus operation at the end of its computation. Exponentiation is similar, except with modulus operations performed at intermediary steps as well.
 
-Division is more complicated. While some operations, such as $frac{6}{2} \% 7$ can be expressed as the regular division operation (since 2 evenly divides 6, and equals the integer 3) modulo 7, the same is not true of $frac{2}{6} \% 7$. $frac{2}{6} = frac{1}{3} = 0.333...$ but modular arithmetic is based on integers, so this won't do.
+Division is more complicated. While some operations, such as $\frac{6}{2} \% 7$ can be expressed as the regular division operation (since 2 evenly divides 6, and equals the integer 3) modulo 7, the same is not true of $\frac{2}{6} \% 7$. $\frac{2}{6} = \frac{1}{3} = 0.333...$ but modular arithmetic is based on integers, so this won't do.
 
 Let's consider what division really is: if multiplication is finding $x * y = z$ with known values of $x$ and $y$, division is finding $x * z = y$. Modular division follows the same principle, where we're trying to find $(x * z) \% m = y \% m$ given known values of $x$, $y$, and $m$.
 
-If we work it out by hand, we can discover that a solution for $frac{2}{6} \% 7$ is $5$ -- by rearranging it into our multiplication equation, we find that $(6 * 5) \% 7 = 2 \% 7$ to be valid.
+If we work it out by hand, we can discover that a solution for $\frac{2}{6} \% 7$ is $5$ -- by rearranging it into our multiplication equation, we find that $(6 * 5) \% 7 = 2 \% 7$ to be valid.
 
 A naive method of calculating modular division would be to try every possible value $[0, m)$ and see if it satisfies the above equation. Unfortunately, when our $m$ is large as it often is, this can be far too slow to reliably use.
 
-This section is about division with a prime $m$ because it's easier to do (we'll cover arbitrary values of $m$ later). Another way of representing division is as $x * frac{1}{y} = z$ with known $x$ and $y$, and the same applies under modulus assuming that we can calculate $frac{1}{y} \% m$.
+This section is about division with a prime $m$ because it's easier to do (we'll cover arbitrary values of $m$ later). Another way of representing division is as $x * \frac{1}{y} = z$ with known $x$ and $y$, and the same applies under modulus assuming that we can calculate $\frac{1}{y} \% m$.
 
-As it turns out, it's not very difficult to calculate $frac{1}{y} \% m$ when $m$ is prime. Fermat's little theorem states that $a^m \% m = a \% m$ when $m$ is prime, which is equivalent to $a^{m-1} \% m = 1 \% m$, and $a$ can be divided out from both sides to obtain $a^{m-2} \% m = frac{1}{a} \% m$. As such, as long as we know $m$ is prime, we can quickly calculate $frac{1}{y}$ by raising it to the (modular) power of $m-2$. All together, we can calculate $frac{x}{y} \% m$ as $x * y^{m-2} \% m$.
+As it turns out, it's not very difficult to calculate $\frac{1}{y} \% m$ when $m$ is prime. Fermat's little theorem states that $a^m \% m = a \% m$ when $m$ is prime, which is equivalent to $a^{m-1} \% m = 1 \% m$, and $a$ can be divided out from both sides to obtain $a^{m-2} \% m = \frac{1}{a} \% m$. As such, as long as we know $m$ is prime, we can quickly calculate $\frac{1}{y}$ by raising it to the (modular) power of $m-2$. All together, we can calculate $\frac{x}{y} \% m$ as $x * y^{m-2} \% m$.
 
 \subsubsection{Modular Inverse}
 
