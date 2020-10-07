@@ -2,6 +2,7 @@
 \subsection{Concepts}
 \subsubsection{Directed and Undirected}
 \subsubsection{Cyclic and Acyclic}
+\subsubsection{Connected and Disconnected}
 \subsubsection{Weighted}
 \subsubsection{Transitive Closure}
 \subsubsection{Grids}
@@ -22,6 +23,11 @@ It's important to know that, in general, there isn't any single pathfinding algo
 Union-Find, which also goes by the name of \textit{disjoint-set}, is a data structure that groups connected nodes together into different subsets through operations called \textbf{union} (which connects two nodes together, akin to creating an edge) and \textbf{find} (which determines which subset a node belongs to).
 
 \subsection{Minimum Spanning Trees}
+
+Many graphs have redundant edges -- between nodes $A$ and $B$ there may be several different paths. A spanning tree of a connected graph is one in which we use a subset of edges (whether we think of it as removing redundant edges or building up only the necessary edges depends on the algorithm we use) so that every pair of nodes has exactly one unique path between them.
+
+A minimum spanning tree is a variant of a general spanning tree, where we want to obtain the minimum total weight among all spanning trees.
+
 \subsubsection{Prim's Algorithm}
 \subsubsection{Kruskal's Algorithm}
 \subsection{Strongly Connected Components}
