@@ -122,11 +122,13 @@ That said, we aren't guaranteed for a multiplicative inverse of a number to exis
 
 As for calculating the modular inverse, recall the motivation for the extended GCD, finding $x$, $y$, and $GCD(a,b)$ in the equation $ax + by = GCD(a,b)$ given $a$ and $b$. Now consider finding the GCD of $a$ and $m$, knowing that they are coprime: $ax + my = 1$ since the GCD of any coprime numbers is 1. We can quickly rearrange this to find $ax = 1 - my$, and modulo $m$ we find $ax \% m = 1 \% m$. If we consider that this can be further rearranged into $x \% m = \frac{1}{a} \% m$, we've successfully calculated our modular inverse.
 
-Conveniently, our function to determine whether $a$ and $m$ are coprime and our function to calculate the value of $x$ are actually the same function.
+Conveniently, our function to determine whether $a$ and $m$ are coprime and our function to calculate the value of $x$ are actually the same function. This makes the code for the modular inverse relatively short:
 
 \inputcpp{code/number_theory/modulo_inverse.cpp}
 
 \subsubsection{Division (Any Modulo)}
+
+Division under any modulo can now be implemented relatively easily: replace the prime mod specific method of finding the modular inverse $a^{m-2}\%m$ and use the general modular inverse method instead. We also have to take care that the value of this modular inverse isn't $-1$ (or whatever other value we have set as invalid), but the core idea of the function remains the same.
 
 \subsubsection{Discrete Log}
 
