@@ -120,6 +120,10 @@ Adding on from the section on division (prime modulo), when we try to find $\fra
 
 That said, we aren't guaranteed for a multiplicative inverse of a number to exist under every modulo. Namely, for there to be a multiplicative inverse of $a$ under modulo $m$, $a$ and $m$ need to be coprime. This will always be the case when $m$ is prime (since $a \% m$ is smaller than $m$ and cannot be a multiple of $m$, and as a prime number $m$ is coprime to anything that isn't a multiple of it), but may not be the case if $m$ is composite. For example, $a = 2, m = 4$ has no multiplicative inverse, since $2$ and $4$ aren't coprime. We can also verify this by trying to find an integer solution for $(2 * x) \% 4 = 1 \% 4$ which we can quickly find does not exist (for all values of $x$ we will either obtain $2 \% 4$ or $0 \% 4$, never $1 \% 4$).
 
+As for calculating the modular inverse, recall the motivation for the extended GCD, finding $x$, $y$, and $GCD(a,b)$ in the equation $ax + by = GCD(a,b)$ given $a$ and $b$. Now consider finding the GCD of $a$ and $m$, knowing that they are coprime: $ax + my = 1$ since the GCD of any coprime numbers is 1. We can quickly rearrange this to find $ax = 1 - my$, and modulo $m$ we find $ax \% m = 1 \% m$. If we consider that this can be further rearranged into $x \% m = \frac{1}{a} \% m$, we've successfully calculated our modular inverse.
+
+Conveniently, our function to determine whether $a$ and $m$ are coprime and our function to calculate the value of $x$ are actually the same function.
+
 \subsubsection{Division (Any Modulo)}
 
 \subsubsection{Discrete Log}
