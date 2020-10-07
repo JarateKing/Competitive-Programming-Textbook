@@ -1,5 +1,6 @@
 \section{Graph Problems}
 \subsection{Concepts}
+\subsubsection{Nodes and Edges}
 \subsubsection{Directed and Undirected}
 \subsubsection{Cyclic and Acyclic}
 \subsubsection{Connected and Disconnected}
@@ -43,6 +44,12 @@ A Eulerian Path is a traversal of a graph in which every edge is visited exactly
 
 Similarly, a Eulerian Cycle is a traversal of a graph that visits every edge exactly once with the added restriction that it's a cycle and has the same start and end node.
 
+It is relatively easy to verify whether or not a Eulerian Path or Cycle exists. The following conditions must be satisfied:
+\begin{itemize}
+\item The graph must be connected
+\item The degree of each node must be even
+\end{itemize}
+
 \subsubsection{BEST Algorithm}
 \subsubsection{Hierholzer's Algorithm}
 \subsection{Hamiltonian Paths}
@@ -50,3 +57,10 @@ Similarly, a Eulerian Cycle is a traversal of a graph that visits every edge exa
 A Hamiltonian Path is similar to a Eulerian Path except that it deals with nodes rather than edges -- it's a traversal in which each node is visited exactly once, and by consequence each edge is either visited once or not visited at all.
 
 A Hamiltonian Cycle follows the same convention where we add the restriction that the end node of our traversal also has to be our source node.
+
+Unlike Eulerian Paths and Cycles, verifying whether a Hamiltonian Path or Cycle exists or not is an NP-complete problem for the general case. There are special cases however:
+\begin{itemize}
+\item a complete graph with $n$ nodes has $(n-1)!/2$ different Hamiltonian Cycles.
+\item By Dirac's Theorem, a simple graph with at least 3 nodes contains a Hamiltonian Cycle if every node has a degree of at least $\frac{n}{2}$ where $n$ is the number of nodes in the graph.
+\item By Ore's Theorem (which generalizes Dirac's Theorem), a simple graph with at least 3 nodes contains a Hamiltonian Cycle if, for every pair of nodes in the graph, the sum of their degrees is at least $n$ where $n$ is the number of nodes in the graph.
+\end{itemize}
