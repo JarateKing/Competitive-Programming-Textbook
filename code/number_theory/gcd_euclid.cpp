@@ -3,7 +3,7 @@ int gcd(int a, int b) {
 	if (b == 0)
 		return a;
 	
-	// recursively calculate
+	// recursively calculate, swapping each time
 	int val = gcd(b, a % b);
 	return val;
 }
