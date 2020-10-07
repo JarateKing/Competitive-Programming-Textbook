@@ -116,6 +116,10 @@ As it turns out, it's not very difficult to calculate $\frac{1}{y} \% m$ when $m
 
 \subsubsection{Modular Inverse}
 
+Adding on from the section on division (prime modulo), when we try to find $\frac{1}{a}$ (equivalently $a^{-1}$), it turns out there's a name for this. It's the \textit{modular multiplicative inverse} or just \textit{modular inverse}. And it isn't limited to just primes either, there can be 
+
+That said, we aren't guaranteed for a multiplicative inverse of a number to exist under every modulo. Namely, for there to be a multiplicative inverse of $a$ under modulo $m$, $a$ and $m$ need to be coprime. This will always be the case when $m$ is prime (since $a \% m$ is smaller than $m$ and cannot be a multiple of $m$, and as a prime number $m$ is coprime to anything that isn't a multiple of it), but may not be the case if $m$ is composite. For example, $a = 2, m = 4$ has no multiplicative inverse, since $2$ and $4$ aren't coprime. We can also verify this by trying to find an integer solution for $(2 * x) \% 4 = 1 \% 4$ which we can quickly find does not exist (for all values of $x$ we will either obtain $2 \% 4$ or $0 \% 4$, never $1 \% 4$).
+
 \subsubsection{Division (Any Modulo)}
 
 \subsubsection{Discrete Log}
