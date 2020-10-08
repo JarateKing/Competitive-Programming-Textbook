@@ -60,6 +60,10 @@ However, you generally don't need to code this yourself. GCC comes with \mintinl
 
 \subsubsection{Extended GCD}
 
+Sometimes we want to know more than just the GCD of two numbers -- namely we might want to know what values of $x$ and $y$ could satisfy the equation $ax + by = GCD(a,b)$ where $a$ and $b$ are known.
+
+The values of $x$ and $y$ that can satisfy that equation aren't necessarily unique. For example, with $a = b = 1$ which has a GCD of $1$, we can find that $x = 1, y = 0$ works, or $x = 2, y = -1$ works, or $x = -10, y = 11$, or infinitely many different other options. For our purposes, we're interested in findy one valid solution.
+
 \inputcpp{code/number_theory/gcd_extended.cpp}
 
 \subsubsection{Primal Representation}
