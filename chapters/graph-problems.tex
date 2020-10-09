@@ -9,9 +9,9 @@ There are multiple ways to represent graphs when we talk about actually implemen
 
 \inputcpp{code/graph/core_edge_list.cpp}
 
-Unfortunately, edge lists are relative uncommon and aren't the ideal graph representation for the majority of graph algorithms. This is because 
+Unfortunately, edge lists are relative uncommon and aren't the ideal graph representation for the majority of graph algorithms. This is because one of the most common things we want to do with graph algorithms is operate on edges connected to a specific node. With edge lists, this is $O(n)$ -- we have to traverse through the entire list to find what edges are connected to a specific node. We can optimize this somewhat (sort the edge list so all nodes appear in order in $O(n log n)$, then binary search for a specific node in $O(log n)$, for example) but ultimately we can do better with other graph representations for most use cases.
 
-\textbf{Adjacency lists} are a graph representation in which we have an array of each node, where each node stores its edges. This can either be as an array of \mintinline{cpp}{Node} objects, or as an array of edge lists. We can take some shortcuts in our implementation:
+\textbf{Adjacency lists} are a graph representation in which we have an array of each node, where each node stores its edges. This fixes our issue with edge lists, because now we can index directly into a node and operate directly on all of its incident edges. This can either be as an array of \mintinline{cpp}{Node} objects where each \mintinline{cpp}{Node} contains an edge list, or as an array of edge lists. Even simpler, we can have an array where each index is the start node of the edge, and store a list of end node values:
 
 \inputcpp{code/graph/core_adjacency_list.cpp}
 
