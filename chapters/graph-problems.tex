@@ -21,7 +21,15 @@ As it turns out, this is called an \textbf{adjacency matrix}. We maintain a 2D a
 
 \inputcpp{code/graph/core_adjacency_matrix.cpp}
 
+Now, is any one of these representations strictly better than the others? Not at all! They all have their strengths and weaknesses, namely:
+\begin{itemize}
+\item Only adjacency matrices can check if an edge between $a$ and $b$ exists in $O(1)$. Edge lists need to iterate through the entire list to find if that edge exists, while adjacency lists have to iterate through the list of edges incident to $a$.
+\item If there are only a couple of edges incident to node $a$, only adjacency lists can iterate through those incident edges quickly. Edge lists don't have easy access to find node $a$ and have to search through the entire list, while adjacency matrices have to look through every value of \mintinline{cpp}{edges[a][0..n]} to find incident edges.
+\item If there are only a couple of edges in general and you need to iterate through every edge, only edge lists can iterate through them quickly. Adjacency lists require you to iterate through its whole array of size $n$, and adjacency matrices require you to iterate through its entire 2D array -- to go through $n^2$ different values.
+\end{itemize}
+To generalize, using a list is good if your graph doesn't have a large amount of edges compared to the number of nodes, and you want to iterate through edges rather than access specific ones. Comparatively, using an array is good if your graph has lots of edges relative to the number of nodes, and/or you don't need to iterate through edges and would prefer the $O(1)$ lookup time.
 
+In practice, edge lists are usually not the preferred method -- there are relatively few algorithms or problems that are best implemented by iterating through every edge in arbitrary order. Adjacency lists and adjacency matrices appear fairly frequently, so it's important to know both of them well.
 
 \subsubsection{Directed and Undirected}
 \subsubsection{Cyclic and Acyclic}
