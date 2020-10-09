@@ -11,6 +11,10 @@ There are multiple ways to represent graphs when we talk about actually implemen
 
 Unfortunately, edge lists are relative uncommon and aren't the ideal graph representation for the majority of graph algorithms. This is because 
 
+\textbf{Adjacency lists} are a graph representation in which we have an array of each node, where each node stores its edges. This can either be as an array of \mintinline{cpp}{Node} objects, or as an array of edge lists. We can take some shortcuts in our implementation:
+
+\inputcpp{code/graph/core_adjacency_list.cpp}
+
 \subsubsection{Directed and Undirected}
 \subsubsection{Cyclic and Acyclic}
 \subsubsection{Connected and Disconnected}
