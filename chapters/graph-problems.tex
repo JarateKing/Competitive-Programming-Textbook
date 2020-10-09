@@ -7,6 +7,8 @@ There are multiple ways to represent graphs when we talk about actually implemen
 
 \textbf{Edge lists} are likely the most simple representation of a graph, in which we have an array store each edge in the graph. Nodes are implicit by their value -- an edge is represented as a pair of integers $a$ and $b$ (possibly with additional information like weight) that defines a connection between the $a$th node and the $b$th node.
 
+\inputcpp{code/graph/core_edge_list.cpp}
+
 Unfortunately, edge lists are relative uncommon and aren't the ideal graph representation for the majority of graph algorithms. This is because 
 
 \subsubsection{Directed and Undirected}
