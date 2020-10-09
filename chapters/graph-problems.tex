@@ -15,6 +15,10 @@ Unfortunately, edge lists are relative uncommon and aren't the ideal graph repre
 
 \inputcpp{code/graph/core_adjacency_list.cpp}
 
+Now, we may notice that we improved our accesses for our start node from $O(n)$ to $O(1)$ by using an array instead of a list, with the index equal to our start node. Unfortunately, since adjacency lists still use lists, trying determine whether an edge between a specific start node and a specific end node exists is potentially $O(n)$ as well. So you may ask, why not use an array again, so that we have a 2D array where end nodes are our index for the inner array?
+
+As it turns out, this is called an \textbf{adjacency matrix}.
+
 \subsubsection{Directed and Undirected}
 \subsubsection{Cyclic and Acyclic}
 \subsubsection{Connected and Disconnected}
