@@ -42,6 +42,11 @@ In contrast, an undirected graph has edges that go in either direction. The edge
 Our graph representations that we developed above only supported directed graphs. However, when we add an edge $a,b$, we can also add the edge $b,a$ in order to make our representations be equivalent to undirected graphs.
 
 \subsubsection{Cyclic and Acyclic}
+
+A \textbf{cycle} is a path where the start and end node are the same. In other words, without traversing the same edges, cycles are what you find when you end up at the same node as you started.
+
+We call a graph that contains cycles \textbf{cyclic}. In comparison, a graph with no cycles is \textbf{acyclic}. This is relevant because sometimes algorithms work well on acyclic graphs but not on cyclic ones, or alternatively fundamentally only matter for cyclic graphs (such as cycle finding algorithms).
+
 \subsubsection{Connected and Disconnected}
 \subsubsection{Weighted}
 \subsubsection{Transitive Closure}
