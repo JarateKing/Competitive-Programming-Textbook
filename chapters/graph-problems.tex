@@ -48,6 +48,11 @@ A \textbf{cycle} is a path where the start and end node are the same. In other w
 We call a graph that contains cycles \textbf{cyclic}. In comparison, a graph with no cycles is \textbf{acyclic}. This is relevant because sometimes algorithms work well on acyclic graphs but not on cyclic ones, or alternatively fundamentally only matter for cyclic graphs (such as cycle finding algorithms).
 
 \subsubsection{Connected and Disconnected}
+
+Two nodes are considered \textbf{connected} when there exists some path between them. Opposite to this, two nodes are \textbf{disconnected} if there isn't a path between them, and by definition no amount of graph traversing from one node will lead you to the other.
+
+When we're talking about the graph as a whole, a \textbf{connected graph} means that every node is connected to every other node. Likewise, a \textbf{disconnected graph} means that at least one pair of nodes is not connected.
+
 \subsubsection{Weighted}
 \subsubsection{Transitive Closure}
 \subsubsection{Grids}
