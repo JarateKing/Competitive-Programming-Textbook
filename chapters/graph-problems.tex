@@ -53,6 +53,12 @@ Two nodes are considered \textbf{connected} when there exists some path between 
 
 When we're talking about the graph as a whole, a \textbf{connected graph} means that every node is connected to every other node. Likewise, a \textbf{disconnected graph} means that at least one pair of nodes is not connected.
 
+\subsubsection{Complete}
+
+A graph is considered \textbf{complete} if every node contains an edge to every other node. As a result, the minimum path length from one node to another is always $1$ in a complete graph.
+
+A complete graph with $n$ nodes will contain $\frac{n(n-1)}{2}$ edges. While often assumptions can be made about complete graphs that simplify problems immensely, the large amount of edges may also make common algorithms expensive and ineffective.
+
 \subsubsection{Weighted}
 \subsubsection{Transitive Closure}
 \subsubsection{Grids}
