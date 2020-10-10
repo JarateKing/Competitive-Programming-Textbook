@@ -32,6 +32,15 @@ To generalize, using a list is good if your graph doesn't have a large amount of
 In practice, edge lists are usually not the preferred method -- there are relatively few algorithms or problems that are best implemented by iterating through every edge in arbitrary order. Adjacency lists and adjacency matrices appear fairly frequently, so it's important to know both of them well.
 
 \subsubsection{Directed and Undirected}
+
+One trait of graphs is whether they're directed or undirected.
+
+In a directed graph, edges are one way -- an edge from $a$ to $b$ can be traversed in that order, but you could not go from $b$ to $a$ using that edge.
+
+In contrast, an undirected graph has edges that go in either direction. The edge $a,b$ also represents an edge $b,a$ in that traversal can be done with either $a$ to $b$ or $b$ to $a$.
+
+Our graph representations that we developed above only supported directed graphs. However, when we add an edge $a,b$, we can also add the edge $b,a$ in order to make our representations be equivalent to undirected graphs.
+
 \subsubsection{Cyclic and Acyclic}
 \subsubsection{Connected and Disconnected}
 \subsubsection{Weighted}
