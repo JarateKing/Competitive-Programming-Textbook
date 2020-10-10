@@ -53,6 +53,10 @@ Two nodes are considered \textbf{connected} when there exists some path between 
 
 When we're talking about the graph as a whole, a \textbf{connected graph} means that every node is connected to every other node. Likewise, a \textbf{disconnected graph} means that at least one pair of nodes is not connected.
 
+The \textbf{transitive closure} of a graph is a transformation in which edges are created between any connected nodes. For example, if a graph normally contains the edges $\{0,1\},\{1,2\}$, there is no edge for $\{0,2\}$ despite there being a valid path between them. In the transitive closure, we would create the edge $\{0,2\}$ so that every node has an edge directly to every other node it's connected to.
+
+Often, the transitive closure of a graph will be stored as an adjacency matrix, because it generally results in a large amount of edges (with a lot of redundancy).
+
 \subsubsection{Complete}
 
 A graph is considered \textbf{complete} if every node contains an edge to every other node. As a result, the minimum path length from one node to another is always $1$ in a complete graph.
@@ -60,7 +64,6 @@ A graph is considered \textbf{complete} if every node contains an edge to every 
 A complete graph with $n$ nodes will contain $\frac{n(n-1)}{2}$ edges. While often assumptions can be made about complete graphs that simplify problems immensely, the large amount of edges may also make common algorithms expensive and ineffective.
 
 \subsubsection{Weighted}
-\subsubsection{Transitive Closure}
 \subsubsection{Grids}
 \subsection{Pathfinding}
 
