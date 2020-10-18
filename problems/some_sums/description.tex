@@ -1,0 +1,8 @@
+\problem{Some Sums}
+{Sometimes we want to sum a range of an array. Some call this a "range sum". Sometimes, we find some amount of range sums, and sum them together. Some would consider this a sum of some range sums problem.}
+{Input starts with two numbers, $n$ and $m$ where $1 \le n \le 10^5$ and $1 \le m \le 10^5$. For every $n$ there is a value $a_i$ where $-5000 \le a_i \le 5000$. For every $m$ there is a two integers $x_i,y_i$ representing the range $[x_i,y_i)$ where $0 \le x_i < y_i \le n$.}
+{Output the total sum of all range sums. In other words, calculate and print $\sum_{i=0}^{m-1} \sum_{j=x_i}^{y_i - 1} a_j$.}
+{1 second}
+{1024 mb}
+{\IOsample{problems/some_sums/1}
+\IOsample{problems/some_sums/2}}
