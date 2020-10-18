@@ -68,4 +68,10 @@ The $k$th smallest value in a range can be implemented as...
 
 Ropes are a data structure that can be thought of as an alternative to strings, with some operations that have better time complexity and others that are worse.
 
-Inserting or deleting a character at the end of a string is generally a $O(1)$ operation (amortized), but insertion or deletion at an arbitrary point in the string is $O(n)$. For ropes, the time complexity of insertion or deletion is $O(log n)$ at any arbitrary point, but is also $(log n)$ when inserting or deleting at the end of the string. One of the general costs with this is that querying or modifying a character at an arbitrary index is $O(1)$ in strings, but is another $O(log n)$ operation in ropes.
+Inserting or deleting a character at the end of a string is generally a $O(1)$ operation (amortized), but insertion or deletion at an arbitrary point in the string is $O(n)$. For ropes, the time complexity of insertion or deletion is $O(log n)$ at any arbitrary point, but is also $(log n)$ when inserting or deleting at the end of the string. One of the general costs with this is that querying or modifying a character at an arbitrary index is $O(1)$ in strings, but is an $O(log n)$ operation in ropes.
+
+\hrulefill
+
+\input{problems/some_sums/description}
+
+\hrulefill
