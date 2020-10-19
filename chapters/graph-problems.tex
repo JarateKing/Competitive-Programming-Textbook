@@ -86,10 +86,15 @@ It's important to know that, in general, there isn't any single pathfinding algo
 Out of all the pathfinding algorithms, the depth first search is the easiest conceptually. Starting at a specific node, we explore a path as long as possible without revisiting the same node twice (until we either find our target end node, or we reach a point where we have no more unvisited neighbors to explore). If we don't find the end node, we try again with a slightly different path -- the last time we had multiple unvisited neighbors to a node (and we ended up going down the first path), let's no try the next neighbor and attempt that path.
 
 {\centering \includegraphics[width=\textwidth]{images/graph/dfs.png}}
+\textit{In the above image, blue is the proper path from $1$ to $6$ while grey is explored nodes that are not involved in the proper path.}
 
 In the above example, we start at node $1$ and want to find whether a path exists to node $6$. A DFS will begin by checking $\{1\}$, $\{1, 2\}$, $\{1, 2, 3\}$, $\{1, 2, 4\}$, $\{1, 5\}$, $\{1, 5, 6\}$, and at that point can say there is a path between $1$ and $6$. 
 
+We can model this using a stack data structure, where we add all unvisited neighbors of a node into the stack. If at any point we encounter the end node, we know there's a valid path and can return \mintinline{cpp}{true} then. If our stack is empty, we know we've checked every node connected to our starting position without finding the end node.
+
 \inputcpp{code/graph/dfs_stack.cpp}
+
+A keen eye can notice that using a stack like that is very similar to recursion -- in fact the code for a DFS becomes significantly shorter when we convert it to use recursion instead:
 
 \inputcpp{code/graph/dfs_recursive.cpp}
 
