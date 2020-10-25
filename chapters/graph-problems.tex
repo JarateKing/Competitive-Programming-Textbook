@@ -121,6 +121,11 @@ A restriction with Dijkstra's is that it can't handle negative weights properly 
 The Bellman-Ford algorithm can work with this, both by being able to handle negative weights (when there are no negative cycles) and being able to detect negative cycles (in which case there is no shortest path).
 
 \subsubsection{Floyd-Warshall Algorithm}
+
+So far the algorithms we've considered have been single-source shortest path algorithms -- namely that we have a specific starting node. What if we want to determine the shortest path distance between any two arbitrary points? We would need an all-pairs shortest path algorithm instead.
+
+Floyd-Warshall meets these requirements. It works with negative weights as well, assuming that there are no negative weight cycles.
+
 \subsubsection{Path Reconstruction}
 \subsection{Union-Find}
 
