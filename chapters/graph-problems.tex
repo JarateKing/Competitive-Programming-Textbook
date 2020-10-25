@@ -99,6 +99,11 @@ A keen eye can notice that using a stack like that is very similar to recursion 
 \inputcpp{code/graph/dfs_recursive.cpp}
 
 \subsubsection{Breadth First Search}
+
+Breadth first search is similar to depth first search, except instead of trying to search through the first path possible (prioritizing \textit{depth}) we try to search through every neighbouring node (priorizing \textit{breadth}).
+
+The simplest approach to implementing this is to take our stack-based implementation for DFS and use a queue instead. This means that, instead of trying the most recently added node for the next iteration as we would in a DFS, we will use the oldest node for the next iteration.
+
 \subsubsection{Djikstra's Algorithm}
 \subsubsection{A* Algorithm}
 \subsubsection{Bellman-Ford Algorithm}
