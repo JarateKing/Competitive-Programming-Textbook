@@ -104,7 +104,12 @@ Breadth first search is similar to depth first search, except instead of trying 
 
 The simplest approach to implementing this is to take our stack-based implementation for DFS and use a queue instead. This means that, instead of trying the most recently added node for the next iteration as we would in a DFS, we will use the oldest node for the next iteration.
 
-\subsubsection{Djikstra's Algorithm}
+\subsubsection{Dijkstra's Algorithm}
+
+DFS and BFS, as can be noted, doesn't consider weighted graphs -- if we exit at the first time we encounter the target end node, DFS will give us some valid path and BFS will give us a path with the minimum number of edges. In neither case are these edges necessarily with the minimum total weight (in BFS's case, we may find a solution in one edge with weight of 100, when the minimum total weight would be two edges each with weight 1).
+
+Dijkstra's algorithm is a solution to this. It's also implemented like DFS or BFS except we use a priority queue, where the weight of our current path is how we base the priority (we consider lower weights before higher weights). Additionally, rather than storing whether a node is visited or not, we store the current best (minimum) weight of a path we've found (defaulting to infinity, or some huge number that won't be encountered normally). Using this, when we consider the neighbors of an node, rather than checking if that node is already visited we check if our current node's best weight + the weight of our next edge, and add that to our priority queue if so.
+
 \subsubsection{A* Algorithm}
 \subsubsection{Bellman-Ford Algorithm}
 \subsubsection{Floyd-Warshall Algorithm}
