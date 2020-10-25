@@ -111,6 +111,9 @@ DFS and BFS, as can be noted, doesn't consider weighted graphs -- if we exit at 
 Dijkstra's algorithm is a solution to this. It's also implemented like DFS or BFS except we use a priority queue, where the weight of our current path is how we base the priority (we consider lower weights before higher weights). Additionally, rather than storing whether a node is visited or not, we store the current best (minimum) weight of a path we've found (defaulting to infinity, or some huge number that won't be encountered normally). Using this, when we consider the neighbors of an node, rather than checking if that node is already visited we check if our current node's best weight + the weight of our next edge, and add that to our priority queue if so.
 
 \subsubsection{A* Algorithm}
+
+The A* algorithm can be considered a generalization of Dijkstra's, in which we use a heuristic function to (hopefully) improve performance.
+
 \subsubsection{Bellman-Ford Algorithm}
 \subsubsection{Floyd-Warshall Algorithm}
 \subsubsection{Path Reconstruction}
