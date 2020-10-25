@@ -115,6 +115,11 @@ Dijkstra's algorithm is a solution to this. It's also implemented like DFS or BF
 The A* algorithm can be considered a generalization of Dijkstra's, in which we use a heuristic function to (hopefully) improve performance.
 
 \subsubsection{Bellman-Ford Algorithm}
+
+A restriction with Dijkstra's is that it can't handle negative weights properly -- there are specific cases where a negative weight can break the assumptions that Dijkstra's makes.
+
+The Bellman-Ford algorithm can work with this, both by being able to handle negative weights (when there are no negative cycles) and being able to detect negative cycles (in which case there is no shortest path).
+
 \subsubsection{Floyd-Warshall Algorithm}
 \subsubsection{Path Reconstruction}
 \subsection{Union-Find}
