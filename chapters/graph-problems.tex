@@ -127,6 +127,13 @@ So far the algorithms we've considered have been single-source shortest path alg
 Floyd-Warshall meets these requirements. It works with negative weights as well, assuming that there are no negative weight cycles.
 
 \subsubsection{Path Reconstruction}
+
+For DFS, BFS, Dijkstra's, etc. we can include an auxillary array that represents some data about each node. In order for the algorithms to work, we already include an array that determines whether a node has been visited for DFS and BFS, and for Dijkstra's we include an array that determines the minimum weight of a path we've needed so far.
+
+One of the most common ones is a \textit{parent} array, in which every node stores what node came before it in the path. This is useful for path reconstruction, where we want to determine the path taken to get to the end node.
+
+When we set our node as visited (for DFS and BFS) or the weight required (for Dijkstra's) we also set the parent node. Then, after our algorithm is done, we check the parent of the end node, then its parent, then the parent of that node, and so on until we reach the source node. The path is this list of parents in reverse.
+
 \subsection{Union-Find}
 
 Union-Find, which also goes by the name of \textit{disjoint-set}, is a data structure that groups connected nodes together into different subsets through operations called \textbf{union} (which connects two nodes together, akin to creating an edge) and \textbf{find} (which determines which subset a node belongs to). As a result, Union-Find is well suited for any problem in which you have to determine if two different elements belong to the same set -- this sees applications both by itself in many problems, and as an important part of different graph algorithms.
