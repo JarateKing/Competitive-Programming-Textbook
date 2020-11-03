@@ -12,7 +12,7 @@ Unfortunately, this is relatively slow. In many problems or algorithms where you
 
 Binary exponentiation is the idea of calculating an arbitrary integer power as a product of different values of $a^{2^n}$. Specifically, we rely on two properties:
 \begin{itemize}
-\item We can represent a number as a sum of powers of 2 based on its binary representation. Consider the decimal number $10$, which has a binary representation of $1010_2$. We can tell that $10 = 2^1 + 2^3$ from its binary representation.
+\item We can represent a number as a sum of powers of 2 based on its binary representation \index{Binary Representation}. Consider the decimal number $10$, which has a binary representation of $1010_2$. We can tell that $10 = 2^1 + 2^3$ from its binary representation.
 \item $a^{n+m} = a^n * a^m$. Rather than calculate the larger $a^{n+m}$ we can instead calculate it as the product of smaller powers that add to $n+m$.
 \end{itemize}
 
