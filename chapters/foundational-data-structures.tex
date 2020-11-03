@@ -1,15 +1,20 @@
 \section{Foundational Data Structures}
+\index{Data Structures}
+
 \subsection{Arrays}
+\index{Arrays}
 
 Arrays are the most basic data structure in most programming languages. It is very simple in its functionality: instead of storing a single value like a regular variable does, it stores some amount of values.
 
 \subsubsection{Dynamic Arrays}
+\index{Dynamic Arrays} \index{Vectors} \index{ArrayLists}
 
 Arrays don't have to be a fixed size -- dynamic arrays allow you to dynamically resize the array when you need more space to put new elements.
 
 In C++ we have the \mintinline{cpp}{std::vector} class that works as our dynamic array. In Java, it's \mintinline{java}{ArrayList}. And in Python, lists are already dynamic arrays.
 
 \subsection{Sets}
+\index{Sets}
 
 In mathematics, a set is a collection of distinct elements. Pratically speaking, this differs from a traditional array in that every element is unique (in practice, trying to insert a duplicate element will not insert it) and that there is no guarantee of any specific order (in practice, the order depends on implementation).
 
@@ -18,35 +23,43 @@ In C++, the basic type for a set is \mintinline{cpp}{std::set}. Internally, this
 C++ also offers the \mintinline{cpp}{std::unordered_set} that is based on a hash table. This offers $O(1)$ average case insertion, deletion, and queries, but is generally much less performant for iterating through the entire \mintinline{cpp}{std::unordered_set} than using an \mintinline{cpp}{std::set}.
 
 \subsection{Maps}
+\index{Maps}
 
 Maps are very similar to sets, except that every element has an associated value with it as well.
 
 C++ calls its map structure a \mintinline{cpp}{std::map} as the tree-based structure, with \mintinline{cpp}{std::unordered_map} serving as the hash-based variant. In Java, we have a \mintinline{Java}{Map} interface, of which \mintinline{java}{TreeMap} and \mintinline{java}{HashMap} (among several other variants) are available. In Python, we have dict's as a language feature that serves as its map.
 
 \subsection{Sequential Structures}
+\index{Sequential Structures}
 
 We define sequential structures as data structures that only let you see access one or two of its elements at any given time. Unlike an array that can access any arbitrary element it stores, our sequential structures act as a container for elements that has very strong rules about what we're allowed to access.
 
-\subsubsection{Stack}
+\subsubsection{Stacks}
+\index{Stacks}
 
 A stack is a first-in-last-out structure -- you can add or remove elements from the back (or top) of the stack.
 
-\subsubsection{Queue}
+\subsubsection{Queues}
+\index{Queues}
 
 A queue is a structure that's the opposite of a stack in that it's first-in-first-out. Specifically, you can add elements to the back of a queue and remove elements from the front of the queue.
 
-\subsubsection{Deque}
+\subsubsection{Deques}
+\index{Deques}
 
 A Deque is a double-ended queue. Practically speaking, this structure supports both operations of stacks at queues at once -- you can add or remove elements from either the front or the back.
 
-\subsubsection{Priority Queue}
+\subsubsection{Priority Queues}
+\index{Priority Queues}
 
 A priority queue, despite its name, does not behave exactly like a queue. While accessing and removing elements does happen at the front of a priority queue, a priority queue is always sorted and by consequence insertion can put an element anywhere in the priority queue (as long as it keeps the priority queue sorted).
 
 \subsection{Trees}
+\index{Trees}
 
 While we have mentioned the possibility of trees in sets and maps, we often have to deal with trees as a general structure.
 
 \subsection{Binary Search Tree}
+\index{Binary Search Tree}
 
 One of the most common trees is the binary search tree.

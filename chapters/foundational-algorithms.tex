@@ -1,8 +1,10 @@
 \section{Foundational Algorithms}
+\index{Algorithms}
 
 There are a few algorithms that should be covered and discussed before going into much further explorations.
 
 \subsection{Sorting}
+\index{Sorting}
 
 Sorting is likely the most fundamental algorithm you will use in competitive programming. It appears in many problems, to the point where problems that just require sorting to solve them are usually considered relatively easy. More often you'll see sorting be involved as a necessary component to more difficult problems. In many cases, sorting is required in order to perform efficient algorithms (as we will see soon, sorting is required to perform a \textbf{binary search} which is generally much faster than a \textbf{sequential search}).
 
@@ -27,6 +29,7 @@ In contrast, an \textbf{unstable} algorithm makes no guarantees. It could pretty
 If every element of the array is unique, the difference between stable and unstable doesn't matter. If there are duplicate elements in the array, but you don't have any other data associated with them (two duplicate elements will be identical to eachother) then it doesn't matter either. It also wouldn't matter if duplicate elements with different data exist, but you don't really care what order they appear in as long as they're sorted relative to other elements. It's only in the (relatively narrow) circumstance that all these properties hold and the original order of duplicate elements is relevant that the difference between stable and unstable matters.
 
 \subsubsection{Insertion Sort}
+\index{Insertion Sort}
 
 \textbf{Insertion sort} is a stable comparison-based sorting algorithm that's among the simplest to implement. The algorithm consists of iterating through the unsorted array, and for each element we check if the element before it is larger and swap if so, then check if the element before that is larger and swap if so, etc. In other words, we keep shifting an element earlier until elements to the left are all smaller and elements to the right are all larger.
 
@@ -37,10 +40,13 @@ What is the run-time of this algorithm? Unfortunately it is a fairly naive algor
 While insertion-sort is generally not common because its $O(n^2)$ time complexity is too slow for large arrays, it does have very little overhead when dealing with small arrays to the point of often being one of the fastest sorting algorithms. Specifically, when we're dealing with elements in the CPU cache, swapping elements is extremely fast. For this reason it's not uncommon to see it beind used as part of a more complicated hybrid sort. Timsort, the standard library sorting algorithm of Python, is one such hybrid sort that is based on a combination of insertion sort and merge sort, for example.
 
 \subsubsection{Quicksort}
+\index{Quicksort}
 
 \subsubsection{Mergesort}
+\index{Mergesort}
 
 \subsubsection{Counting Sort}
+\index{Counting Sort}
 
 Consider the case where you have $10^9$ 1-digit numbers that you want to sort. It is certainly possible to perform a comparison-based sort that will run in $O(n log n)$, there is actually an integer sort that's perfectly suited for this sort of problem that runs in $O(n)$.
 
@@ -60,6 +66,7 @@ Looking at the concepts of sorting, we can note that counting sort is:
 Note that our count array has to be as large as the maximum element. Because of this (and that we have to traverse the entire count array), this means counting sort is best suited for when the range of valid elements is very small. A huge amount of one-digit numbers is a great example of where counting sort does well (and was chosen as the example here for that reason). When our elements are potentially very large, counting sort is not very well suited.
 
 \subsubsection{Cycle Sort}
+\index{Cycle Sort}
 
 \subsubsection{Other Sorting Algorithms}
 
@@ -74,12 +81,12 @@ If we're not too concerned with sorting algorithm details, what do we do instead
 
 For interest, some other sorting algorithms are described here:
 \begin{itemize}
-\item \textbf{Bubble sort} is a commonly taught algorithm as a very simple (but very naive and slow) sorting algorithm. You iterate through the list multiple times, and if two adjacent elements are out of order, they get swapped. It doesn't see much practical use because other sorting algorithms are generally better.
-\item \textbf{Selection sort} is a naive sorting algorithm that for each element, it finds whatever element is smallest out of all elements to the right and swaps it into its right place. You can be guaranteed that, at the $i$th iteration, the range $[0,i)$ contains the right elements that need to be sorted.
-\item \textbf{Heapsort} is an algorithm that inserts all elements of an array into a heap, and then removes all those elements from the heap.
-\item \textbf{Radix Sort} is an integer sorting algorithm that recursively sorts by individual digits -- you take either the most-significant-digit or least-significant-digit of a number, distribute elements into different buckets based on what that digit was, then within each bucket you repeat with the next digit, and so on.
-\item \textbf{Bogosort} an extremely naive algorithm that creates a random permutation of an array, checks if it's sorted, and if not repeats. It's notable that it has an expected runtime of $O(n!)$ and in the worst case (if you are extremely unlucky) will never finish, but in the best case is $O(n)$.
-\item \textbf{Dropsort} is an extremely fast algorithm that sorts an entire array in a single pass, by simply removing any elements that are smaller than the one before it. It is usually mentioned as a joke algorithm for this reason -- but the output is a sorted array in any case (even if it's potentially much smaller than the original array).
+\item \textbf{Bubble sort} \index{Bubble Sort} is a commonly taught algorithm as a very simple (but very naive and slow) sorting algorithm. You iterate through the list multiple times, and if two adjacent elements are out of order, they get swapped. It doesn't see much practical use because other sorting algorithms are generally better.
+\item \textbf{Selection sort} \index{Selection Sort} is a naive sorting algorithm that for each element, it finds whatever element is smallest out of all elements to the right and swaps it into its right place. You can be guaranteed that, at the $i$th iteration, the range $[0,i)$ contains the right elements that need to be sorted.
+\item \textbf{Heapsort} \index{Heapsort} is an algorithm that inserts all elements of an array into a heap, and then removes all those elements from the heap.
+\item \textbf{Radix Sort} \index{Radix Sort} is an integer sorting algorithm that recursively sorts by individual digits -- you take either the most-significant-digit or least-significant-digit of a number, distribute elements into different buckets based on what that digit was, then within each bucket you repeat with the next digit, and so on.
+\item \textbf{Bogosort} \index{Bogosort} an extremely naive algorithm that creates a random permutation of an array, checks if it's sorted, and if not repeats. It's notable that it has an expected runtime of $O(n!)$ and in the worst case (if you are extremely unlucky) will never finish, but in the best case is $O(n)$.
+\item \textbf{Dropsort} \index{Dropsort} is an extremely fast algorithm that sorts an entire array in a single pass, by simply removing any elements that are smaller than the one before it. It is usually mentioned as a joke algorithm for this reason -- but the output is a sorted array in any case (even if it's potentially much smaller than the original array).
 \end{itemize}
 
 That isn't to say that we have a complete list of all sorting algorithms -- not at all, there are lots of them. Some fairly well-known but not listed here, some that are variants on existing algorithms, and some that are nearly unheard of but still a valid sorting algorithm nonetheless.
@@ -89,22 +96,26 @@ That isn't to say that we have a complete list of all sorting algorithms -- not 
 \input{problems/large_and_small_pairs/description}
 
 \subsection{Searching}
+\index{Searching}
 
 Often, you need to check whether an element exists within an array. Other times, you have to find the index of that element. In any case, given an array (or other list of elements), searching for an element is a common task. Like sorting, this is often fairly simple when done on its own, and more often than not it's a subtask of a larger problem or a part of a larger algorithm entirely.
 
 There are various algorithms for searching for an element within an array.
 
 \subsubsection{Sequential Search}
+\index{Sequential Search} \index{Linear Search}
 
 \textbf{Sequential search} (also called linear search) is the simplest form of searching for an element within an array. It consists of a simple for-loop that checks each individual element 
 
 It's useful because it doesn't rely on the array being sorted or anything like that. While it is often quite slow, it can be useful when runtime is not a concern.
 
 \subsubsection{Binary Search}
+\index{Binary Search}
 
 \textbf{Binary search} is an extremely common search algorithm that uses the structure of a sorted array to offer great speedups.
 
 \subsubsection{Exponential Search}
+\index{Exponential Search}
 
 \textbf{Exponential Search} is a variant on binary search that both performs slightly better than binary search when the search key is near the beginning of the list, and also works for unbounded lists (not generally an issue with arrays, but if you were to binary search a nonstrictly increasing function without a clear maximum, this would apply).
 
@@ -115,6 +126,7 @@ Once we have the valid range, we simply perform a normal binary search on that r
 \inputcpp{code/algorithms/exponential_search.cpp}
 
 \subsubsection{Quickselect}
+\index{Quickselect}
 
 Let's consider the case where you want to find the $k$th smallest element in an unsorted array. One of the easiest options is to sort that array and then just look at the $k$th element there.
 
@@ -123,9 +135,10 @@ You will notice however, that we don't actually need most of the array to be sor
 If you can notice the wording of that is fairly similar to quicksort, you're correct. \textbf{Quickselect} is a selection algorithm that uses similar concepts like partitioning that quicksort uses, in order to find the $k$th smallest element by only partially sorting the array.
 
 \subsubsection{Unimodal Searches}
+\index{Unimodal Searches}
 
 Less commonly, you may want to search the outputs of a function rather than an array. There are some search algorithms designed to search for maximums or minimums in a unimodal function (a function that has only one unique maximum or minimum).
 
-\textbf{Ternary Search} is...
+\textbf{Ternary Search} \index{Ternary Search} is...
 
-\textbf{Golden Section Search} is...
+\textbf{Golden Section Search} \index{Golden Section Search} is...
