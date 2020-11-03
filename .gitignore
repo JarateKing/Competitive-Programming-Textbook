@@ -10,6 +10,9 @@
 *.toc
 *.pygstyle
 *.pygtex
+*.idx
+*.ilg
+*.ind
 
 # ignore any pdf's from subfolders
 */*.pdf
