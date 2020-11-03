@@ -1,6 +1,8 @@
 \section{Number Theory Problems}
+\index{Number Theory Problems}
 
 \subsection{Binary Exponentiation}
+\index{Binary Exponentiation}
 
 Consider the naive way to calculate $a^n$ (where $n$ is an integer), we simply get the product of $n$ $a$s. In terms of code, we can simply initialize a variable to $1$ and then have a for-loop that multiplies our variable by $a$ a total of $n$ times. This works fine for $0^n$ where our answer should be 0, and $a^0$ where our answer should be $1$, but doesn't work for $0^0$ which is undefined (for simplicity's sake, we'll ignore $0^0$).
 
@@ -21,6 +23,7 @@ When we combine these together, we can notice that $a^{10} = a^{2^1 + 2^3} = a^{
 The value in this is that we have significantly reduced our runtime. Rather than calculate in $O(n)$, we calculate in $O(log_2n)$. Now, rather than $2^{2^{31}-1}$ requiring over 2 billion iterations of a for-loop in the naive method, it takes a mere 31 iterations of a while-loop in our binary exponentiation method.
 
 \subsection{Primes}
+\index{Prime Numbers}
 
 Prime numbers are a recurring concept inside number theory, and is foundational to a lot of more advanced applications.
 
@@ -29,10 +32,13 @@ In short, prime numbers are integers $> 1$ that cannot be evenly divided by any 
 The opposite of a prime number is a composite number, that is evenly dividable by some number of prime numbers. $4 = 2^2, 6 = 2*3, 8 = 2^3, 9 = 3^2, 10 = 2*5, 12 = 2^2*3, ...$ are examples of composite numbers. Every composite number has exactly one representation as the product of prime numbers.
 
 \subsubsection{Prime Sieve}
+\index{Prime Sieve} \index{Sieve of Eratosthenes}
 
-\subsubsection{Primality Test}
+\subsubsection{Miller-Rabin Primality Test}
+\index{Miller-Rabin} \index{Primality Test}
 
 \subsubsection{Prime Factoring}
+\index{Prime Factoring}
 
 We can factorize a number into its prime factors by simply iterating over every possible divisor and attempting to divide it. As long as we start with the smallest possible divisors (with 2 being the smallest nontrivial divisor) and work our way up to larger divisors, we are guaranteed to only find prime numbers (since any composite number would've already been handled by its prime factors).
 
@@ -41,8 +47,10 @@ A very important optimization is to note that we only need to actually iterate u
 \inputcpp{code/number_theory/prime_factorization_naive.cpp}
 
 \subsubsection{Pollard's Rho Algorithm}
+\index{Pollard's Rho Algorithm}
 
 \subsection{Greatest Common Divisor}
+\index{Greatest Common Divisor}
 
 The greatest common divisor between two non-zero integers is as its name suggest -- the largest number that can divide both of two given integers. For example the divisors of $12$ are $\{1,2,3,4,6,12\}$ and the divisors of $16$ are $\{1,2,4,8,16\}$, and as a result the GCD between the two is $4$ which is the largest shared divisor between the two. Similarly, the GCD of $5$ and $6$, which share no divisors other than $1$, is $1$. As well, it can be observed that the GCD of two equal numbers is that number itself again, since a number contains itself as a divisor (and as such, the GCD of $10$ and $10$ is $10$).
 
@@ -51,6 +59,7 @@ We also define the GCD of any number and 0 to be that number: $GCD(x,0) = x$.
 GCDs have many applications. One of the simplest being in reducing fractions -- we know by looking at it that $\frac{2}{6}$ can be simplified into $\frac{1}{3}$. We can easily obtain this simplified fraction by dividing both the numerator and the denominator by the GCD of the numberator and denominator. For example, we can simplify the fraction $\frac{1800}{2100}$ by finding the GCD between both parts of the fraction, which is 300, and dividing both $1800$ and $2100$ by it. We get $\frac{6}{7}$ which is the most reduced form that fraction can take.
 
 \subsubsection{Basic GCD}
+\index{Euclidean Algorithm}
 
 Calculating the GCD of two numbers can be done through a variety of methods. We'll explore the \textit{Euclidean Algorithm} approach to the problem.
 
@@ -67,6 +76,7 @@ This is fairly easy to express recursively. All together, our code may look like
 However, you generally don't need to code this yourself. GCC comes with \mintinline{c++}{__gcd(a,b)} as a function, C++17 added \mintinline{c++}{std::gcd(a,b)} to the standard library, Python includes \mintinline{python}{math.gcd(a,b)} through its math module, and Java does not offer a GCD function for primitives but does support \mintinline{java}{a.gcd(b)} for its \mintinline{java}{BigInteger} class.
 
 \subsubsection{Extended GCD}
+\index{Extended GCD} \index{Extended Euclidean Algorithm}
 
 Sometimes we want to know more than just the GCD of two numbers -- namely we might want to know what values of $x$ and $y$ could satisfy the equation $ax + by = GCD(a,b)$ where $a$ and $b$ are known.
 
@@ -75,22 +85,26 @@ The values of $x$ and $y$ that can satisfy that equation aren't necessarily uniq
 \inputcpp{code/number_theory/gcd_extended.cpp}
 
 \subsubsection{Primal Representation}
+\index{Primal Representation}
 
 Given a prime factorization of two numbers, the GCD is the product of factors in common. For example, the prime factorization of $60$ is $\{2,2,3,5\}$ while the prime factorization of $24$ is $\{2,2,2,3\}$. The factors in common are $\{2,2,3\}$ whose product is 12, which is the GCD of 60 and 24.
 
 \subsubsection{Least Common Multiple}
+\index{Least Common Multiple}
 
 The least common multiple between two non-zero integers can be calculated quickly: $\frac{a * b}{gcd(a, b)}$. Since $gcd(a, b)$ is a divisor of both $a$ and $b$ (and by extension $a * b$) this will always be an integer as well.
 
 The primal representation of the LCM is similar to the primal representation of their GCD, except it's the product of factors they don't share multiplied by the product of factors in common (or GCD). For example, with $60$ and $24$ again, we have $\{2,5\}$ as unshared factors, along with $\{2,2,3\}$ as common factors, which is $2 * 2 * 2 * 3 * 5 = 120$ which is the LCM.
 
 \subsubsection{Coprime Numbers}
+\index{Coprime Numbers} \index{Relatively Prime}
 
 Numbers are considered coprime (or relatively prime) if their GCD is 1. That is to say, they have no prime factors in common.
 
 Prime numbers are, by necessity, coprime to other primes. This is because they would share no prime factors (for both, their sole prime factor being themselves) and as such have a GCD of 1. Following similar logic, any number is either coprime to a prime, or it's a multiple of that prime (because the only scenario that the GCD wouldn't be 1 is when the prime is a factor).
 
 \subsection{Modular Arithmetic}
+\index{Modular Arithmetic}
 
 \subsubsection{Addition}
 
@@ -145,6 +159,7 @@ This section is about division with a prime $m$ because it's easier to do (we'll
 As it turns out, it's not very difficult to calculate $\frac{1}{y} \% m$ when $m$ is prime. Fermat's little theorem states that $a^m \% m = a \% m$ when $m$ is prime, which is equivalent to $a^{m-1} \% m = 1 \% m$, and $a$ can be divided out from both sides to obtain $a^{m-2} \% m = \frac{1}{a} \% m$. As such, as long as we know $m$ is prime, we can quickly calculate $\frac{1}{y}$ by raising it to the (modular) power of $m-2$. All together, we can calculate $\frac{x}{y} \% m$ as $x * y^{m-2} \% m$.
 
 \subsubsection{Modular Inverse}
+\index{Modular Inverse}
 
 Adding on from the section on division (prime modulo), when we try to find $\frac{1}{a}$ (equivalently $a^{-1}$), it turns out there's a name for this. It's the \textit{modular multiplicative inverse} or just \textit{modular inverse}. And it isn't limited to just primes either, there can be 
 
@@ -161,5 +176,6 @@ Conveniently, our function to determine whether $a$ and $m$ are coprime and our 
 Division under any modulo can now be implemented relatively easily: replace the prime mod specific method of finding the modular inverse $a^{m-2}\%m$ and use the general modular inverse method instead. We also have to take care that the value of this modular inverse isn't $-1$ (or whatever other value we have set as invalid), but the core idea of the function remains the same.
 
 \subsubsection{Discrete Log}
+\index{Discrete Log}
 
 \subsubsection{Square Root}

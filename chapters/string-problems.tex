@@ -1,7 +1,10 @@
 \section{String Problems}
+\index{String Problems}
+
 \subsection{String Concepts}
 
 \subsubsection{Anagrams}
+\index{Anagrams}
 
 Anagrams are the string equivalent to a permutation of an array. Two strings are anagrams of eachother if they contain the same elements, but their ordering isn't necessarily the same. For example, "abc" and "bac" are anagrams. Similarly, all anagrams of "abc" are \{"abc","acb","bac","bca","cab","cba"\}.
 
@@ -14,6 +17,7 @@ That said, we can make our code smaller (though somewhat less efficient) by simp
 \inputcpp{code/string/is_anagram_1.cpp}
 
 \subsubsection{Lexicographic Order}
+\index{Lexicographic Order}
 
 Lexicographic order of strings is one where strings are sorted based on the alphabetical ordering of their first characters. When strings have the same first character, the alphabetical order of their second characters are considered, and so on. A similar tie-breaker has to appear with shorter strings, where the end of the string is considered first alphabetically.
 
@@ -22,6 +26,7 @@ For example, \{"abc", "abd", "ada", "ae", "aeiou", "b"\} is a lexicographically 
 Most languages provide some way to check whether a string is lexicographically greater or lesser than another. In C++ and Python, you can simply use \mintinline{cpp}{"abc" < "zzz"} which will return \mintinline{cpp}{true} since "abc" is lexicographically lesser than "zzz". In Java, we would want to use \mintinline{java}{"abc".compareTo("zzz")} which would return a negative value to indicate that it's lexicographically lesser (a positive value means lexicographically greater, and a value of 0 means they're the same string).
 
 \subsubsection{Palindromes}
+\index{Palindromes}
 
 Palindromes are strings that are the same when they're reversed. For example, "abccba" or "abcba" are both palindromes, whereas "abcde" isn't.
 
@@ -34,30 +39,35 @@ Something to watch out for is that you can have palindromes of even length (such
 It is also worth noting that a palindrome of length $> 2$ always contains at least one other palindrome as a substring, which we can obtain by removing the first and last character. "abba" contains "bb" as a palindrome substring, while "abcba" contains "bcb" as a palindrome substring, which itself contains "c" as a palindrome substring (of length 1). It turns out that we can divide the length of a palindrome by 2 rounded down, and get the number of palindrome substrings that are centered on the same point ("abcba"'s length divided by 2 is 2, which is the number of strict substring palindromes with "c" as the center, "bcb" and "c". The same concept applies to even length palindromes). Note that these aren't necessarily the only palindrome substrings possible -- "aabbaa" contains \{"a", "b", "aa",""bb","abba"\} as its unique palindrome substrings, as something to watch out for.
 
 \subsubsection{Prefixes}
+\index{Prefixes}
 
 Prefixes are substrings that contain the start of a string. For example, the prefixes of "abcde" are \{"a","ab","abc","abcd","abcde"\}.
 
 A strict or proper prefix is a prefix that isn't the same length as the full string (equivalently, a prefix that doesn't contain the end). Using the above example, proper prefixes would be \{"a","ab","abc","abcd"\} which notably excludes the original string "abcde".
 
 \subsubsection{Substrings}
+\index{Substrings}
 
 Substrings are the string equivalent to subarray -- it is the original string with some amount from the start and end removed. "abcd" has the substrings \{"a", "b", "c", "d", "ab", "bc", "cd", "abc", "bcd", "abcd"\}. Note that the original string "abcd" is a valid substring of itself, it just removes 0 characters from the start or the end.
 
 Sometimes you will see a "strict" substring. This is the same as a regular substring except the original string isn't counted. This makes sure that substrings will always remove at least one character from either the start or the end, and that the length of each strict substring will be less than the original string.
 
 \subsubsection{Suffixes}
+\index{Suffixes}
 
 Opposite to prefixes, suffixes are substrings that contain the end of a string. For example, the suffixes of "abcde" are \{"e","de","cde","bcde","abcde"\}.
 
 Strict or proper suffixes are also similar to prefixes, in that they're suffixes that aren't the same length as the original string (or are suffixes that don't contain the start of the string).
 
 \subsection{Pattern Matching}
+\index{Pattern Matching}
 
 One of the common tasks needed for string problems involves pattern matching -- determining whether or not a substring exists in the larger string altogether.
 
 There are a fair amount of possible variants and alternatives to pattern matching. The simplest is simply "does a given substring exist in a given larger string" with no other complications. In this case, if we have some text "abcdef" and we're looking for the pattern "def", we can confidently say the pattern does exist. A common variant is to find the specific location of a matched pattern, where the previous example would start its match at position 3 in the original string. Sometimes it's sufficient to find one match even if there may be many, sometimes it's necessary to find every valid match.
 
 \subsubsection{Regex}
+\index{Regex}
 
 \textit{Note: the term 'regex' is a common shorthand for 'regular expressions', but there is a large difference between modern regex engines and true regular expressions. Briefly, that regular expressions are regular in a formal languages sense, while regex engines include many features that make them not regular expressions. Because of this, when we say "regex" we mean the language used in modern regex engines, while "regular expressions" is more akin to theoretical computer science. Confusingly, we might also say 'regex expression' when we want to refer to a specific pattern of regex, while we don't use 'regular expression expression'.}
 
@@ -70,6 +80,7 @@ The main advantages of regex are that they can be very quick to code, and they c
 This comes with some hefty downsides though: namely that regex matching is significantly slower than other methods of pattern matching (to the point of needing to be very careful, because exceeding the timelimit with regex is very common), that it requires an entire different syntax to write and is generally harder to understand once written, and that if the regex engine doesn't do exactly what you need then it can't be easily modified to work.
 
 \subsubsection{Knuth-Morris-Pratt}
+\index{Knuth-Morris-Pratt}
 
 Consider the naive approach: for every position $i$ in the original string $s$ with the search pattern $p$, we check if $s[i] = p[0]$, then if $s[i+1] = p[1]$, and so on until we go through the either the full pattern (in which case we found a match) or the full original string (in which case we didn't find a match).
 
@@ -82,7 +93,10 @@ To begin, we generate an array `l` where $l[i]$ is the length of the longest pro
 Now that we have the l-array, we can actually perform our pattern matching. Let's consider the example of trying to pattern match "abcabd" into "abcabcabd" again. We begin naively, comparing $s[0] = p[0]$ through to $s[5] = p[5]$ and notice we have a mismatch. Rather than shifting the string by 1 and recomparing the full pattern, we instead shift the string by 3 and begin comparing the pattern starting at $s[3+2] = p[2]$.
 
 \subsubsection{Boyer Moore}
+\index{Boyer Moore}
+
 \subsubsection{Z-Algorithm}
+\index{Z-Algorithm}
 
 The Z-Algorithm generates an array $Z$ where $Z[i]$ is the length of the longest common prefix between a string and its substring beginning at position $i$. Explained practically, $Z[i]$ is the number of characters that are the same starting from $s[0]$ and $s[i]$.
 
@@ -91,6 +105,7 @@ While this is a general string algorithm with several applications, one applicat
 Now, any time the length of $p$ appears inside the z-array, we know that pattern has a match. We can convince ourselves of this pretty easily -- because of $x$ we should never have a value that's greater than the length of $p$, and any value in the z-array that appears after $x$ is how many leading characters are the same in $p$.
 
 \subsubsection{Aho Corasick}
+\index{Aho Corasick}
 
 Aho Corasick is an algorithm for pattern matching that's designed to search for multiple patterns simultaneously. Aho Corasick is based on construction of a finite state machine that represents all patterns simultaneously, and allows you to iterate over the original string with each character being used for the state transitions, and noting every accepted state as a successful match.
 
@@ -101,7 +116,10 @@ Sometimes, we may want to do some creative applications using our pattern matchi
 Consider the regex expression \mintinline{python}{"abc.*xyz"}, which essentially matches any substring that starts with "abc" and ends with "xyz", including "abcxyz". We don't actually need regex to solve this.
 
 \subsection{Subsequence Matching}
+\index{Subsequence Matching}
+
 \subsection{Hashing}
+\index{Hashing}
 
 Comparing strings with eachother to see if they're the same or not is a $O(n)$ operation -- you can only tell if two strings of the same length are different by checking if any characters are different, and as a result you can only know tht two strings are the same if you check each character. For problems that involve lots of string equality checks, this might be too slow.
 
@@ -118,6 +136,8 @@ A simple example of this happening is that, if our integer is 32 bit, we can sto
 A more practical example, let's consider a case where we have a polynomial hash with the function \mintinline{cpp}{v = ((s[i] - 'a' + 1) + v * 27) % 31} that loops through the string $s$. With this function, the strings \mintinline{cpp}{"a"} and \mintinline{cpp}{"zl"} both have the hash value $1$. In practice we'll rarely want to perform the hash modulo a small number like 31, but the same concept applies with larger moduluses or when relying on buffer overflows.
 
 \subsection{Prefix/Suffix Arrays}
+\index{Prefix Arrays} \index{Suffix Arrays}
+
 \subsection{Distance}
 \subsubsection{Diff}
 \subsubsection{Levenshtein}

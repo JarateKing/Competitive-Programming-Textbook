@@ -1,10 +1,12 @@
 \section{Advanced Data Structures}
+\index{Data Structures}
 
 "Advanced" is possibly a misnomer. Some of these data structures aren't very complicated, in either their implementation or their usage. We call them advanced here because they relate to much more specific and particular applications. Things like arrays or sets are necessary to solve many basic problems -- while things like range-based structures may be necessary to efficiently implement an algorithm or solution, the problems they appear in are never as simple.
 
 \subsection{Concepts}
 
 \subsubsection{Persistent Data Structures}
+\index{Persistent Data Structures}
 
 Persistent data structures are ones that allow for not just querying an element, but also being able to query it at a specific time, keeping track of the modifications that have been done to it. For example, if you had a queue with 10 elements and pushed and popped several times, you wouldn't be able to query what the front of the queue is at its initial state with 10 elements. A persistent queue would not only allow you to query it at that state, or after any arbitrary amount of pushes and pops for that matter.
 
@@ -19,6 +21,7 @@ In our persistent queue's case, a better approach would be to recognize that we 
 \inputcpp{code/data_structures/persistent_queue.cpp}
 
 \subsubsection{Lazy Evaluation}
+\index{Lazy Evaluation}
 
 In some cases, we are far more likely to update a data structure than we are to query it. In other cases, we may have many updates in one go before we make any queries. Perhaps an update involves modifying a huge range of elements in our data structure, when we only perform queries on a small handful of them, and most of the updates are ignored and unused.
 
@@ -29,7 +32,10 @@ Consider a data structure where...
 We can make these updates lazy as...
 
 \subsection{Range-based Structures}
+\index{Range-Based Data Structures}
+
 \subsubsection{Prefix Sum Arrays}
+\index{Prefix Sum Arrays}
 
 Prefix sums are not a particularly complicated data structure. However, they are useful as the most basic form of range-based data structures. As the name suggests, they deal with sums of integers.
 
@@ -42,17 +48,22 @@ Normally, the prefix sum gives us the sum of the array from $[0,i)$. We can obta
 While for some problems prefix sums are sufficient (construction in $O(n)$ and queries in $O(1)$), they aren't able to be updated efficiently (you would have to recalculate all sums after the element you're updating, which is $O(n)$).
 
 \subsubsection{Sparse Table}
+\index{Sparse Tables}
+
 \subsubsection{Fenwick Tree / Binary Indexed Tree}
+\index{Fenwick Trees} \index{BITs}
 
 Fenwick Trees, also commonly known as Binary Indexed Trees (which is also commonly abbreviated to BITs) is a structure that allows calculates the prefix sum that can be queried in $O(log n)$ and allows for updates in $O(log n)$ as well, compared to the prefix sum array that allows $O(1)$ queries but $O(n)$ updates.
 
 \subsubsection{Segment Tree}
+\index{Segment Trees}
 
 Segment Trees are conceptually similar to Fenwick Trees, in that they support range queries in $O(log n)$ and updates in $O(log n)$ as well. Segment Trees have the notable benefit of supporting more functions that summation, though -- sums, products, maximum, minimum, GCD, LCM, as some examples.
 
 The cost of this is some slight overhead -- there is more code to them than Fenwick Trees, and they require some additional memory as well, but generally most problems that can be solved with Fenwick Trees can also be solved with Segment Trees.
 
 \subsubsection{Wavelet Tree}
+\index{Wavelet Trees}
 
 Wavelet Trees are range based structures that lend themselves to several different operations -- namely, counting the number of occurrences of a value in a range, the number of occurrences of between two values within a range, and getting the $k$th smallest value in a range.
 
@@ -65,6 +76,7 @@ The number of occurrences of any number between two values can be done as...
 The $k$th smallest value in a range can be implemented as...
 
 \subsection{Ropes}
+\index{Ropes}
 
 Ropes are a data structure that can be thought of as an alternative to strings, with some operations that have better time complexity and others that are worse.
 

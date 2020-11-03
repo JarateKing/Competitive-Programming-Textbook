@@ -1,27 +1,31 @@
 \section{Dynamic Programming Problems}
+\index{Dynamic Programming} \index{DP} \index{Recursion}
 
 Dynamic programming (often shortened to "dp") is a method to break down certain problems into smaller sub-problems, very similar to recursion. It can be thought of as an optimization over regular recursion, where multiple calls with the same input only have to be evaluated once instead of multiple times.
 
-Consider the problem of calculating the Fibonacci sequence. The Fibonacci sequence is the sequence $0,1,1,2,3,5,8,13,21,34,55,89,...$ where each value (other than the initial $0,1$) is the sum of the previous two (so $89 = 55 + 34$, $55 = 34 + 21$, $34 = 21 + 13$, and so on). This is a pretty intuitive example of recursion, like in:
+Consider the problem of calculating the Fibonacci sequence\index{Fibonacci Sequence}. The Fibonacci sequence is the sequence $0,1,1,2,3,5,8,13,21,34,55,89,...$ where each value (other than the initial $0,1$) is the sum of the previous two (so $89 = 55 + 34$, $55 = 34 + 21$, $34 = 21 + 13$, and so on). This is a pretty intuitive example of recursion, like in:
 
 \inputcpp{code/dp/fib_recursive.cpp}
 
 Unfortunately, this results in a lot of repeated work. A call to \mintinline{cpp}{fibonacci(10)} will call \mintinline{cpp}{fibonacci(9)} and \mintinline{cpp}{fibonacci(8)}, where \mintinline{cpp}{fibonacci(9)} will also call \mintinline{cpp}{fibonacci(8)}, \mintinline{cpp}{fibonacci(7)} ends up getting called 3 times, \mintinline{cpp}{fibonacci(6)} gets called 5 times, and so on until \mintinline{cpp}{fibonacci(1)} ultimately gets called 56 times. There is a huge amount of work being done with these recursive calls \textit{that we already obtained the result from earlier}.
 
-Dynamic programming fixes this by storing the results of these recursive subcalls in a process called memoization. We can simply store a value when we calculate it, so that we can reduce the number of recursive calls done.
+Dynamic programming fixes this by storing the results of these recursive subcalls in a process called memoization\index{Memoization}. We can simply store a value when we calculate it, so that we can reduce the number of recursive calls done.
 
+\index{Top-Down Dynamic Programming}
 \inputcpp{code/dp/fib_dp_td.cpp}
 
 That is called "top-down" dynamic programming because we still make recursive calls, but if we've already gotten the required result from one of our earlier recursive calls we'll store it for any times it appears later.
 
 The alternative is "bottom-up" dynamic programming where we start with the smallest cases and gradually work our way up:
 
+\index{Bottom-Up Dynamic Programming}
 \inputcpp{code/dp/fib_dp_bu.cpp}
 
 Here, we don't make any recursive calls at all -- a call of \mintinline{cpp}{fibonacci(10)} will not result in recalculating earlier values in the sequence repeatedly. We start from the base cases, and work our way up from the bottom, hence the term "bottom-up".
 
 You may note that in this problem we can store this permanently, by precalculating entirely:
 
+\index{Precalculation}
 \inputcpp{code/dp/fib_precalc.cpp}
 
 Where we call \mintinline{cpp}{genFibonacci()} at the start of the program, and then obtain results from \mintinline{cpp}{fibonacci(n)} or even directly with \mintinline{cpp}{f[n]}.
@@ -31,6 +35,7 @@ This works in this specific instance because our stored results are always the s
 In theory, any problem that can be solved recursively can also be solved with dynamic programming. We can simply apply top-down dynamic programming to an existing recursive solution, as long as our recursive function doesn't have any side-effects like printing or modifying a global state. But we don't necessarily see any benefit from doing this -- if there's no overlap in our recursive calls, there's no benefit to storing results.
 
 \subsection{Coin Change}
+\index{Coin Change}
 
 Something of interest is that we can also use dynamic programming to efficiently count the number of valid solutions for a given problem.
 
@@ -41,6 +46,7 @@ What do we do when our list of valid coins is $\{1,2,3,4,5,6,7,8,9,10,17,25,90\}
 \inputcpp{code/dp/coinchange.cpp}
 
 \subsection{Longest Common Subsequence}
+\index{Longest Common Subsequence}
 
 The Longest Common Subsequence problem (commonly called the LCS problem) is one where you're given two strings (or some other array of data) and, as the name suggests, you have to find the longest subsequence they have in common.
 
@@ -55,6 +61,7 @@ We can solve this with dynamic programming:
 \inputcpp{code/dp/lcs.cpp}
 
 \subsection{Longest Increasing Subsequence}
+\index{Longest Increasing Subsequence}
 
 A similar (but also standard) problem as above, we want to deal with the longest subsequence of a single array where all elements are increasing. The main variants of this problem are whether the elements are strictly increasing or not -- for this description we will go with strictly increasing.
 
