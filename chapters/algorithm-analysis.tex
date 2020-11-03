@@ -1,9 +1,12 @@
 \section{Algorithm Analysis}
-\subsection{Big-O Notation}
+\index{Algorithm Analysis}
 
+\subsection{Big-O Notation}
+\index{Big-O Notation}
 
 
 \subsection{Runtime Complexity}
+\index{Runtime Complexity}
 
 The main application of Big-O notation is to describe runtimes of algorithms.
 
@@ -54,6 +57,7 @@ As well, there are sometimes time complexities that rely on multiple variables. 
 \end{itemize}
 
 \subsection{Space Complexity}
+\index{Space Complexity}
 
 Space complexity is comparable to runtime complexity. But instead of measuring how much time an algorithm takes to run, it measures how much additional data the algorithm needs to store.
 
@@ -62,10 +66,12 @@ If you have a problem with an input of size $n$, and you need to store elements 
 In general, all the same complexities that exist with runtime complexities are possible, but we are less likely to run into the less common ones, and likewise we are less likely to concern ourselves with the memory complexity (more often than not, runtime constraints are what limit you in a problem, memory constraints are not uncommon to be a problem but are less often than runtime).
 
 \subsection{Precision}
+\index{Precision}
 
 Frequently, we will need to deal with precision in solving problems. Specifically, often we have problems where larger inputs do not fit into smaller types (for integers), or repeated arithmetic makes us require a certain level of precision that smaller types don't offer (for floats).
 
 \subsubsection{Integer Types}
+\index{Integer Types}
 
 \begin{itemize}
 \item \textbf{16-bit signed} (\mintinline{cpp}{short} in C++ and Java) supports $[-2^{15},2^{15})$ and can hold integers up to over $10^4$.
@@ -83,6 +89,7 @@ Frequently, we will need to deal with precision in solving problems. Specificall
 It's notable to mention that C++ does not have its own arbitrary-precision integer type. There are popular third-party libraries for this, but those aren't normally available in contests or on online judges. It's not uncommon for competitive programmers who use C++ to write their own arbitrary-precision integer type (you can find examples in many teams' ICPC notebooks) but it is also common for problems to not require arbitrary precision types.
 
 \subsubsection{Floating Point Types}
+\index{Floating Point Types}
 
 \begin{itemize}
 \item \textbf{32-bit floating point} (\mintinline{cpp}{float} in C++ and Java) supports up to $\pm3.40282 * 10^{38}$.
