@@ -45,6 +45,8 @@ While insertion-sort is generally not common because its $O(n^2)$ time complexit
 \subsubsection{Mergesort}
 \index{Mergesort}
 
+Mergesort can also be used to simplify certain problems, such as counting inversions in an array. An inversion is defined as a pair $i < j$ where $a[i] > a[j]$. In plain terms, an inversion is a pair of elements where the larger element appears earlier in the array. We can count this quickly using mergesort. Specifically when we do the merge step of mergesort, any time an element in the left half of the subarray is greater than the right half of the subarray, we know every other element remaining in the left half of the subarray is also greater. This means we can count the number of inversions as a part of mergesort, which takes $O(n log n)$, instead of the naive approach of checking every pair in $O(n^2)$. This is not the only $O(n log n)$ approach to this problem, but it should indicate that creatively using mergesort for other tasks related to sorting is an option.
+
 \subsubsection{Counting Sort}
 \index{Counting Sort}
 
