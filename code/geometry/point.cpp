@@ -1,7 +1,7 @@
 struct point {
     // variables for each dimension
-    int x, y;
+    double x, y;
     
     // constructor
-    point(int x, int y) : x(x), y(y) {}
+    point(double x, double y) : x(x), y(y) {}
 };
