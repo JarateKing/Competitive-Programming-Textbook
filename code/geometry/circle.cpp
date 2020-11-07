@@ -4,6 +4,7 @@ struct circle {
     double r;
     
     // constructors
+    circle() : r(0) {}
     circle(point c, double r) : c(c), r(r) {}
     circle(point i, point j, point k) {
         double sq1 = (i.x*i.x+i.y*i.y), sq2 = (j.x*j.x+j.y*j.y), sq3 = (k.x*k.x+k.y*k.y);
@@ -24,4 +25,4 @@ struct circle {
     double circumference() {
         return 2 * M_PI * r;
     }
-}
+};
