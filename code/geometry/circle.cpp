@@ -16,4 +16,12 @@ struct circle {
         c = point(-B / (2*A), -C / (2*A));
         r = sqrt((B*B + C*C - 4*A*D) / (4*A*A));
     }
+	
+	// methods
+	double diameter() {
+        return r * 2;
+    }
+    double circumference() {
+        return 2 * M_PI * r;
+    }
 }
