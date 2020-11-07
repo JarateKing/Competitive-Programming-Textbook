@@ -28,4 +28,7 @@ struct circle {
     double circumference() {
         return 2 * M_PI * r;
     }
+    double area() {
+        return M_PI * r * r;
+    }
 };
