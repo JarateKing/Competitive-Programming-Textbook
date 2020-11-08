@@ -36,7 +36,11 @@ Circles are a slightly more complicated structure than the previous ones explore
 
 While this definition itself may not be overly complicated, we have various other things to consider with this structure, and various circle-specific terms to define. The diameter is the width of the circle, or the distance between one point on a circle and the opposite point -- this is easily calculated as twice the radius. The circumference, which in plain terms is the length of the circle if it was unrolled into a straight segment, is calculated as $2 \pi r$. The area of a circle is defined as $\pi r^2$.
 
+We can also define a circle by three points. We won't cover how to derive this, and that is left as an exercise for anyone interested. The code is included:
+
 \inputcpp{code/geometry/circle.cpp}
+
+Note that these aren't the only ways to define a circle. The equation $(x-h)^2 + (y-k)^2 = r^2$ where $\{h,k\}$ is point is commonly used to define a circle and can express it on the coordinate plane. This definition is useful to keep in mind for some problems, but generally very easy to convert into a point and a radius, so it is not included here.
 
 \subsubsection{Triangles}
 \index{Triangles}
