@@ -58,7 +58,7 @@ Fenwick Trees, also commonly known as Binary Indexed Trees (which is also common
 \subsubsection{Segment Tree}
 \index{Segment Trees}
 
-Segment Trees are conceptually similar to Fenwick Trees, in that they support range queries in $O(log n)$ and updates in $O(log n)$ as well. Segment Trees have the notable benefit of supporting more functions that summation, though -- sums, products, maximum, minimum, GCD, LCM, as some examples.
+Segment Trees are conceptually similar to Fenwick Trees, in that they support range queries in $O(log n)$ and updates in $O(log n)$ as well. Segment Trees have the notable benefit of supporting more functions than just summation, though -- sums, products, maximum, minimum, GCD\index{Greatest Common Divisor}, LCM\index{Least Common Multiple}, or xor\index{XOR} of an arbitrary range are some examples that appear with some frequency.
 
 The cost of this is some slight overhead -- there is more code to them than Fenwick Trees, and they require some additional memory as well, but generally most problems that can be solved with Fenwick Trees can also be solved with Segment Trees.
 
