@@ -14,3 +14,12 @@
 
 \subsection{Josephus Problem}
 \index{Josephus Problem}
+
+The Josephus problem is a specific task that can be formulated as:
+
+$n$ people stand in a circle. We begin at the first person, who then excludes the person who is $k-1$ positions to the right of themselves. We then repeat the same process, starting at the person to the right of the one who was just removed. We continue until there is only one person who hasn't been excluded. Our task is to find out who that last person is.
+
+As an example with $n = 7$ and $k = 3$, we begin with a list $\{1, 2, 3, 4, 5, 6, 7\}$. The first person removes the position 2 to the right, so we adjust our list and have $\{1, 2, 4, 5, 6, 7\}$. $4$ then removes $6$, giving us $\{1,2,3,5,7\}$. $7$ removes $2$, for $\{1,4,5,7\}$. $4$ removes $7$, $1$ removes $5$, then $1$ removes $1$. We arrive at a list of size 1, where our answer then is $4$.
+
+The problem has some grim origins, originating from a story of a historian Flavius Josephus living in the first century, wherein himself and 40 soldiers decided to avoid capture by standing in a circle and committing suicide in a manner not unlike what was described above. The original story has some differences from the formulated problem, namely that there were two survivors rather than just one, and that Josephus claimed it luck or will of God rather that he be spared rather than intentionally calculating the safest spot, but broadly speaking it's a strong example of the Josephus problem.
+
