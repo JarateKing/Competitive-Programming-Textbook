@@ -186,6 +186,10 @@ You can notice how similar this is to a depth first search. One way to view this
 
 Following this logic, we can use alternatives like BFS as well, which should function near equivalently. A recursive DFS-like solution was chosen for simplicity because the code is relatively short.
 
+A common application of floodfill is to count how many distinct regions there are. For example, using the above code, we can count how many regions of connected \mintinline{cpp}{'.'} characters exist in a grid with a function such as:
+
+\inputcpp{code/graph/floodfill_count.cpp}
+
 \subsection{Union-Find}
 \index{Union-Find} \index{Disjoint-Set} \index{DSU}
 
