@@ -219,8 +219,17 @@ Under Construction
 A bipartite graph is one in which nodes belong to two mutually exclusive sets (usually these are unnamed, but we'll call them A and B to easily distinguish them from each other). Edges in a bipartite graph can only exist between two nodes if one belongs to set A and the other belongs to set B -- a bipartite graph does not allow for an edge between two nodes of the same set. More than that, every node in A has to have an edge that connects it to a node in B, and vice versa.
 
 \subsubsection{Determining Bipartite Graphs}
+\index{2-coloring}
 
-Under Construction
+As it turns out, determining whether a bipartite graph is equivalent to whether or not there is a valid 2-coloring of the graph. That is, can we color nodes in a graph using only two colors without any same colors being adjacent to eachother?
+
+To begin, we pick an arbitrary node. We set its color to red (our choice in color is arbitrary, and in truth we'll likely implement it with a boolean or an integer). We then set all its neighbouring edges to blue. Then we set all their neighbouring edges to red, as long as they haven't already been colored blue.
+
+This coloring neighbours process continues until we either:
+\begin{itemize}
+\item successfully iterate through every edge in the graph and colored every node without issue, in which case we have found a valid 2-coloring (there is one other valid 2-coloring, which is simply the direct inversion).
+\item attempted to color a node that was already colored with the opposite color, in which case there is no such thing as a valid 2-coloring.
+\end{itemize}
 
 \subsubsection{Maximum Bipartite Matching}
 \index{Maximum Bipartite Matching} \index{Hopcroft-Karp}
