@@ -51,7 +51,13 @@ This approach does have its limitations. Namely, that if we try to generate prim
 \subsubsection{Miller-Rabin Primality Test}
 \index{Miller-Rabin} \index{Primality Test}
 
-Under Construction
+Miller-Rabin is a primality test that can determine whether or not a number is \textit{probably} prime (but with enough certainty that we don't have to worry in practice) or definitely composite.
+
+The code for this requires some modular arithmetic functions that we will cover later in this chapter. While we normally would like to include all necessary code chronologically, there are modular arithmetic functions we cover that themselves rely on prime numbers, so we include everything necessary to prime numbers before that. If you wish to implement this code directly, know that you need to read some of the modular arithmetic section later as well.
+
+\inputcpp{code/number_theory/prime_miller_rabin.cpp}
+
+We can adjust this algorithm to deterministically verify that a number is prime or not (up to a known maximum value) by setting specific values of $a$ that we've previously verified works for a specific range. For any number below $2^{32}$ we only need to use $\{2, 7, 61\}$. Using the first 12 primes, $\{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37\}$ works for any number below $2^{64}$.
 
 \subsubsection{Prime Factoring}
 \index{Prime Factoring}
