@@ -34,7 +34,17 @@ The opposite of a prime number is a composite number, that is evenly dividable b
 \subsubsection{Prime Sieve}
 \index{Prime Sieve} \index{Sieve of Eratosthenes}
 
-Under Construction
+A prime sieve, also known as the sieve of Eratosthenes, is a common way to find all prime numbers up to a specific size. It relies on two basic observations:
+\begin{itemize}
+\item if a number is prime, all of its multiples are not
+\item if a number is composite, it must be a multiple of at least one prime smaller than it. By looking at the inverse of this statement, if a number is prime then there must not be equal to any multiple of a prime number smaller than it.
+\end{itemize}
+
+A prime sieve is a pretty logical extension of the above observations -- we say 2 is prime, then we mark every multiple of 2 as composite. We check the next number, 3, which wasn't marked as composite and therefore is prime, and we mark every multiple of 3 as composite as well. The next number, 4, was marked as composite, so we know that it's not prime (and don't need to do anything extra, since every multiple of 4 is already marked as composite). 5 isn't marked, so we treat it as prime and mark all its multiples. 6 is composite, 7 is prime, 8 is composite, 9 is composite, etc.
+
+In terms of code, we can express this as an array:
+
+\inputcpp{code/number_theory/prime_sieve.cpp}
 
 \subsubsection{Miller-Rabin Primality Test}
 \index{Miller-Rabin} \index{Primality Test}
