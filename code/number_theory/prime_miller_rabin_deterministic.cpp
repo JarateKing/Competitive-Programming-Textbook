@@ -1,5 +1,8 @@
+// values of a that will work for any value < 2^32
+vector<int> miller_rabin_primes = {2, 7, 61};
+
 // for consistency with sieve, return 0 if prime and 1 if composite
-bool miller_rabin(int n) {
+bool miller_rabin_deterministic(int n) {
     // base cases
     if (n < 2) return true;
     if (n == 2) return false;
@@ -15,9 +18,9 @@ bool miller_rabin(int n) {
     }
     
     // repeat this process for more precision
-    for (int i = 0; i < 10; i++) {
-        // random number in range [1,n)
-        int a = rand() % (n - 1) + 1;
+    for (auto a : miller_rabin_primes) {
+        // a is prime, so we can check if prime here
+        if (a == n) return false;
         
         // a^s mod n
         int m = modulo_pow(a, s, n);
@@ -34,6 +37,6 @@ bool miller_rabin(int n) {
         }
     }
     
-    // n is probably prime
+    // n is prime
     return false;
 }

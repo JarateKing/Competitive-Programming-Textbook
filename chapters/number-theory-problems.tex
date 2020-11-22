@@ -57,7 +57,9 @@ The code for this requires some modular arithmetic functions that we will cover 
 
 \inputcpp{code/number_theory/prime_miller_rabin.cpp}
 
-We can adjust this algorithm to deterministically verify that a number is prime or not (up to a known maximum value) by setting specific values of $a$ that we've previously verified works for a specific range. For any number below $2^{32}$ we only need to use $\{2, 7, 61\}$. Using the first 12 primes, $\{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37\}$ works for any number below $2^{64}$.
+We can adjust this algorithm to deterministically verify that a number is prime or not (up to a known maximum value) by setting specific values of $a$ that we've previously verified works for a specific range. For any number below $2^{32}$ we only need to use $\{2, 7, 61\}$. Using the first 12 primes, $\{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37\}$ works for any number below $2^{64}$. Adjusting the code can be done as so:
+
+\inputcpp{code/number_theory/prime_miller_rabin_deterministic.cpp}
 
 \subsubsection{Prime Factoring}
 \index{Prime Factoring}
