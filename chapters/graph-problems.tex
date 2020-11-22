@@ -169,6 +169,23 @@ One of the most common ones is a \textit{parent} array, in which every node stor
 
 When we set our node as visited (for DFS and BFS) or the weight required (for Dijkstra's) we also set the parent node. Then, after our algorithm is done, we check the parent of the end node, then its parent, then the parent of that node, and so on until we reach the source node. The path is this list of parents in reverse.
 
+\subsection{Flood Fill}
+\index{Flood Fill}
+
+Flood fill is an algorithm in which, given a graph (often a grid) and a specific node (in a grid, often a coordinate) and we set an entire region of alike elements (or any specific criteria that we need) as filled.
+
+A standard example is in image editing software, the idea of a "fill" tool. Specifically, where we click on a part of an image and it changes the color of that pixel and any connected pixels of the same color.
+
+Here is an example recursive implementation on a grid of \mintinline{cpp}{'.'} and \mintinline{cpp}{'#'} characters:
+
+\inputcpp{code/graph/floodfill.cpp}
+
+There are many additional variants to this. If we need to preserve the original grid, instead of setting nodes as visited by turning them from \mintinline{cpp}{'.'} to \mintinline{cpp}{'!'}, we can use a 2D boolean array to mark elements as visited or unvisited.
+
+You can notice how similar this is to a depth first search. One way to view this implementation is as DFS'ing through every possible path from the source node, in order to determine every node it's connected to. While we normally set nodes as visited in a DFS simply to avoid operating on nodes we've already considered, the intention of flood fill is solely to find these visited nodes.
+
+Following this logic, we can use alternatives like BFS as well, which should function near equivalently. A recursive DFS-like solution was chosen for simplicity because the code is relatively short.
+
 \subsection{Union-Find}
 \index{Union-Find} \index{Disjoint-Set} \index{DSU}
 
@@ -233,6 +250,8 @@ This coloring neighbours process continues until we either:
 
 \subsubsection{Maximum Bipartite Matching}
 \index{Maximum Bipartite Matching} \index{Hopcroft-Karp}
+
+Under Construction
 
 \subsubsection{Maximum Weight Bipartite Matching}
 \index{Maximum Weight Bipartite Matching} \index{Kuhn-Munkres} \index{Hungarian Matching algorithm}
