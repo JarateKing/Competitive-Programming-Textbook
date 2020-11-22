@@ -46,6 +46,8 @@ In terms of code, we can express this as an array:
 
 \inputcpp{code/number_theory/prime_sieve.cpp}
 
+This approach does have its limitations. Namely, that if we try to generate primes up to very large numbers, we have to worry about running out of memory or taking too long to generate primes. In practice, if we have to deal with numbers larger than $~10^7$ we have to be concerned about not being able to use a sieve anymore (this is not a hard limit, and $10^8$ or occasionally $10^9$ are possible given the problem constraints, but generally at these sizes the intended approach would be to use a different method).
+
 \subsubsection{Miller-Rabin Primality Test}
 \index{Miller-Rabin} \index{Primality Test}
 
