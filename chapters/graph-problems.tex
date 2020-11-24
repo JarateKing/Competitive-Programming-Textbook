@@ -230,6 +230,8 @@ Algorithmically, we:
 \item repeat from step 2 until we have every node included
 \end{enumerate}
 
+Conceptually, this is very similar to Dijkstra's algorithm for pathfinding. They aren't identical: Prim's operates on the minimum weight edge only, while Dijkstra's uses the minimum total weight (minimum sum of all weights along a path from the source node). As a result, despite very similar looking code, the outputs of these two algorithms can vary significantly.
+
 \subsection{Strongly Connected Components}
 \index{Strongly Connected Components}
 
