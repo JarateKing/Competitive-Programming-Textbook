@@ -200,15 +200,25 @@ Union-Find, which also goes by the name of \textit{disjoint-set}, is a data stru
 
 Many graphs have redundant edges -- between nodes $A$ and $B$ there may be several different paths. A spanning tree of a connected graph is one in which we use a subset of edges (whether we think of it as removing redundant edges or building up only the necessary edges depends on the algorithm we use) so that every pair of nodes has exactly one unique path between them.
 
-A minimum spanning tree is a variant of a general spanning tree, where we want to obtain the minimum total weight among all spanning trees. This is not necessarily unique either, as there easily could be multiple possible minimum spanning trees.
-
-\subsubsection{Prim's Algorithm}
-\index{Prim's Algorithm}
-
-Under Construction
+A minimum spanning tree (commonly going by the acronym MST) is a variant of a general spanning tree, where we want to obtain the minimum total weight among all spanning trees. This is not necessarily unique either, as there easily could be multiple possible minimum spanning trees.
 
 \subsubsection{Kruskal's Algorithm}
 \index{Kruskal's Algorithm}
+
+In order to build a minimum spanning tree, we greedily take the edge from the graph with the minimum weight that does not form a cycle within our work-in-progress MST.
+
+Algorithmically, we can do this as:
+\begin{enumerate}
+\item sort all edges in the graph by weight
+\item iterate through the sorted edges
+\item if the start and end node of that edge are not connected (which we can determine with Union-Find), we connect those nodes and add the edge to our MST.
+\end{enumerate}
+When this process finishes, we will obtain a minimum spanning tree.
+
+We can exit early from the above process if we already have $n-1$ edges in the MST, where $n$ is the number of nodes. At that point, we would have every node belong to the same set, and as a result any more edges we consider will not be added because they inherently will add a cycle.
+
+\subsubsection{Prim's Algorithm}
+\index{Prim's Algorithm}
 
 Under Construction
 
