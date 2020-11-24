@@ -220,7 +220,15 @@ We can exit early from the above process if we already have $n-1$ edges in the M
 \subsubsection{Prim's Algorithm}
 \index{Prim's Algorithm}
 
-Under Construction
+Prim's algorithm, rather than dealing with every edge immediately and choosing between them, will instead keep track of what nodes are currently represented in the MST and only deal with edges connected to them. While Kruskal's can add edges fairly randomly and won't necessarily have them be connected, Prim's will consistently grow from a single node.
+
+Algorithmically, we:
+\begin{enumerate}
+\item choose an arbitrary node as our start node
+\item add that node into a set $A$ and all edges connected to that node into a set $B$
+\item find the minimum weight edge in $B$ that involves a node not in $A$, and add that edge to our MST
+\item repeat from step 2 until we have every node included
+\end{enumerate}
 
 \subsection{Strongly Connected Components}
 \index{Strongly Connected Components}
