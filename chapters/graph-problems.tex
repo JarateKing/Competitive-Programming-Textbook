@@ -246,8 +246,10 @@ Kosaraju's Algorithm is a conceptually simple algorithm for finding strongly con
 \begin{enumerate}
 \item DFS from each node that hasn't already been considered, storing the order that nodes are finished DFS'ing
 \item DFS again for each node that hasn't already been considered, in reverse of the order found above, using the transpose of the graph (the same graph, but with all directions flipped). The reachable nodes from each DFS is a strongly connected component.
-\item
 \end{enumerate}
+
+\inputcpp{code/graph/kosaraju_dfs.cpp}
+\inputcpp{code/graph/kosaraju.cpp}
 
 \subsubsection{Tarjan's Algorithm}
 \index{Tarjan's Algorithm}
