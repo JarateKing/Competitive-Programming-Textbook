@@ -248,8 +248,17 @@ Kosaraju's Algorithm is a conceptually simple algorithm for finding strongly con
 \item DFS again for each node that hasn't already been considered, in reverse of the order found above, using the transpose of the graph (the same graph, but with all directions flipped). The reachable nodes from each DFS is a strongly connected component.
 \end{enumerate}
 
+Let's start by defining the DFS we're going to use for this.
+
 \inputcpp{code/graph/kosaraju_dfs.cpp}
+
+As a note about its design: often you will see implementations of Kosaraju's algorithm define two different DFSes, one for the first iteration (that adds elements to the \mintinline{cpp}{order} list in a postorder traversal) and another for the second iteration (that adds elements to the \mintinline{cpp}{ans.edges[count]} list in a preorder traversal). We combine the code here into one method to save a small amount of space, and to make it more clear how similar the two steps of the algorithm are.
+
+With that made, we now just need to do the setup required in order to apply it:
+
 \inputcpp{code/graph/kosaraju.cpp}
+
+Some of this work can be done outside of the method -- for example, when we first create the graph, it can be useful to generate the reverse of the graph there too, instead of having it done within our algorithm.
 
 \subsubsection{Tarjan's Algorithm}
 \index{Tarjan's Algorithm}

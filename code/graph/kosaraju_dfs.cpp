@@ -1,5 +1,6 @@
 // DFS method used for Kosaraju's
-void DFS(AdjList& graph, int i, vector<bool>& visited, vector<int>& accesses, bool isPreorder) {
+void DFS(AdjList& graph, int i, vector<bool>& visited,
+  vector<int>& accesses, bool isPreorder) {
     visited[i] = true;
     
     if (isPreorder)
