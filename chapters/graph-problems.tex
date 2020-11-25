@@ -242,7 +242,12 @@ This concept sees some use in various problems. For example, if we want to consi
 \subsubsection{Kosaraju's Algorithm}
 \index{Kosaraju's Algorithm}
 
-Under Construction
+Kosaraju's Algorithm is a conceptually simple algorithm for finding strongly connected components. The process is to:
+\begin{enumerate}
+\item DFS from each node that hasn't already been considered, storing the order that nodes are finished DFS'ing
+\item DFS again for each node that hasn't already been considered, in reverse of the order found above, using the transpose of the graph (the same graph, but with all directions flipped). The reachable nodes from each DFS is a strongly connected component.
+\item
+\end{enumerate}
 
 \subsubsection{Tarjan's Algorithm}
 \index{Tarjan's Algorithm}
@@ -250,7 +255,7 @@ Under Construction
 Under Construction
 
 \subsection{Maximum Flow}
-\index{Maximum Flow}
+\index{Maximum Flow} \index{Ford-Fulkerson} \index{Edmonds-Karp} \index{Dinic's Algorithm}
 
 Under Construction
 
