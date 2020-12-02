@@ -17,9 +17,9 @@ There are many frequent examples of algorithm complexities:
 
 \begin{itemize}
 \item $O(1)$ means that an algorithm is done in constant time, no matter how big the input is. A trivial example would be "for a list of $n$ elements, print the first element" because the algorithm is not concerned with how many elements there are after the first one.
-\item $O(log n)$
+\item $O(log n)$ means that an algorithm does take longer to execute with larger inputs, but it doesn't increase very significantly. In log base 2, doubling the input size will only make it take one more unit of time -- if $log_2(n) = 1$ then $log_2(2n) = 2$, $log_2(4n) = 3$, $log_2(8n) = 4$, and so on. It is very uncommon that a $O(log n)$ algorithm will not pass a problem's time limits.
 \item $O(n)$ is an extremely common runtime, where you have to go through every element of the input.
-\item $O(n log n)$
+\item $O(n log n)$ is a common runtime when we perform a $O(log n)$ algorithm on every element of the input.
 \item $O(n^2)$ is a very common runtime that can be best described as "for every input, go through every input."
 \item $O(n^3)$ is much like $O(n^2)$ except that it is "for every pair of input, go through every input" where every pair of input is $O(n^2)$ itself.
 \end{itemize}
